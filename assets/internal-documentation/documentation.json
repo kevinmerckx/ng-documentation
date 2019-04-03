@@ -1,0 +1,1128 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-0e788ef19309516db9cfe2106edf46aa",
+            "file": "projects/docs/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faHandshake",
+                    "defaultValue": "faHandshake",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'docs'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { faHandshake } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.sass']\n})\nexport class AppComponent {\n  title = 'docs';\n  faHandshake = faHandshake;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-app [brandLogo]=\"'assets/logo.svg'\">\n  <li><a href=\"https://github.com/interfacewerk/iwerk-angular-ui\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n  <li><a href=\"https://interfacewerk.de/jobs\"><fa-icon [icon]=\"faHandshake\"></fa-icon> We are hiring!</a></li>\n  <li><a href=\"https://interfacewerk.de\">interfacewerk.de</a></li>\n</docs-app>\n"
+        },
+        {
+            "name": "CodeComponent",
+            "id": "component-CodeComponent-046f245f83530fe6457598442a102e39",
+            "file": "projects/docs/src/app/features/code/code/code.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-code",
+            "styleUrls": [
+                "./code.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-code',\n  templateUrl: './code.component.html',\n  styleUrls: ['./code.component.sass']\n})\nexport class CodeComponent  {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./code.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Code'\"\n  [componentId]=\"'CodeComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Code\">\n    <app-code-example1></app-code-example1>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "CodeExample1Component",
+            "id": "component-CodeExample1Component-606c8b0500b4ee4b7594bb4d8f7eef75",
+            "file": "projects/docs/src/app/features/code/code-example1/code-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-code-example1",
+            "styleUrls": [
+                "./code-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-code-example1',\n  templateUrl: './code-example1.component.html',\n  styleUrls: ['./code-example1.component.sass']\n})\nexport class CodeExample1Component {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./code-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-code path=\"code-example1.component.html\"></docs-code>"
+        },
+        {
+            "name": "CodeLineComponent",
+            "id": "component-CodeLineComponent-ccfdcbaf4544906eb230f7eb2063ac00",
+            "file": "projects/docs/src/app/features/code-line/code-line/code-line.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-code-line",
+            "styleUrls": [
+                "./code-line.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-line.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-code-line',\n  templateUrl: './code-line.component.html',\n  styleUrls: ['./code-line.component.sass']\n})\nexport class CodeLineComponent  {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./code-line.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Code Line'\"\n  [componentId]=\"'CodeLineComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display one line of code\">\n    <app-code-line-example1></app-code-line-example1>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-line-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "CodeLineExample1Component",
+            "id": "component-CodeLineExample1Component-f69eea044f09b35675ddf6928e40b912",
+            "file": "projects/docs/src/app/features/code-line/code-line-example1/code-line-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-code-line-example1",
+            "styleUrls": [
+                "./code-line-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-line-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-code-line-example1',\n  templateUrl: './code-line-example1.component.html',\n  styleUrls: ['./code-line-example1.component.sass']\n})\nexport class CodeLineExample1Component  {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./code-line-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-code-line>console.log('Hello world!');</docs-code-line>"
+        },
+        {
+            "name": "ComponentApiComponent",
+            "id": "component-ComponentApiComponent-fcf2d9d6f70fc83c30b7bca485f79169",
+            "file": "projects/docs/src/app/features/component-api/component-api/component-api.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-component-api",
+            "styleUrls": [
+                "./component-api.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-api.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-component-api',\n  templateUrl: './component-api.component.html',\n  styleUrls: ['./component-api.component.sass']\n})\nexport class ComponentApiComponent  {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-api.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Component API'\"\n  [componentId]=\"'ComponentApiComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display a component's API\">\n    <docs-tabs>\n      <app-component-api-example1 *docsTab=\"'Example'\"></app-component-api-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-api-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "ComponentApiExample1Component",
+            "id": "component-ComponentApiExample1Component-2faaaeed1d66421ba2ddcdb5d81505a8",
+            "file": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "DocumentationService"
+                },
+                {
+                    "name": "{\n    provide: DOCUMENTATION_PATH, useValue: \n}"
+                }
+            ],
+            "selector": "app-component-api-example1",
+            "styleUrls": [
+                "./component-api-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-api-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-api-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-api\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n></docs-component-api>\n"
+        },
+        {
+            "name": "ComponentDocumentationComponent",
+            "id": "component-ComponentDocumentationComponent-c5cb6000defb78823a8cbe67162ec3bd",
+            "file": "projects/docs/src/app/features/component-documentation/component-documentation/component-documentation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-component-documentation",
+            "styleUrls": [
+                "./component-documentation.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-documentation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-documentation.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Component Documentation'\"\n  [componentId]=\"'ComponentDocumentationComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Component Documentation\">\n    <docs-tabs>\n      <app-component-documentation-example1 *docsTab=\"'Example'\"></app-component-documentation-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-documentation-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "ComponentDocumentationExample1Component",
+            "id": "component-ComponentDocumentationExample1Component-3af4cc959c35456e4725e995ab81462c",
+            "file": "projects/docs/src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "DocumentationService"
+                },
+                {
+                    "name": "{\n    provide: DOCUMENTATION_PATH, useValue: \n}"
+                }
+            ],
+            "selector": "app-component-documentation-example1",
+            "styleUrls": [
+                "./component-documentation-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-documentation-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-documentation-example1',\n  templateUrl: './component-documentation-example1.component.html',\n  styleUrls: ['./component-documentation-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentDocumentationExample1Component {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-documentation-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Profile'\"\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n  [disableRoutedNavigation]=\"true\"\n>\n  <ng-template docsComponentExample=\"Basic Usage\">\n    <app-profile [profileId]=\"'a76Hhjh6'\" [category]=\"'Admin'\"></app-profile>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-86c80ed51a3fecff22ae4799bf54cb75",
+            "file": "projects/docs/src/app/features/home/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.sass']\n})\nexport class HomeComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\\:host\n  padding: 0 15px\n  display: block",
+                    "styleUrl": "./home.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-docs</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
+        },
+        {
+            "name": "ProfileComponent",
+            "id": "component-ProfileComponent-9883f3f24a47ca89437b59c22d7be69a",
+            "file": "projects/docs/src/app/shared/profile/profile.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-profile",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./profile.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "category",
+                    "description": "<p>The category of the profile.</p>\n",
+                    "line": 18,
+                    "type": "number"
+                },
+                {
+                    "name": "profileId",
+                    "description": "<p>The profile ID.</p>\n",
+                    "line": 14,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "deleted",
+                    "defaultValue": "new EventEmitter()",
+                    "description": "<p>Inform when the profile is deleted.</p>\n",
+                    "line": 23,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "copy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "description": "<p>Copies the profile.</p>\n"
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "<p>Profile component that displays basic information of a profile.</p>\n",
+            "rawdescription": "Profile component that displays basic information of a profile.",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n/**\n * Profile component that displays basic information of a profile.\n */\n@Component({\n  selector: 'app-profile',\n  templateUrl: './profile.component.html'\n})\nexport class ProfileComponent {\n  /**\n   * The profile ID.\n   */\n  @Input() profileId: string;\n  /**\n   * The category of the profile.\n   */\n  @Input() category: number;\n\n  /**\n   * Inform when the profile is deleted.\n   */\n  @Output() deleted = new EventEmitter();\n\n  /**\n   * Copies the profile.\n   */\n  copy() {\n    // tslint:disable-next-line:no-empty\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "<strong>Profile #{{profileId}}</strong> (category: {{category}})"
+        },
+        {
+            "name": "TabsComponent",
+            "id": "component-TabsComponent-fb3f545cd22d56c53dfec77add212659",
+            "file": "projects/docs/src/app/features/tabs/tabs/tabs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tabs",
+            "styleUrls": [
+                "./tabs.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tabs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-tabs',\n  templateUrl: './tabs.component.html',\n  styleUrls: ['./tabs.component.sass']\n})\nexport class TabsComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tabs.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Tabs'\"\n  [componentId]=\"'TabsComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Tabs to display code\">\n    <app-tabs-example1></app-tabs-example1>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "TabsExample1Component",
+            "id": "component-TabsExample1Component-be05335871e42b1e811ecda85ab5d44a",
+            "file": "projects/docs/src/app/features/tabs/tabs-example1/tabs-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tabs-example1",
+            "styleUrls": [
+                "./tabs-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tabs-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-tabs-example1',\n  templateUrl: './tabs-example1.component.html',\n  styleUrls: ['./tabs-example1.component.sass']\n})\nexport class TabsExample1Component {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tabs-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-tabs>\n  <docs-code *docsTab=\"'HTML'\" path=\"tabs-example1.component.html\"></docs-code>\n  <docs-code *docsTab=\"'TS'\" path=\"tabs-example1.component.ts\"></docs-code>\n</docs-tabs>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CodeLineModule"
+                        },
+                        {
+                            "name": "CodeModule"
+                        },
+                        {
+                            "name": "HomeModule"
+                        },
+                        {
+                            "name": "TabsModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CodeLineModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CodeLineComponent"
+                        },
+                        {
+                            "name": "CodeLineExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CodeModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CodeComponent"
+                        },
+                        {
+                            "name": "CodeExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ComponentApiModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ComponentApiComponent"
+                        },
+                        {
+                            "name": "ComponentApiExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ComponentDocumentationModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ComponentDocumentationComponent"
+                        },
+                        {
+                            "name": "ComponentDocumentationExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HomeModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SharedModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ProfileComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ProfileComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TabsModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TabsComponent"
+                        },
+                        {
+                            "name": "TabsExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/docs/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/docs/src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/docs/src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/docs/src/test.ts",
+                "type": "any"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/docs/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/docs/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/docs/src/test.ts",
+                    "type": "any"
+                }
+            ],
+            "projects/docs/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/docs/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "projects/docs/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/docs/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 5,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/docs/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/code-line/code-line-example1/code-line-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeLineExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/code-line/code-line/code-line.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeLineComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/code/code-example1/code-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/code/code/code.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentApiExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-api/component-api/component-api.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentApiComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentDocumentationExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-documentation/component-documentation/component-documentation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentDocumentationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/home/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/tabs/tabs-example1/tabs-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/tabs/tabs/tabs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/shared/profile/profile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileComponent",
+                "coveragePercent": 100,
+                "coverageCount": "5/5",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/docs/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
