@@ -16,6 +16,7 @@ import {
   ComponentDocumentationComponent
 } from './features/component-documentation/component-documentation/component-documentation.component';
 import { ComponentDocumentationModule } from './features/component-documentation/component-documentation.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,10 @@ import { ComponentDocumentationModule } from './features/component-documentation
       }
     })
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

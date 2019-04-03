@@ -895,17 +895,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/docs/src/environments/environment.ts",
+                "file": "projects/docs/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/docs/src/environments/environment.prod.ts",
+                "file": "projects/docs/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "require",
@@ -936,16 +936,6 @@
                     "type": "any"
                 }
             ],
-            "projects/docs/src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/docs/src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "projects/docs/src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -954,6 +944,16 @@
                     "file": "projects/docs/src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "projects/docs/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/docs/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ]
         },
