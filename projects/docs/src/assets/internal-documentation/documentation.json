@@ -252,7 +252,7 @@
         },
         {
             "name": "ComponentApiExample1Component",
-            "id": "component-ComponentApiExample1Component-d73ff246ba3c63bc7bb12bb959044ffa",
+            "id": "component-ComponentApiExample1Component-2faaaeed1d66421ba2ddcdb5d81505a8",
             "file": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -284,7 +284,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-profile',\n  template: ''\n})\nexport class ProfileComponent {\n  /**\n   * The profile ID.\n   */\n  @Input() profileId: string;\n  /**\n   * The category of the profile.\n   */\n  @Input() category: number;\n\n  /**\n   * Inform when the profile is deleted.\n   */\n  @Output() deleted = new EventEmitter();\n\n  /**\n   * Copies the profile.\n   */\n  copy() {\n    // tslint:disable-next-line:no-empty\n  }\n}\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -294,6 +294,107 @@
             ],
             "stylesData": "",
             "templateData": "<docs-component-api\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n></docs-component-api>\n"
+        },
+        {
+            "name": "ComponentDocumentationComponent",
+            "id": "component-ComponentDocumentationComponent-f45ad920c6812558dd814a276632176d",
+            "file": "projects/docs/src/app/features/component-documentation/component-documentation/component-documentation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-component-documentation",
+            "styleUrls": [
+                "./component-documentation.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-documentation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-documentation.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Component Documentation'\"\n  [componentId]=\"'ComponentDocumentationComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Component Documentation\">\n    <docs-tabs>\n      <app-component-documentation-example1 *docsTab=\"'Example'\"></app-component-documentation-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-documentation-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "ComponentDocumentationExample1Component",
+            "id": "component-ComponentDocumentationExample1Component-ab98b49ed6ee91a07ec529c42d92d720",
+            "file": "projects/docs/src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "DocumentationService"
+                },
+                {
+                    "name": "{\n    provide: DOCUMENTATION_PATH, useValue: \n}"
+                }
+            ],
+            "selector": "app-component-documentation-example1",
+            "styleUrls": [
+                "./component-documentation-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./component-documentation-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-documentation-example1',\n  templateUrl: './component-documentation-example1.component.html',\n  styleUrls: ['./component-documentation-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentDocumentationExample1Component {}\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./component-documentation-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Profile'\"\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n  [disableRoutedNavigation]=\"true\"\n>\n  <ng-template docsComponentExample=\"Basic Usage\">\n    <app-profile [profileId]=\"'a76Hhjh6'\" [category]=\"'Admin'\"></app-profile>\n  </ng-template>\n</docs-component-documentation>\n"
         },
         {
             "name": "HomeComponent",
@@ -335,8 +436,8 @@
         },
         {
             "name": "ProfileComponent",
-            "id": "component-ProfileComponent-d73ff246ba3c63bc7bb12bb959044ffa",
-            "file": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
+            "id": "component-ProfileComponent-9883f3f24a47ca89437b59c22d7be69a",
+            "file": "projects/docs/src/app/shared/profile/profile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -345,20 +446,21 @@
             "selector": "app-profile",
             "styleUrls": [],
             "styles": [],
-            "template": "",
-            "templateUrl": [],
+            "templateUrl": [
+                "./profile.component.html"
+            ],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "category",
                     "description": "<p>The category of the profile.</p>\n",
-                    "line": 17,
+                    "line": 18,
                     "type": "number"
                 },
                 {
                     "name": "profileId",
                     "description": "<p>The profile ID.</p>\n",
-                    "line": 13,
+                    "line": 14,
                     "type": "string"
                 }
             ],
@@ -367,7 +469,7 @@
                     "name": "deleted",
                     "defaultValue": "new EventEmitter()",
                     "description": "<p>Inform when the profile is deleted.</p>\n",
-                    "line": 22,
+                    "line": 23,
                     "type": "EventEmitter"
                 }
             ],
@@ -379,19 +481,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 28,
                     "description": "<p>Copies the profile.</p>\n"
                 }
             ],
             "hostBindings": [],
             "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
+            "description": "<p>Profile component that displays basic information of a profile.</p>\n",
+            "rawdescription": "Profile component that displays basic information of a profile.",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-profile',\n  template: ''\n})\nexport class ProfileComponent {\n  /**\n   * The profile ID.\n   */\n  @Input() profileId: string;\n  /**\n   * The category of the profile.\n   */\n  @Input() category: number;\n\n  /**\n   * Inform when the profile is deleted.\n   */\n  @Output() deleted = new EventEmitter();\n\n  /**\n   * Copies the profile.\n   */\n  copy() {\n    // tslint:disable-next-line:no-empty\n  }\n}\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n/**\n * Profile component that displays basic information of a profile.\n */\n@Component({\n  selector: 'app-profile',\n  templateUrl: './profile.component.html'\n})\nexport class ProfileComponent {\n  /**\n   * The profile ID.\n   */\n  @Input() profileId: string;\n  /**\n   * The category of the profile.\n   */\n  @Input() category: number;\n\n  /**\n   * Inform when the profile is deleted.\n   */\n  @Output() deleted = new EventEmitter();\n\n  /**\n   * Copies the profile.\n   */\n  copy() {\n    // tslint:disable-next-line:no-empty\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": ""
+            "stylesData": "",
+            "templateData": "<strong>Profile #{{profileId}}</strong> (category: {{category}})"
         },
         {
             "name": "TabsComponent",
@@ -616,9 +719,46 @@
                         },
                         {
                             "name": "ComponentApiExample1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ComponentDocumentationModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ComponentDocumentationComponent"
                         },
                         {
-                            "name": "ProfileComponent"
+                            "name": "ComponentDocumentationExample1Component"
                         }
                     ]
                 },
@@ -690,7 +830,11 @@
                 },
                 {
                     "type": "declarations",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ProfileComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "imports",
@@ -698,7 +842,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ProfileComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -891,21 +1039,30 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProfileComponent",
-                "coveragePercent": 80,
-                "coverageCount": "4/5",
-                "status": "very-good"
-            },
-            {
                 "filePath": "projects/docs/src/app/features/component-api/component-api/component-api.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentApiComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentDocumentationExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/component-documentation/component-documentation/component-documentation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComponentDocumentationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -934,6 +1091,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/shared/profile/profile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileComponent",
+                "coveragePercent": 100,
+                "coverageCount": "5/5",
+                "status": "very-good"
             },
             {
                 "filePath": "projects/docs/src/environments/environment.prod.ts",

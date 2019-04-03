@@ -12,6 +12,10 @@ import { HomeModule } from './features/home/home.module';
 import { HomeComponent } from './features/home/home/home.component';
 import { TabsModule } from './features/tabs/tabs.module';
 import { TabsComponent } from './features/tabs/tabs/tabs.component';
+import {
+  ComponentDocumentationComponent
+} from './features/component-documentation/component-documentation/component-documentation.component';
+import { ComponentDocumentationModule } from './features/component-documentation/component-documentation.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { TabsComponent } from './features/tabs/tabs/tabs.component';
     CodeLineModule,
     HomeModule,
     ComponentApiModule,
+    ComponentDocumentationModule,
     DocsModule.configure({
       welcomePage: HomeComponent,
       componentPages: {
@@ -42,6 +47,10 @@ import { TabsComponent } from './features/tabs/tabs/tabs.component';
         componentApi: {
           component: ComponentApiComponent,
           title: 'Component API'
+        },
+        componentDocumentation: {
+          component: ComponentDocumentationComponent,
+          title: 'Component Documentation'
         }
       }
     })
