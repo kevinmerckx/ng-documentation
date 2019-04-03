@@ -1,17 +1,33 @@
-import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';
+import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+/**
+ * Component that displays a component's or a directive's information: an overview, examples and API.
+ */
 @Component({
   selector: 'docs-component-documentation',
   templateUrl: './component-documentation.component.html',
   styleUrls: ['./component-documentation.component.sass']
 })
-export class ComponentDocumentationComponent {
+export class ComponentDocumentationComponent implements OnChanges {
+  /**
+   * The component class name.
+   */
   @Input() componentId: string;
-  @Input() componentType: 'directives';
+  /**
+   * The component type.
+   */
+  @Input() componentType: 'directives' | 'components';
+  /**
+   * A title that will be displayed.
+   */
   @Input() componentTitle: string;
+  /**
+   * @ignore
+   */
+  @Input() disableRoutedNavigation = false;
 
   examples: ComponentExampleDirective[] = [];
 
@@ -24,24 +40,48 @@ export class ComponentDocumentationComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.tab$ = this.route.queryParams.pipe(map(p => p.tab || 'overview'));
-    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));
-    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));
-    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));
   }
 
+  /**
+   * @ignore
+   */
+  ngOnChanges() {
+    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));
+    this.updateIsObservables();
+  }
+
+  /**
+   * @ignore
+   */
   registerExample(example: ComponentExampleDirective) {
     this.examples.push(example);
   }
 
+  /**
+   * @ignore
+   */
   select(tab: 'overview' | 'examples' | 'api') {
-    this.router.navigate(['.'], {
-      queryParamsHandling: 'merge',
-      queryParams: {
-        tab
-      },
-      relativeTo: this.route,
-    });
+    if (this.disableRoutedNavigation) {
+      this.tab$ = of(tab);
+      this.updateIsObservables();
+    } else {
+      this.router.navigate(['.'], {
+        queryParamsHandling: 'merge',
+        queryParams: {
+          tab
+        },
+        relativeTo: this.route,
+      });
+    }
+  }
+
+  /**
+   * @ignore
+   */
+  private updateIsObservables() {
+    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));
+    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));
+    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));
   }
 }
 

@@ -82,7 +82,11 @@ export class DocumentationService {
         if (!this.documentation) {
             return undefined;
         } else {
-            return this.documentation[type].find(d => d.name === name);
+            const result = this.documentation[type].find(d => d.name === name);
+            if (result) {
+                return result;
+            }
+            throw new Error('Not found: ' + name);
         }
     }
 

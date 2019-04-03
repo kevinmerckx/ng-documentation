@@ -94,10 +94,10 @@
     "interfaces": [
         {
             "name": "ComponentDocumentation",
-            "id": "interface-ComponentDocumentation-53464b5a21c4af33b317ac23812e3058",
+            "id": "interface-ComponentDocumentation-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
                 {
                     "name": "accessors",
@@ -204,10 +204,10 @@
         },
         {
             "name": "Documentation",
-            "id": "interface-Documentation-53464b5a21c4af33b317ac23812e3058",
+            "id": "interface-Documentation-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
                 {
                     "name": "components",
@@ -230,10 +230,10 @@
         },
         {
             "name": "InputType",
-            "id": "interface-InputType-53464b5a21c4af33b317ac23812e3058",
+            "id": "interface-InputType-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
                 {
                     "name": "description",
@@ -263,10 +263,10 @@
         },
         {
             "name": "MethodType",
-            "id": "interface-MethodType-53464b5a21c4af33b317ac23812e3058",
+            "id": "interface-MethodType-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
                 {
                     "name": "name",
@@ -289,10 +289,10 @@
         },
         {
             "name": "OutputType",
-            "id": "interface-OutputType-53464b5a21c4af33b317ac23812e3058",
+            "id": "interface-OutputType-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
                 {
                     "name": "defaultValue",
@@ -331,7 +331,7 @@
     "injectables": [
         {
             "name": "DocumentationService",
-            "id": "injectable-DocumentationService-53464b5a21c4af33b317ac23812e3058",
+            "id": "injectable-DocumentationService-72d2e401d7441f6b7e0e07c06200e190",
             "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
             "properties": [
                 {
@@ -424,7 +424,7 @@
                     "optional": false,
                     "returnType": "Observable<string>",
                     "typeParameters": [],
-                    "line": 89,
+                    "line": 93,
                     "jsdoctags": [
                         {
                             "name": "options",
@@ -437,7 +437,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            return this.documentation[type].find(d => d.name === name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -496,17 +496,17 @@
     "directives": [
         {
             "name": "AnchorContainerDirective",
-            "id": "directive-AnchorContainerDirective-c01856449609736004212f6989dc8fe7",
+            "id": "directive-AnchorContainerDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
             "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
-            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent {\n  @Input() componentId: string;\n  @Input() componentType: 'directives';\n  @Input() componentTitle: string;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n    this.tab$ = this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  select(tab: 'overview' | 'examples' | 'api') {\n    this.router.navigate(['.'], {\n      queryParamsHandling: 'merge',\n      queryParams: {\n        tab\n      },\n      relativeTo: this.route,\n    });\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
             "selector": "[docsAnchorContainer]",
             "providers": [],
             "inputsClass": [
                 {
                     "name": "docsAnchorContainer",
-                    "line": 52,
+                    "line": 92,
                     "type": "string"
                 }
             ],
@@ -520,7 +520,7 @@
                     "type": "AnchorDirective[]",
                     "optional": false,
                     "description": "",
-                    "line": 53,
+                    "line": 93,
                     "modifierKind": [
                         112
                     ]
@@ -530,7 +530,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 54,
+                    "line": 94,
                     "modifierKind": [
                         112
                     ]
@@ -543,7 +543,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 62
+                    "line": 102
                 },
                 {
                     "name": "registerAnchor",
@@ -556,7 +556,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 58,
+                    "line": 98,
                     "jsdoctags": [
                         {
                             "name": "anchor",
@@ -580,7 +580,7 @@
                         "type": "ElementRef"
                     }
                 ],
-                "line": 54,
+                "line": 94,
                 "jsdoctags": [
                     {
                         "name": "elementRef",
@@ -594,17 +594,17 @@
         },
         {
             "name": "AnchorDirective",
-            "id": "directive-AnchorDirective-c01856449609736004212f6989dc8fe7",
+            "id": "directive-AnchorDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
             "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
-            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent {\n  @Input() componentId: string;\n  @Input() componentType: 'directives';\n  @Input() componentTitle: string;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n    this.tab$ = this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  select(tab: 'overview' | 'examples' | 'api') {\n    this.router.navigate(['.'], {\n      queryParamsHandling: 'merge',\n      queryParams: {\n        tab\n      },\n      relativeTo: this.route,\n    });\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
             "selector": "[docsAnchor]",
             "providers": [],
             "inputsClass": [
                 {
                     "name": "docsAnchor",
-                    "line": 79,
+                    "line": 119,
                     "type": "string"
                 }
             ],
@@ -617,7 +617,7 @@
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 83,
+                    "line": 123,
                     "modifierKind": [
                         114
                     ]
@@ -637,7 +637,7 @@
                         "type": "ElementRef"
                     }
                 ],
-                "line": 79,
+                "line": 119,
                 "jsdoctags": [
                     {
                         "name": "container",
@@ -658,17 +658,17 @@
         },
         {
             "name": "ComponentExampleDirective",
-            "id": "directive-ComponentExampleDirective-c01856449609736004212f6989dc8fe7",
+            "id": "directive-ComponentExampleDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
             "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
-            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent {\n  @Input() componentId: string;\n  @Input() componentType: 'directives';\n  @Input() componentTitle: string;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n    this.tab$ = this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  select(tab: 'overview' | 'examples' | 'api') {\n    this.router.navigate(['.'], {\n      queryParamsHandling: 'merge',\n      queryParams: {\n        tab\n      },\n      relativeTo: this.route,\n    });\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
             "selector": "[docsComponentExample]",
             "providers": [],
             "inputsClass": [
                 {
                     "name": "docsComponentExample",
-                    "line": 93,
+                    "line": 133,
                     "type": "string"
                 }
             ],
@@ -681,7 +681,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 97,
+                    "line": 137,
                     "modifierKind": [
                         114
                     ]
@@ -701,7 +701,7 @@
                         "type": "TemplateRef<any>"
                     }
                 ],
-                "line": 93,
+                "line": 133,
                 "jsdoctags": [
                     {
                         "name": "documentation",
@@ -1139,7 +1139,7 @@
         },
         {
             "name": "ComponentDocumentationComponent",
-            "id": "component-ComponentDocumentationComponent-c01856449609736004212f6989dc8fe7",
+            "id": "component-ComponentDocumentationComponent-7d89b1daf5e4c2df9f2df5b4b08ab813",
             "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1158,18 +1158,21 @@
             "inputsClass": [
                 {
                     "name": "componentId",
-                    "line": 12,
+                    "description": "<p>The component class name.</p>\n",
+                    "line": 18,
                     "type": "string"
                 },
                 {
                     "name": "componentTitle",
-                    "line": 14,
+                    "description": "<p>A title that will be displayed.</p>\n",
+                    "line": 26,
                     "type": "string"
                 },
                 {
                     "name": "componentType",
-                    "line": 13,
-                    "type": ""
+                    "description": "<p>The component type.</p>\n",
+                    "line": 22,
+                    "type": "\"directives\" | \"components\""
                 }
             ],
             "outputsClass": [],
@@ -1180,89 +1183,44 @@
                     "type": "ComponentExampleDirective[]",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 32
                 },
                 {
                     "name": "isApi$",
                     "type": "Observable<boolean>",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 37
                 },
                 {
                     "name": "isExamples$",
                     "type": "Observable<boolean>",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 36
                 },
                 {
                     "name": "isOverview$",
                     "type": "Observable<boolean>",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 35
                 },
                 {
                     "name": "tab$",
                     "type": "Observable<\"overview\" | \"examples\" | \"api\">",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 34
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "registerExample",
-                    "args": [
-                        {
-                            "name": "example",
-                            "type": "ComponentExampleDirective"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 33,
-                    "jsdoctags": [
-                        {
-                            "name": "example",
-                            "type": "ComponentExampleDirective",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "select",
-                    "args": [
-                        {
-                            "name": "tab",
-                            "type": "\"overview\" | \"examples\" | \"api\""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 37,
-                    "jsdoctags": [
-                        {
-                            "name": "tab",
-                            "type": "\"overview\" | \"examples\" | \"api\"",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
+            "description": "<p>Component that displays a component&#39;s or a directive&#39;s information: an overview, examples and API.</p>\n",
+            "rawdescription": "Component that displays a component's or a directive's information: an overview, examples and API.",
             "type": "component",
-            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent {\n  @Input() componentId: string;\n  @Input() componentType: 'directives';\n  @Input() componentTitle: string;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n    this.tab$ = this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  select(tab: 'overview' | 'examples' | 'api') {\n    this.router.navigate(['.'], {\n      queryParamsHandling: 'merge',\n      queryParams: {\n        tab\n      },\n      relativeTo: this.route,\n    });\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1284,7 +1242,7 @@
                         "type": "ActivatedRoute"
                     }
                 ],
-                "line": 21,
+                "line": 37,
                 "jsdoctags": [
                     {
                         "name": "router",
@@ -1302,6 +1260,9 @@
                     }
                 ]
             },
+            "implements": [
+                "OnChanges"
+            ],
             "templateData": "<div class=\"header\">\n  <h1>{{componentTitle}}</h1>\n\n  <ol>\n    <li [class.active]=\"isOverview$ | async\" (click)=\"select('overview')\">Overview</li>\n    <li [class.active]=\"isExamples$ | async\" (click)=\"select('examples')\">Examples</li>\n    <li [class.active]=\"isApi$ | async\" (click)=\"select('api')\">API</li>\n  </ol>\n</div>\n\n<div class=\"content\" [docsAnchorContainer]=\"tab$ | async\">\n  <docs-component-description\n    docsAnchor=\"overview\"\n    [componentId]=\"componentId\"\n    [componentType]=\"componentType\"\n  ></docs-component-description>\n\n  <h2 docsAnchor=\"examples\">Examples</h2>\n  <ng-template ngFor [ngForOf]=\"examples\" let-example>\n    <docs-component-example [example]=\"example\"></docs-component-example>\n  </ng-template>\n\n  <h2 docsAnchor=\"api\">API</h2>\n  \n  <docs-component-api\n    [componentId]=\"componentId\"\n    [componentType]=\"componentType\"\n  ></docs-component-api>\n  \n</div>\n\n"
         },
         {
@@ -2080,7 +2041,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -2151,9 +2112,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentDocumentationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/12",
-                "status": "low"
+                "coveragePercent": 40,
+                "coverageCount": "4/10",
+                "status": "medium"
             },
             {
                 "filePath": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",

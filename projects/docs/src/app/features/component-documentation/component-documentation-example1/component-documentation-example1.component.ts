@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';
 import { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';
 
 @Component({
-  selector: 'app-component-api-example1',
-  templateUrl: './component-api-example1.component.html',
-  styleUrls: ['./component-api-example1.component.sass'],
+  selector: 'app-component-documentation-example1',
+  templateUrl: './component-documentation-example1.component.html',
+  styleUrls: ['./component-documentation-example1.component.sass'],
   providers: [
     DocumentationService,
     {
@@ -14,5 +14,4 @@ import { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token
     }
   ]
 })
-export class ComponentApiExample1Component {
-}
+export class ComponentDocumentationExample1Component {}
