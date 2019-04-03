@@ -15,4 +15,3 @@ import { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token
   ]
 })
 export class ComponentDocumentationExample1Component {}
-
