@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ng-docs",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "@fortawesome/angular-fontawesome",
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/free-solid-svg-icons",
+    "iwerk-angular-ui",
+    "@compodoc/compodoc",
+    "node-html-parser",
+    "nodemon"
+  ]
+}

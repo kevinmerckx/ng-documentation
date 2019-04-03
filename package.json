@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:playground": "ng serve --project=playground",
+    "start:docs": "ng serve --project=docs",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "watch-docs:docs": "./scripts/watch-docs.sh projects/docs/src/assets/documentation projects/ng-docs/tsconfig.lib.json docs",
+    "watch-docs:docs-internal": "./scripts/watch-docs.sh projects/docs/src/assets/internal-documentation projects/docs/tsconfig.app.json docs",
+    "build:lib": "ng build ng-docs && ./node_modules/.bin/node-sass projects/ng-docs/src/lib/styles.sass dist/ng-docs/ng-docs.css && cp -R projects/ng-docs/src/lib/styles/font-awesome-4.7.0 dist/ng-docs/font-awesome && cp -R scripts dist/ng-docs"
   },
   "private": true,
   "dependencies": {
@@ -19,18 +23,27 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "core-js": "^2.5.4",
+    "iwerk-angular-ui": "^3.17.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "@compodoc/compodoc": "^1.1.9",
+    "node-html-parser": "^1.1.13",
+    "nodemon": "^1.18.10"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular-devkit/build-ng-packagr": "~0.13.0",
     "@angular/cli": "~7.3.7",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -39,8 +52,12 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^4.2.0",
+    "node-sass": "^4.11.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": ">=0.34.0",
+    "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
   }

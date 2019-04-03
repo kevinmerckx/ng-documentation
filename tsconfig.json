@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-docs": [
+        "dist/ng-docs"
+      ],
+      "ng-docs/*": [
+        "dist/ng-docs/*"
+      ]
+    }
   }
 }

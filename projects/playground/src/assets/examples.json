@@ -1,0 +1,1 @@
+{"app.component.html":"<docs-code path=\"app.component.html\"></docs-code>\n<docs-code path=\"app.component.ts\"></docs-code>","app.component.ts":"import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.sass']\n})\nexport class AppComponent {\n  title = 'playground';\n}\n"}
