@@ -1,5 +1,11 @@
 # NgDocs
 
+## Documentation
+
+[https://kevinmerckx.github.io/ng-docs/](https://kevinmerckx.github.io/ng-docs/)
+
+## Setup
+
 "Automatic" documentation.
 
 * Generate `documentation.json` in `src/assets` with compodoc
