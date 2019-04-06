@@ -1,5 +1,7 @@
 # NgDocs
 
+[![Build Status](https://travis-ci.org/kevinmerckx/ng-docs.svg?branch=develop)](https://travis-ci.org/kevinmerckx/ng-docs)
+
 ## Documentation
 
 [https://kevinmerckx.github.io/ng-docs/](https://kevinmerckx.github.io/ng-docs/)
