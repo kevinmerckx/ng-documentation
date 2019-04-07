@@ -3,7 +3,7 @@
     "default": {
       "packages": [
         "package.json",
-        "projects/ng-docs/package.json"
+        "projects/ng-documentation/package.json"
       ]
     }
   }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { DocsModule } from 'projects/ng-docs/src/public-api';
+import { DocsModule } from 'projects/ng-documentation/src/public-api';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({

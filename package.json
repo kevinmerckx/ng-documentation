@@ -1,5 +1,5 @@
 {
-  "name": "ng-docs",
+  "name": "ng-documentation",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,14 +9,14 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "watch-docs:docs": "./scripts/watch-docs.sh projects/docs/src/assets/documentation projects/ng-docs/tsconfig.lib.json docs",
+    "watch-docs:docs": "./scripts/watch-docs.sh projects/docs/src/assets/documentation projects/ng-documentation/tsconfig.lib.json docs",
     "watch-docs:docs-internal": "./scripts/watch-docs.sh projects/docs/src/assets/internal-documentation projects/docs/tsconfig.app.json docs",
-    "build:lib": "ng build ng-docs && ./node_modules/.bin/node-sass projects/ng-docs/src/lib/styles.sass dist/ng-docs/ng-docs.css && cp -R projects/ng-docs/src/lib/styles/font-awesome-4.7.0 dist/ng-docs/font-awesome && cp -R scripts dist/ng-docs",
-    "build:docs": "./scripts/generate-doc.sh projects/docs/src/assets/documentation projects/ng-docs/tsconfig.lib.json docs && ./scripts/generate-doc.sh projects/docs/src/assets/internal-documentation projects/docs/tsconfig.app.json docs && ng build docs --base-href https://kevinmerckx.github.io/ng-docs/"
+    "build:lib": "ng build ng-documentation && ./node_modules/.bin/node-sass projects/ng-documentation/src/lib/styles.sass dist/ng-documentation/ng-documentation.css && cp -R projects/ng-documentation/src/lib/styles/font-awesome-4.7.0 dist/ng-documentation/font-awesome && cp -R scripts dist/ng-documentation",
+    "build:docs": "./scripts/generate-doc.sh projects/docs/src/assets/documentation projects/ng-documentation/tsconfig.lib.json docs && ./scripts/generate-doc.sh projects/docs/src/assets/internal-documentation projects/docs/tsconfig.app.json docs && ng build docs --base-href https://kevinmerckx.github.io/ng-documentation/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevinmerckx/ng-docs.git"
+    "url": "https://github.com/kevinmerckx/ng-documentation.git"
   },
   "private": true,
   "dependencies": {
@@ -70,7 +70,7 @@
     "typescript": "^3.2.2"
   },
   "release": {
-    "pkgRoot": "dist/ng-docs",
+    "pkgRoot": "dist/ng-documentation",
     "verifyConditions": [
       "@semantic-release/changelog",
       "@semantic-release/npm",

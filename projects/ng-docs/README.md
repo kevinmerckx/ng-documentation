@@ -1,10 +1,10 @@
 # NgDocs
 
-[![Build Status](https://travis-ci.org/kevinmerckx/ng-docs.svg?branch=develop)](https://travis-ci.org/kevinmerckx/ng-docs)
+[![Build Status](https://travis-ci.org/kevinmerckx/ng-documentation.svg?branch=develop)](https://travis-ci.org/kevinmerckx/ng-documentation)
 
 ## Documentation
 
-[https://kevinmerckx.github.io/ng-docs/](https://kevinmerckx.github.io/ng-docs/)
+[https://kevinmerckx.github.io/ng-documentation/](https://kevinmerckx.github.io/ng-documentation/)
 
 ## Setup
 
