@@ -1,6 +1,13 @@
 \:host
   display: block
   margin: 5px 0
+  position: relative
+
+docs-copy-button
+  position: absolute
+  right: 15px
+  top: 50%
+  transform: translateY(-50%)
 
 .code-container
   display: flex
@@ -16,18 +23,3 @@ pre
 code
   margin: 0
 
-.hidden
-  visibility: hidden
-
-.copy
-  background: none
-  color: #7a7272
-  border: none
-  border-radius: 0
-  box-shadow: none
-  padding: 0
-  margin: 0 0 0 15px
-
-.copied
-  font-size: 11px
-  color: #7a7272

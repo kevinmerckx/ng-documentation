@@ -16,6 +16,7 @@ import {
 import { ComponentExampleComponent } from './component-example/component-example.component';
 import { TabDirective, TabsComponent } from './tabs/tabs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CopyButtonComponent } from './copy-button/copy-button.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     TabsComponent,
     TabDirective,
     CodeComponent,
-    CodeLineComponent
+    CodeLineComponent,
+    CopyButtonComponent
   ]
 })
 export class CoreModule { }
