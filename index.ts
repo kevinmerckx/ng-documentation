@@ -1,1 +1,1 @@
-export * from './projects/ng-docs/src/public-api';
+export * from './projects/ng-documentation/src/public-api';

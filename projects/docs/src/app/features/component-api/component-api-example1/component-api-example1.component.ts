@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';
-import { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';
+import { DocumentationService } from 'projects/ng-documentation/src/lib/core/documentation.service';
+import { DOCUMENTATION_PATH } from 'projects/ng-documentation/src/lib/documentation.token';
 
 @Component({
   selector: 'app-component-api-example1',

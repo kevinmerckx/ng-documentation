@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DocsModule } from 'projects/ng-docs/src/public-api';
+import { DocsModule } from 'projects/ng-documentation/src/public-api';
 
 @NgModule({
   declarations: [],
