@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DocsModule } from 'projects/ng-docs/src/public-api';
+import { DocsModule } from 'projects/ng-documentation/src/public-api';
 import { AppComponent } from './app.component';
 import { CodeLineModule } from './features/code-line/code-line.module';
 import { CodeLineComponent } from './features/code-line/code-line/code-line.component';

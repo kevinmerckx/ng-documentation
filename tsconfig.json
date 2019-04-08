@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ng-docs": [
-        "dist/ng-docs"
+      "ng-documentation": [
+        "dist/ng-documentation"
       ],
-      "ng-docs/*": [
-        "dist/ng-docs/*"
+      "ng-documentation/*": [
+        "dist/ng-documentation/*"
       ]
     }
   }

@@ -3,7 +3,7 @@
         {
             "name": "CodeSamplePipe",
             "id": "pipe-CodeSamplePipe-89fb1be73ff33f8a5a1493a819334c70",
-            "file": "projects/ng-docs/src/lib/core/code-sample/code-sample.pipe.ts",
+            "file": "projects/ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts",
             "type": "pipe",
             "description": "",
             "properties": [
@@ -47,7 +47,7 @@
         {
             "name": "ComponentDescriptionPipe",
             "id": "pipe-ComponentDescriptionPipe-89fb1be73ff33f8a5a1493a819334c70",
-            "file": "projects/ng-docs/src/lib/core/code-sample/code-sample.pipe.ts",
+            "file": "projects/ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts",
             "type": "pipe",
             "description": "",
             "properties": [],
@@ -95,7 +95,7 @@
         {
             "name": "ComponentDocumentation",
             "id": "interface-ComponentDocumentation-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "type": "interface",
             "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
@@ -156,7 +156,7 @@
         {
             "name": "ComponentPage",
             "id": "interface-ComponentPage-83b7dda0328421b00287eadc49c09e8b",
-            "file": "projects/ng-docs/src/lib/routes.token.ts",
+            "file": "projects/ng-documentation/src/lib/routes.token.ts",
             "type": "interface",
             "sourceCode": "import { InjectionToken, Type } from '@angular/core';\n\nexport interface ComponentPageMap {\n  [path: string]: ComponentPage;\n}\n\nexport type ComponentPages = Array<ComponentPage & { path: string }>;\n\nexport interface ComponentPage {\n  title: string;\n  component: Type<any>;\n}\n\nexport const COMPONENT_PAGES = new InjectionToken<ComponentPages>('COMPONENT_PAGES');\n",
             "properties": [
@@ -182,7 +182,7 @@
         {
             "name": "ComponentPageMap",
             "id": "interface-ComponentPageMap-83b7dda0328421b00287eadc49c09e8b",
-            "file": "projects/ng-docs/src/lib/routes.token.ts",
+            "file": "projects/ng-documentation/src/lib/routes.token.ts",
             "type": "interface",
             "sourceCode": "import { InjectionToken, Type } from '@angular/core';\n\nexport interface ComponentPageMap {\n  [path: string]: ComponentPage;\n}\n\nexport type ComponentPages = Array<ComponentPage & { path: string }>;\n\nexport interface ComponentPage {\n  title: string;\n  component: Type<any>;\n}\n\nexport const COMPONENT_PAGES = new InjectionToken<ComponentPages>('COMPONENT_PAGES');\n",
             "properties": [],
@@ -205,7 +205,7 @@
         {
             "name": "Documentation",
             "id": "interface-Documentation-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "type": "interface",
             "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
@@ -231,7 +231,7 @@
         {
             "name": "InputType",
             "id": "interface-InputType-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "type": "interface",
             "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
@@ -264,7 +264,7 @@
         {
             "name": "MethodType",
             "id": "interface-MethodType-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "type": "interface",
             "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
@@ -290,7 +290,7 @@
         {
             "name": "OutputType",
             "id": "interface-OutputType-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "type": "interface",
             "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable, Optional, Inject } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DOCUMENTATION_PATH } from '../documentation.token';\n\nexport interface InputType {\n    name: string;\n    description: string;\n    type: string;\n}\n\nexport interface OutputType {\n    name: string;\n    description: string;\n    type: string;\n    defaultValue: string;\n}\n\nexport interface MethodType {\n    name: string;\n    returnType: string;\n}\n\nexport interface ComponentDocumentation {\n    name: string;\n    selector: string;\n    description: string;\n    inputsClass: Array<InputType>;\n    outputsClass: Array<OutputType>;\n    methodsClass: Array<MethodType>;\n    accessors: {[id: string]: {\n        name: string\n        getSignature: {\n            returnType: string\n        }\n    }};\n}\n\nexport interface Documentation {\n    directives: Array<ComponentDocumentation>;\n    components: Array<ComponentDocumentation>;\n}\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class DocumentationService {\n    private documentationSubject = new BehaviorSubject<Documentation>(undefined);\n\n    get documentation() {\n        return this.documentationSubject.value;\n    }\n\n    get documentation$() {\n        return this.documentationSubject.asObservable();\n    }\n\n    constructor(\n        private http: HttpClient,\n        @Optional() @Inject(DOCUMENTATION_PATH) documentationPath\n    ) {\n        this.http.get(documentationPath || 'assets/documentation/documentation.json')\n        .subscribe((c: any) => {\n          this.documentationSubject.next(c);\n        });\n    }\n\n    getComponentDocumentation$(name: string, type: keyof Documentation) {\n        return this.documentationSubject.pipe(\n            map(documentation => {\n                if (!documentation) {\n                    return undefined;\n                } else {\n                    return documentation[type].find(d => d.name === name);\n                }\n            })\n        );\n    }\n\n    getComponentDocumentation(name: string, type: keyof Documentation) {\n        if (!this.documentation) {\n            return undefined;\n        } else {\n            const result = this.documentation[type].find(d => d.name === name);\n            if (result) {\n                return result;\n            }\n            throw new Error('Not found: ' + name);\n        }\n    }\n\n    getInputType(options: {\n        componentId: string\n        componentType: keyof Documentation\n        input: InputType\n    }): Observable<string> {\n        return this.getComponentDocumentation$(options.componentId, options.componentType)\n            .pipe(map(d => {\n                const defaultResult = options.input.type;\n                if (!d.accessors) {\n                    return defaultResult;\n                }\n                const acc = d.accessors[options.input.name];\n                if (acc) {\n                    return acc.getSignature.returnType;\n                } else {\n                    return defaultResult;\n                }\n            }));\n    }\n}\n",
             "properties": [
@@ -332,7 +332,7 @@
         {
             "name": "DocumentationService",
             "id": "injectable-DocumentationService-72d2e401d7441f6b7e0e07c06200e190",
-            "file": "projects/ng-docs/src/lib/core/documentation.service.ts",
+            "file": "projects/ng-documentation/src/lib/core/documentation.service.ts",
             "properties": [
                 {
                     "name": "documentationSubject",
@@ -497,7 +497,7 @@
         {
             "name": "AnchorContainerDirective",
             "id": "directive-AnchorContainerDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
-            "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
             "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
@@ -595,7 +595,7 @@
         {
             "name": "AnchorDirective",
             "id": "directive-AnchorDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
-            "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
             "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
@@ -659,7 +659,7 @@
         {
             "name": "ComponentExampleDirective",
             "id": "directive-ComponentExampleDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
-            "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
             "type": "directive",
             "description": "",
             "sourceCode": "import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n/**\n * Component that displays a component's or a directive's information: an overview, examples and API.\n */\n@Component({\n  selector: 'docs-component-documentation',\n  templateUrl: './component-documentation.component.html',\n  styleUrls: ['./component-documentation.component.sass']\n})\nexport class ComponentDocumentationComponent implements OnChanges {\n  /**\n   * The component class name.\n   */\n  @Input() componentId: string;\n  /**\n   * The component type.\n   */\n  @Input() componentType: 'directives' | 'components';\n  /**\n   * A title that will be displayed.\n   */\n  @Input() componentTitle: string;\n  /**\n   * @ignore\n   */\n  @Input() disableRoutedNavigation = false;\n\n  examples: ComponentExampleDirective[] = [];\n\n  tab$: Observable<'overview' | 'examples' | 'api'>;\n  isOverview$: Observable<boolean>;\n  isExamples$: Observable<boolean>;\n  isApi$: Observable<boolean>;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  /**\n   * @ignore\n   */\n  ngOnChanges() {\n    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));\n    this.updateIsObservables();\n  }\n\n  /**\n   * @ignore\n   */\n  registerExample(example: ComponentExampleDirective) {\n    this.examples.push(example);\n  }\n\n  /**\n   * @ignore\n   */\n  select(tab: 'overview' | 'examples' | 'api') {\n    if (this.disableRoutedNavigation) {\n      this.tab$ = of(tab);\n      this.updateIsObservables();\n    } else {\n      this.router.navigate(['.'], {\n        queryParamsHandling: 'merge',\n        queryParams: {\n          tab\n        },\n        relativeTo: this.route,\n      });\n    }\n  }\n\n  /**\n   * @ignore\n   */\n  private updateIsObservables() {\n    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));\n    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));\n    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));\n  }\n}\n\n@Directive({\n  selector: '[docsAnchorContainer]'\n})\nexport class AnchorContainerDirective implements AfterViewChecked {\n  @Input() docsAnchorContainer: string;\n  private anchors: AnchorDirective[] = [];\n  private currentAnchor: string;\n\n  constructor(private elementRef: ElementRef) {}\n\n  registerAnchor(anchor: AnchorDirective) {\n    this.anchors.push(anchor);\n  }\n\n  ngAfterViewChecked() {\n    if (this.currentAnchor === this.docsAnchorContainer) {\n      return;\n    }\n\n    this.currentAnchor = this.docsAnchorContainer;\n    const element = this.elementRef.nativeElement as HTMLElement;\n    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;\n\n    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;\n  }\n}\n\n@Directive({\n  selector: '[docsAnchor]'\n})\nexport class AnchorDirective {\n  @Input() docsAnchor: string;\n\n  constructor(\n    private container: AnchorContainerDirective,\n    public elementRef: ElementRef\n  ) {\n    this.container.registerAnchor(this);\n  }\n}\n\n@Directive({\n  selector: '[docsComponentExample]'\n})\nexport class ComponentExampleDirective {\n  @Input() docsComponentExample: string;\n\n  constructor(\n    private documentation: ComponentDocumentationComponent,\n    public template: TemplateRef<any>\n  ) {\n    this.documentation.registerExample(this);\n  }\n}\n",
@@ -723,7 +723,7 @@
         {
             "name": "TabDirective",
             "id": "directive-TabDirective-9d8ea0492d4524eb529c287bf667aa17",
-            "file": "projects/ng-docs/src/lib/core/tabs/tabs.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/tabs/tabs.component.ts",
             "type": "directive",
             "description": "",
             "sourceCode": "import { Component, OnInit, Directive, OnDestroy, TemplateRef, Input } from '@angular/core';\n\n@Component({\n  selector: 'docs-tabs',\n  templateUrl: './tabs.component.html',\n  styleUrls: ['./tabs.component.sass']\n})\nexport class TabsComponent {\n  selectedTemplate: TemplateRef<any>;\n\n  tabs: { label: string, template: TemplateRef<any> }[] = [];\n}\n\n@Directive({\n  selector: '[docsTab]'\n})\nexport class TabDirective implements OnInit, OnDestroy {\n  @Input() docsTab: string;\n\n  constructor(private tabs: TabsComponent, private template: TemplateRef<any>) {}\n\n  ngOnInit() {\n    this.tabs.tabs.push({\n      label: this.docsTab,\n      template: this.template\n    });\n\n    if (!this.tabs.selectedTemplate) {\n      this.tabs.selectedTemplate = this.template;\n    }\n  }\n\n  ngOnDestroy() {\n    this.tabs.tabs = this.tabs.tabs.filter(t => t.template !== this.template);\n\n    if (this.tabs.selectedTemplate === this.template && this.tabs.tabs.length > 0) {\n      this.tabs.selectedTemplate = this.tabs.tabs[0].template;\n    }\n  }\n}\n",
@@ -799,7 +799,7 @@
         {
             "name": "CodeComponent",
             "id": "component-CodeComponent-525d7f258aecbee2c5be6d07b6055111",
-            "file": "projects/ng-docs/src/lib/core/code/code.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/code/code.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -884,7 +884,7 @@
         {
             "name": "CodeLineComponent",
             "id": "component-CodeLineComponent-c7f8a79971727d31563274f793b29aa4",
-            "file": "projects/ng-docs/src/lib/core/code-line/code-line.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/code-line/code-line.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -962,7 +962,7 @@
         {
             "name": "ComponentApiComponent",
             "id": "component-ComponentApiComponent-177e03222d3f08b22ec9cecf9940c27e",
-            "file": "projects/ng-docs/src/lib/core/component-api/component-api.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1091,7 +1091,7 @@
         {
             "name": "ComponentDescriptionComponent",
             "id": "component-ComponentDescriptionComponent-f2ef9d8ce2bdfe3588213f4e877ad8cb",
-            "file": "projects/ng-docs/src/lib/core/component-description/component-description.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-description/component-description.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1140,7 +1140,7 @@
         {
             "name": "ComponentDocumentationComponent",
             "id": "component-ComponentDocumentationComponent-7d89b1daf5e4c2df9f2df5b4b08ab813",
-            "file": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1268,7 +1268,7 @@
         {
             "name": "ComponentExampleComponent",
             "id": "component-ComponentExampleComponent-54b32cd708872ef859437697aba3ead5",
-            "file": "projects/ng-docs/src/lib/core/component-example/component-example.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/component-example/component-example.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1312,7 +1312,7 @@
         {
             "name": "DefaultWelcomeComponent",
             "id": "component-DefaultWelcomeComponent-fb6df549c192c9062b3d33d0c142c6c5",
-            "file": "projects/ng-docs/src/lib/default-welcome/default-welcome.component.ts",
+            "file": "projects/ng-documentation/src/lib/default-welcome/default-welcome.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1350,7 +1350,7 @@
         {
             "name": "DocsComponent",
             "id": "component-DocsComponent-b14e168fef6da5ed851b15bae9cf8966",
-            "file": "projects/ng-docs/src/lib/docs/docs.component.ts",
+            "file": "projects/ng-documentation/src/lib/docs/docs.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -1470,7 +1470,7 @@
         {
             "name": "HomeComponent",
             "id": "component-HomeComponent-a0ed2a3a9bf6bc056edc34cd9b807d60",
-            "file": "projects/ng-docs/src/lib/features/home/home/home.component.ts",
+            "file": "projects/ng-documentation/src/lib/features/home/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1508,7 +1508,7 @@
         {
             "name": "MenuComponent",
             "id": "component-MenuComponent-b29069802220572a2cf676ae75ec6bc8",
-            "file": "projects/ng-docs/src/lib/menu/menu.component.ts",
+            "file": "projects/ng-documentation/src/lib/menu/menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1639,7 +1639,7 @@
         {
             "name": "TabsComponent",
             "id": "component-TabsComponent-9d8ea0492d4524eb529c287bf667aa17",
-            "file": "projects/ng-docs/src/lib/core/tabs/tabs.component.ts",
+            "file": "projects/ng-documentation/src/lib/core/tabs/tabs.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1929,7 +1929,7 @@
                 "name": "COMPONENT_PAGES",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ng-docs/src/lib/routes.token.ts",
+                "file": "projects/ng-documentation/src/lib/routes.token.ts",
                 "type": "",
                 "defaultValue": "new InjectionToken<ComponentPages>('COMPONENT_PAGES')"
             },
@@ -1937,7 +1937,7 @@
                 "name": "DOCUMENTATION_PATH",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ng-docs/src/lib/documentation.token.ts",
+                "file": "projects/ng-documentation/src/lib/documentation.token.ts",
                 "type": "",
                 "defaultValue": "new InjectionToken<string>('DOCUMENTATION_PATH')"
             }
@@ -1945,7 +1945,7 @@
         "functions": [
             {
                 "name": "sortByName",
-                "file": "projects/ng-docs/src/lib/core/component-api/component-api.component.ts",
+                "file": "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "description": "",
@@ -1971,39 +1971,39 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Array<>",
-                "file": "projects/ng-docs/src/lib/routes.token.ts",
+                "file": "projects/ng-documentation/src/lib/routes.token.ts",
                 "description": "",
                 "kind": 161
             }
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/ng-docs/src/lib/routes.token.ts": [
+            "projects/ng-documentation/src/lib/routes.token.ts": [
                 {
                     "name": "COMPONENT_PAGES",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ng-docs/src/lib/routes.token.ts",
+                    "file": "projects/ng-documentation/src/lib/routes.token.ts",
                     "type": "",
                     "defaultValue": "new InjectionToken<ComponentPages>('COMPONENT_PAGES')"
                 }
             ],
-            "projects/ng-docs/src/lib/documentation.token.ts": [
+            "projects/ng-documentation/src/lib/documentation.token.ts": [
                 {
                     "name": "DOCUMENTATION_PATH",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ng-docs/src/lib/documentation.token.ts",
+                    "file": "projects/ng-documentation/src/lib/documentation.token.ts",
                     "type": "",
                     "defaultValue": "new InjectionToken<string>('DOCUMENTATION_PATH')"
                 }
             ]
         },
         "groupedFunctions": {
-            "projects/ng-docs/src/lib/core/component-api/component-api.component.ts": [
+            "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts": [
                 {
                     "name": "sortByName",
-                    "file": "projects/ng-docs/src/lib/core/component-api/component-api.component.ts",
+                    "file": "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "description": "",
@@ -2026,13 +2026,13 @@
         },
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/ng-docs/src/lib/routes.token.ts": [
+            "projects/ng-documentation/src/lib/routes.token.ts": [
                 {
                     "name": "ComponentPages",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Array<>",
-                    "file": "projects/ng-docs/src/lib/routes.token.ts",
+                    "file": "projects/ng-documentation/src/lib/routes.token.ts",
                     "description": "",
                     "kind": 161
                 }
@@ -2045,7 +2045,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/ng-docs/src/lib/core/code-line/code-line.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/code-line/code-line.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CodeLineComponent",
@@ -2054,7 +2054,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/code-sample/code-sample.pipe.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts",
                 "type": "pipe",
                 "linktype": "pipe",
                 "name": "CodeSamplePipe",
@@ -2063,7 +2063,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/code-sample/code-sample.pipe.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts",
                 "type": "pipe",
                 "linktype": "pipe",
                 "name": "ComponentDescriptionPipe",
@@ -2072,7 +2072,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/code/code.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/code/code.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CodeComponent",
@@ -2081,7 +2081,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-api/component-api.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentApiComponent",
@@ -2090,7 +2090,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-api/component-api.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-api/component-api.component.ts",
                 "type": "function",
                 "linksubtype": "function",
                 "name": "sortByName",
@@ -2099,7 +2099,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-description/component-description.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-description/component-description.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentDescriptionComponent",
@@ -2108,7 +2108,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentDocumentationComponent",
@@ -2117,7 +2117,7 @@
                 "status": "medium"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "AnchorContainerDirective",
@@ -2126,7 +2126,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "AnchorDirective",
@@ -2135,7 +2135,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-documentation/component-documentation.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "ComponentExampleDirective",
@@ -2144,7 +2144,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/component-example/component-example.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/component-example/component-example.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ComponentExampleComponent",
@@ -2153,7 +2153,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "DocumentationService",
@@ -2162,7 +2162,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ComponentDocumentation",
@@ -2171,7 +2171,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "Documentation",
@@ -2180,7 +2180,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "InputType",
@@ -2189,7 +2189,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "MethodType",
@@ -2198,7 +2198,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/documentation.service.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "OutputType",
@@ -2207,7 +2207,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/tabs/tabs.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/tabs/tabs.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TabsComponent",
@@ -2216,7 +2216,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/core/tabs/tabs.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/core/tabs/tabs.component.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "TabDirective",
@@ -2225,7 +2225,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/default-welcome/default-welcome.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/default-welcome/default-welcome.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DefaultWelcomeComponent",
@@ -2234,7 +2234,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/docs/docs.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/docs/docs.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DocsComponent",
@@ -2243,7 +2243,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/documentation.token.ts",
+                "filePath": "projects/ng-documentation/src/lib/documentation.token.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2253,7 +2253,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/features/home/home/home.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/features/home/home/home.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
@@ -2262,7 +2262,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/menu/menu.component.ts",
+                "filePath": "projects/ng-documentation/src/lib/menu/menu.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MenuComponent",
@@ -2271,7 +2271,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/routes.token.ts",
+                "filePath": "projects/ng-documentation/src/lib/routes.token.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ComponentPage",
@@ -2280,7 +2280,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/routes.token.ts",
+                "filePath": "projects/ng-documentation/src/lib/routes.token.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ComponentPageMap",
@@ -2289,7 +2289,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ng-docs/src/lib/routes.token.ts",
+                "filePath": "projects/ng-documentation/src/lib/routes.token.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

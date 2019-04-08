@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-docs": {
-      "root": "projects/ng-docs",
-      "sourceRoot": "projects/ng-docs/src",
+    "ng-documentation": {
+      "root": "projects/ng-documentation",
+      "sourceRoot": "projects/ng-documentation/src",
       "projectType": "library",
       "prefix": "docs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-docs/tsconfig.lib.json",
-            "project": "projects/ng-docs/ng-package.json"
+            "tsConfig": "projects/ng-documentation/tsconfig.lib.json",
+            "project": "projects/ng-documentation/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-docs/src/test.ts",
-            "tsConfig": "projects/ng-docs/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-docs/karma.conf.js"
+            "main": "projects/ng-documentation/src/test.ts",
+            "tsConfig": "projects/ng-documentation/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-documentation/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-docs/tsconfig.lib.json",
-              "projects/ng-docs/tsconfig.spec.json"
+              "projects/ng-documentation/tsconfig.lib.json",
+              "projects/ng-documentation/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -63,8 +63,8 @@
             ],
             "styles": [
               "projects/playground/src/styles.sass",
-              "projects/ng-docs/src/lib/styles.sass",
-              "projects/ng-docs/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
+              "projects/ng-documentation/src/lib/styles.sass",
+              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -197,8 +197,8 @@
             ],
             "styles": [
               "projects/docs/src/styles.sass",
-              "projects/ng-docs/src/lib/styles.sass",
-              "projects/ng-docs/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
+              "projects/ng-documentation/src/lib/styles.sass",
+              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -307,5 +307,5 @@
       }
     }
   },
-  "defaultProject": "ng-docs"
+  "defaultProject": "ng-documentation"
 }
