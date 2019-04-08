@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "../ng-docs/src/lib/core/code-line/code-line.component.html":
-/*!******************************************************************!*\
-  !*** ../ng-docs/src/lib/core/code-line/code-line.component.html ***!
-  \******************************************************************/
+/***/ "../ng-documentation/src/lib/core/code-line/code-line.component.html":
+/*!***************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code-line/code-line.component.html ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11,21 +11,21 @@ module.exports = "<div class=\"code-container\">\n  <button class=\"copy\" (clic
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code-line/code-line.component.sass":
-/*!******************************************************************!*\
-  !*** ../ng-docs/src/lib/core/code-line/code-line.component.sass ***!
-  \******************************************************************/
+/***/ "../ng-documentation/src/lib/core/code-line/code-line.component.sass":
+/*!***************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code-line/code-line.component.sass ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n  margin: 5px 0; }\n\n.code-container {\n  display: flex;\n  flex-direction: row;\n  background: whitesmoke;\n  align-items: center; }\n\npre {\n  flex: 1 1;\n  background: transparent;\n  margin: 0; }\n\ncode {\n  margin: 0; }\n\n.hidden {\n  visibility: hidden; }\n\n.copy {\n  background: none;\n  color: #7a7272;\n  border: none;\n  border-radius: 0;\n  box-shadow: none;\n  padding: 0;\n  margin: 0 0 0 15px; }\n\n.copied {\n  font-size: 11px;\n  color: #7a7272; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUM7RUFDQyxjQUFjO0VBQ2QsYUFBYSxFQUFBOztBQUVmO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsbUJBQW1CLEVBQUE7O0FBRXJCO0VBQ0UsU0FBUztFQUNULHVCQUF1QjtFQUN2QixTQUFTLEVBQUE7O0FBRVg7RUFDRSxTQUFTLEVBQUE7O0FBRVg7RUFDRSxrQkFBa0IsRUFBQTs7QUFFcEI7RUFDRSxnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFVBQVU7RUFDVixrQkFBa0IsRUFBQTs7QUFFcEI7RUFDRSxlQUFlO0VBQ2YsY0FBYyxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA1cHggMDsgfVxuXG4uY29kZS1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xuICBhbGlnbi1pdGVtczogY2VudGVyOyB9XG5cbnByZSB7XG4gIGZsZXg6IDEgMTtcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIG1hcmdpbjogMDsgfVxuXG5jb2RlIHtcbiAgbWFyZ2luOiAwOyB9XG5cbi5oaWRkZW4ge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47IH1cblxuLmNvcHkge1xuICBiYWNrZ3JvdW5kOiBub25lO1xuICBjb2xvcjogIzdhNzI3MjtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBib3gtc2hhZG93OiBub25lO1xuICBwYWRkaW5nOiAwO1xuICBtYXJnaW46IDAgMCAwIDE1cHg7IH1cblxuLmNvcGllZCB7XG4gIGZvbnQtc2l6ZTogMTFweDtcbiAgY29sb3I6ICM3YTcyNzI7IH1cbiJdfQ== */"
+module.exports = ":host {\n  display: block;\n  margin: 5px 0; }\n\n.code-container {\n  display: flex;\n  flex-direction: row;\n  background: whitesmoke;\n  align-items: center; }\n\npre {\n  flex: 1 1;\n  background: transparent;\n  margin: 0; }\n\ncode {\n  margin: 0; }\n\n.hidden {\n  visibility: hidden; }\n\n.copy {\n  background: none;\n  color: #7a7272;\n  border: none;\n  border-radius: 0;\n  box-shadow: none;\n  padding: 0;\n  margin: 0 0 0 15px; }\n\n.copied {\n  font-size: 11px;\n  color: #7a7272; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUM7RUFDQyxjQUFjO0VBQ2QsYUFBYSxFQUFBOztBQUVmO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsbUJBQW1CLEVBQUE7O0FBRXJCO0VBQ0UsU0FBUztFQUNULHVCQUF1QjtFQUN2QixTQUFTLEVBQUE7O0FBRVg7RUFDRSxTQUFTLEVBQUE7O0FBRVg7RUFDRSxrQkFBa0IsRUFBQTs7QUFFcEI7RUFDRSxnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFVBQVU7RUFDVixrQkFBa0IsRUFBQTs7QUFFcEI7RUFDRSxlQUFlO0VBQ2YsY0FBYyxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA1cHggMDsgfVxuXG4uY29kZS1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xuICBhbGlnbi1pdGVtczogY2VudGVyOyB9XG5cbnByZSB7XG4gIGZsZXg6IDEgMTtcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIG1hcmdpbjogMDsgfVxuXG5jb2RlIHtcbiAgbWFyZ2luOiAwOyB9XG5cbi5oaWRkZW4ge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47IH1cblxuLmNvcHkge1xuICBiYWNrZ3JvdW5kOiBub25lO1xuICBjb2xvcjogIzdhNzI3MjtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBib3gtc2hhZG93OiBub25lO1xuICBwYWRkaW5nOiAwO1xuICBtYXJnaW46IDAgMCAwIDE1cHg7IH1cblxuLmNvcGllZCB7XG4gIGZvbnQtc2l6ZTogMTFweDtcbiAgY29sb3I6ICM3YTcyNzI7IH1cbiJdfQ== */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code-line/code-line.component.ts":
-/*!****************************************************************!*\
-  !*** ../ng-docs/src/lib/core/code-line/code-line.component.ts ***!
-  \****************************************************************/
+/***/ "../ng-documentation/src/lib/core/code-line/code-line.component.ts":
+/*!*************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code-line/code-line.component.ts ***!
+  \*************************************************************************/
 /*! exports provided: CodeLineComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -77,8 +77,8 @@ var CodeLineComponent = /** @class */ (function () {
     CodeLineComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-code-line',
-            template: __webpack_require__(/*! ./code-line.component.html */ "../ng-docs/src/lib/core/code-line/code-line.component.html"),
-            styles: [__webpack_require__(/*! ./code-line.component.sass */ "../ng-docs/src/lib/core/code-line/code-line.component.sass")]
+            template: __webpack_require__(/*! ./code-line.component.html */ "../ng-documentation/src/lib/core/code-line/code-line.component.html"),
+            styles: [__webpack_require__(/*! ./code-line.component.sass */ "../ng-documentation/src/lib/core/code-line/code-line.component.sass")]
         })
     ], CodeLineComponent);
     return CodeLineComponent;
@@ -88,10 +88,10 @@ var CodeLineComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code-sample/code-sample.module.ts":
-/*!*****************************************************************!*\
-  !*** ../ng-docs/src/lib/core/code-sample/code-sample.module.ts ***!
-  \*****************************************************************/
+/***/ "../ng-documentation/src/lib/core/code-sample/code-sample.module.ts":
+/*!**************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code-sample/code-sample.module.ts ***!
+  \**************************************************************************/
 /*! exports provided: CodeSampleModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _code_sample_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./code-sample.pipe */ "../ng-docs/src/lib/core/code-sample/code-sample.pipe.ts");
+/* harmony import */ var _code_sample_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./code-sample.pipe */ "../ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts");
 
 
 
@@ -126,10 +126,10 @@ var CodeSampleModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code-sample/code-sample.pipe.ts":
-/*!***************************************************************!*\
-  !*** ../ng-docs/src/lib/core/code-sample/code-sample.pipe.ts ***!
-  \***************************************************************/
+/***/ "../ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts":
+/*!************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code-sample/code-sample.pipe.ts ***!
+  \************************************************************************/
 /*! exports provided: CodeSamplePipe, ComponentDescriptionPipe */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _documentation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../documentation.service */ "../ng-docs/src/lib/core/documentation.service.ts");
+/* harmony import */ var _documentation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../documentation.service */ "../ng-documentation/src/lib/core/documentation.service.ts");
 
 
 
@@ -204,10 +204,10 @@ var ComponentDescriptionPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code/code.component.html":
-/*!********************************************************!*\
-  !*** ../ng-docs/src/lib/core/code/code.component.html ***!
-  \********************************************************/
+/***/ "../ng-documentation/src/lib/core/code/code.component.html":
+/*!*****************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code/code.component.html ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -215,21 +215,21 @@ module.exports = "<pre><code #code>{{ path | codeSample }}</code></pre>\n<div cl
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code/code.component.sass":
-/*!********************************************************!*\
-  !*** ../ng-docs/src/lib/core/code/code.component.sass ***!
-  \********************************************************/
+/***/ "../ng-documentation/src/lib/core/code/code.component.sass":
+/*!*****************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code/code.component.sass ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: block;\n  overflow: auto; }\n\npre {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  overflow: auto; }\n\npre code {\n    margin: 0; }\n\n.source-actions {\n  position: absolute;\n  right: 0;\n  top: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  padding: 5px 15px; }\n\n.copy {\n  outline: none;\n  background: none;\n  box-shadow: none;\n  color: grey;\n  padding: 0; }\n\n.copy:hover {\n    color: black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQztFQUNDLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsY0FBYyxFQUFBOztBQUVoQjtFQUNFLFNBQVM7RUFDVCxVQUFVO0VBQ1YsWUFBWTtFQUNaLGNBQWMsRUFBQTs7QUFKaEI7SUFPSSxTQUFTLEVBQUE7O0FBRWI7RUFDRSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLE1BQU07RUFDTixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHFCQUFxQjtFQUNyQixpQkFBaUIsRUFBQTs7QUFFbkI7RUFDRSxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsVUFBVSxFQUFBOztBQUxaO0lBUUksWUFBWSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIiA6aG9zdCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93OiBhdXRvOyB9XG5cbnByZSB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogYXV0bztcblxuICBjb2RlIHtcbiAgICBtYXJnaW46IDA7IH0gfVxuXG4uc291cmNlLWFjdGlvbnMge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAgcGFkZGluZzogNXB4IDE1cHg7IH1cblxuLmNvcHkge1xuICBvdXRsaW5lOiBub25lO1xuICBiYWNrZ3JvdW5kOiBub25lO1xuICBib3gtc2hhZG93OiBub25lO1xuICBjb2xvcjogZ3JleTtcbiAgcGFkZGluZzogMDtcblxuICAmOmhvdmVyIHtcbiAgICBjb2xvcjogYmxhY2s7IH0gfVxuIl19 */"
+module.exports = ":host {\n  position: relative;\n  display: block;\n  overflow: auto; }\n\npre {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  overflow: auto; }\n\npre code {\n    margin: 0; }\n\n.source-actions {\n  position: absolute;\n  right: 0;\n  top: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  padding: 5px 15px; }\n\n.copy {\n  outline: none;\n  background: none;\n  box-shadow: none;\n  color: grey;\n  padding: 0; }\n\n.copy:hover {\n    color: black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQztFQUNDLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsY0FBYyxFQUFBOztBQUVoQjtFQUNFLFNBQVM7RUFDVCxVQUFVO0VBQ1YsWUFBWTtFQUNaLGNBQWMsRUFBQTs7QUFKaEI7SUFPSSxTQUFTLEVBQUE7O0FBRWI7RUFDRSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLE1BQU07RUFDTixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHFCQUFxQjtFQUNyQixpQkFBaUIsRUFBQTs7QUFFbkI7RUFDRSxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsVUFBVSxFQUFBOztBQUxaO0lBUUksWUFBWSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIiA6aG9zdCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93OiBhdXRvOyB9XG5cbnByZSB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogYXV0bztcblxuICBjb2RlIHtcbiAgICBtYXJnaW46IDA7IH0gfVxuXG4uc291cmNlLWFjdGlvbnMge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAgcGFkZGluZzogNXB4IDE1cHg7IH1cblxuLmNvcHkge1xuICBvdXRsaW5lOiBub25lO1xuICBiYWNrZ3JvdW5kOiBub25lO1xuICBib3gtc2hhZG93OiBub25lO1xuICBjb2xvcjogZ3JleTtcbiAgcGFkZGluZzogMDtcblxuICAmOmhvdmVyIHtcbiAgICBjb2xvcjogYmxhY2s7IH0gfVxuIl19 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/code/code.component.ts":
-/*!******************************************************!*\
-  !*** ../ng-docs/src/lib/core/code/code.component.ts ***!
-  \******************************************************/
+/***/ "../ng-documentation/src/lib/core/code/code.component.ts":
+/*!***************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/code/code.component.ts ***!
+  \***************************************************************/
 /*! exports provided: CodeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -285,8 +285,8 @@ var CodeComponent = /** @class */ (function () {
     CodeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-code',
-            template: __webpack_require__(/*! ./code.component.html */ "../ng-docs/src/lib/core/code/code.component.html"),
-            styles: [__webpack_require__(/*! ./code.component.sass */ "../ng-docs/src/lib/core/code/code.component.sass")]
+            template: __webpack_require__(/*! ./code.component.html */ "../ng-documentation/src/lib/core/code/code.component.html"),
+            styles: [__webpack_require__(/*! ./code.component.sass */ "../ng-documentation/src/lib/core/code/code.component.sass")]
         })
     ], CodeComponent);
     return CodeComponent;
@@ -296,10 +296,10 @@ var CodeComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-api/component-api.component.html":
-/*!**************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-api/component-api.component.html ***!
-  \**************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-api/component-api.component.html":
+/*!***********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-api/component-api.component.html ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -307,21 +307,21 @@ module.exports = "<h2>Selector: <code>{{selector$ | async}}</code></h2>\n\n<ng-t
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-api/component-api.component.sass":
-/*!**************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-api/component-api.component.sass ***!
-  \**************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-api/component-api.component.sass":
+/*!***********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-api/component-api.component.sass ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-collapse: collapse;\n  border: 1px solid lightgrey;\n  border-radius: 1px;\n  width: 100%; }\n\nthead {\n  background: lightgrey; }\n\nth {\n  text-align: left; }\n\nth, td {\n  padding: 3px 20px 3px 3px; }\n\ntr {\n  border-bottom: 1px solid lightgrey; }\n\n.name, .type {\n  width: 30%; }\n\n.description {\n  width: 40%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0kseUJBQXlCO0VBQ3pCLDJCQ0V3QjtFRER4QixrQkFBa0I7RUFDbEIsV0FBVyxFQUFBOztBQUVmO0VBQ0kscUJDSHdCLEVBQUE7O0FESzVCO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0kseUJBQXlCLEVBQUE7O0FBRTdCO0VBQ0ksa0NDWndCLEVBQUE7O0FEYzVCO0VBQ0ksVUFBVSxFQUFBOztBQUVkO0VBQ0ksVUFBVSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG50YWJsZSB7XG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItbGlnaHQtZ3JleTtcbiAgICBib3JkZXItcmFkaXVzOiAxcHg7XG4gICAgd2lkdGg6IDEwMCU7IH1cblxudGhlYWQge1xuICAgIGJhY2tncm91bmQ6ICRjb2xvci1saWdodC1ncmV5OyB9XG5cbnRoIHtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0OyB9XG5cbnRoLCB0ZCB7XG4gICAgcGFkZGluZzogM3B4IDIwcHggM3B4IDNweDsgfVxuXG50ciB7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbi5uYW1lLCAudHlwZSB7XG4gICAgd2lkdGg6IDMwJTsgfVxuXG4uZGVzY3JpcHRpb24ge1xuICAgIHdpZHRoOiA0MCU7IH1cbiIsIiRjb2xvci1vbmU6ICMyOEM4RkY7XG4kY29sb3ItdHdvOiAjMjhBMkZGO1xuJGNvbG9yLXRocmVlOiAjRkY3OTNGO1xuJGNvbG9yLWZvdXI6ICNGRjREMDA7XG4kY29sb3ItZml2ZTogI0VFMjIwMDtcblxuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleTtcbiJdfQ== */"
+module.exports = "table {\n  border-collapse: collapse;\n  border: 1px solid lightgrey;\n  border-radius: 1px;\n  width: 100%; }\n\nthead {\n  background: lightgrey; }\n\nth {\n  text-align: left; }\n\nth, td {\n  padding: 3px 20px 3px 3px; }\n\ntr {\n  border-bottom: 1px solid lightgrey; }\n\n.name, .type {\n  width: 30%; }\n\n.description {\n  width: 40%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0kseUJBQXlCO0VBQ3pCLDJCQ0V3QjtFRER4QixrQkFBa0I7RUFDbEIsV0FBVyxFQUFBOztBQUVmO0VBQ0kscUJDSHdCLEVBQUE7O0FESzVCO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0kseUJBQXlCLEVBQUE7O0FBRTdCO0VBQ0ksa0NDWndCLEVBQUE7O0FEYzVCO0VBQ0ksVUFBVSxFQUFBOztBQUVkO0VBQ0ksVUFBVSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG50YWJsZSB7XG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItbGlnaHQtZ3JleTtcbiAgICBib3JkZXItcmFkaXVzOiAxcHg7XG4gICAgd2lkdGg6IDEwMCU7IH1cblxudGhlYWQge1xuICAgIGJhY2tncm91bmQ6ICRjb2xvci1saWdodC1ncmV5OyB9XG5cbnRoIHtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0OyB9XG5cbnRoLCB0ZCB7XG4gICAgcGFkZGluZzogM3B4IDIwcHggM3B4IDNweDsgfVxuXG50ciB7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbi5uYW1lLCAudHlwZSB7XG4gICAgd2lkdGg6IDMwJTsgfVxuXG4uZGVzY3JpcHRpb24ge1xuICAgIHdpZHRoOiA0MCU7IH1cbiIsIiRjb2xvci1vbmU6ICMyOEM4RkY7XG4kY29sb3ItdHdvOiAjMjhBMkZGO1xuJGNvbG9yLXRocmVlOiAjRkY3OTNGO1xuJGNvbG9yLWZvdXI6ICNGRjREMDA7XG4kY29sb3ItZml2ZTogI0VFMjIwMDtcblxuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleTtcbiJdfQ== */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-api/component-api.component.ts":
-/*!************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-api/component-api.component.ts ***!
-  \************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-api/component-api.component.ts":
+/*!*********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-api/component-api.component.ts ***!
+  \*********************************************************************************/
 /*! exports provided: ComponentApiComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "../../node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _documentation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../documentation.service */ "../ng-docs/src/lib/core/documentation.service.ts");
+/* harmony import */ var _documentation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../documentation.service */ "../ng-documentation/src/lib/core/documentation.service.ts");
 
 
 
@@ -380,8 +380,8 @@ var ComponentApiComponent = /** @class */ (function () {
     ComponentApiComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-api',
-            template: __webpack_require__(/*! ./component-api.component.html */ "../ng-docs/src/lib/core/component-api/component-api.component.html"),
-            styles: [__webpack_require__(/*! ./component-api.component.sass */ "../ng-docs/src/lib/core/component-api/component-api.component.sass")]
+            template: __webpack_require__(/*! ./component-api.component.html */ "../ng-documentation/src/lib/core/component-api/component-api.component.html"),
+            styles: [__webpack_require__(/*! ./component-api.component.sass */ "../ng-documentation/src/lib/core/component-api/component-api.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_documentation_service__WEBPACK_IMPORTED_MODULE_3__["DocumentationService"]])
     ], ComponentApiComponent);
@@ -399,10 +399,10 @@ function sortByName(arr) {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-description/component-description.component.html":
-/*!******************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-description/component-description.component.html ***!
-  \******************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-description/component-description.component.html":
+/*!***************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-description/component-description.component.html ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -410,21 +410,21 @@ module.exports = "<div [innerHTML]=\"componentId | componentDescription: compone
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-description/component-description.component.sass":
-/*!******************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-description/component-description.component.sass ***!
-  \******************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-description/component-description.component.sass":
+/*!***************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-description/component-description.component.sass ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvY29yZS9jb21wb25lbnQtZGVzY3JpcHRpb24vY29tcG9uZW50LWRlc2NyaXB0aW9uLmNvbXBvbmVudC5zYXNzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb21wb25lbnQtZGVzY3JpcHRpb24vY29tcG9uZW50LWRlc2NyaXB0aW9uLmNvbXBvbmVudC5zYXNzIn0= */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-description/component-description.component.ts":
-/*!****************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-description/component-description.component.ts ***!
-  \****************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-description/component-description.component.ts":
+/*!*************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-description/component-description.component.ts ***!
+  \*************************************************************************************************/
 /*! exports provided: ComponentDescriptionComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -449,8 +449,8 @@ var ComponentDescriptionComponent = /** @class */ (function () {
     ComponentDescriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-description',
-            template: __webpack_require__(/*! ./component-description.component.html */ "../ng-docs/src/lib/core/component-description/component-description.component.html"),
-            styles: [__webpack_require__(/*! ./component-description.component.sass */ "../ng-docs/src/lib/core/component-description/component-description.component.sass")]
+            template: __webpack_require__(/*! ./component-description.component.html */ "../ng-documentation/src/lib/core/component-description/component-description.component.html"),
+            styles: [__webpack_require__(/*! ./component-description.component.sass */ "../ng-documentation/src/lib/core/component-description/component-description.component.sass")]
         })
     ], ComponentDescriptionComponent);
     return ComponentDescriptionComponent;
@@ -460,10 +460,10 @@ var ComponentDescriptionComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.html":
-/*!**********************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-documentation/component-documentation.component.html ***!
-  \**********************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -471,21 +471,21 @@ module.exports = "<div class=\"header\">\n  <h1>{{componentTitle}}</h1>\n\n  <ol
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.sass":
-/*!**********************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-documentation/component-documentation.component.sass ***!
-  \**********************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.sass":
+/*!*******************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-documentation/component-documentation.component.sass ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  height: 100%;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column; }\n\n.header {\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  border-bottom: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgrey;\n  padding: 0 15px; }\n\n.content {\n  flex: 1 1;\n  padding: 15px;\n  overflow: auto; }\n\nh2 {\n  margin-top: 50px;\n  border-bottom: 1px solid lightgrey; }\n\nol {\n  list-style: none;\n  margin: 0 0 0 30px;\n  padding: 0; }\n\nli {\n  display: inline-block;\n  margin: 0;\n  padding: 5px 10px;\n  transition: color 0.2s;\n  cursor: pointer; }\n\nli:hover {\n    color: #FF793F; }\n\nli.active {\n    color: #FF4D00; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1kb2N1bWVudGF0aW9uL2NvbXBvbmVudC1kb2N1bWVudGF0aW9uLmNvbXBvbmVudC5zYXNzIiwiL2hvbWUvdHJhdmlzL2J1aWxkL2tldmlubWVyY2t4L25nLWRvY3VtZW50YXRpb24vcHJvamVjdHMvbmctZG9jcy9zcmMvbGliL3N0eWxlcy9fdmFyaWFibGVzLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUM7RUFDQyxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixzQkFBc0IsRUFBQTs7QUFFeEI7RUFDRSxjQUFjO0VBQ2QsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixtQkFBbUI7RUFDbkIsNkJBQTZCO0VBQzdCLHFDQUFxQztFQUNyQyxlQUFlLEVBQUE7O0FBRWpCO0VBQ0UsU0FBUztFQUNULGFBQWE7RUFDYixjQUFjLEVBQUE7O0FBR2hCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtDQ25CMEIsRUFBQTs7QURxQjVCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixVQUFVLEVBQUE7O0FBRVo7RUFDRSxxQkFBcUI7RUFDckIsU0FBUztFQUNULGlCQUFpQjtFQUNqQixzQkFBc0I7RUFDdEIsZUFBZSxFQUFBOztBQUxqQjtJQVFJLGNDdENpQixFQUFBOztBRDhCckI7SUFXSSxjQ3hDZ0IsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvY29yZS9jb21wb25lbnQtZG9jdW1lbnRhdGlvbi9jb21wb25lbnQtZG9jdW1lbnRhdGlvbi5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG4gOmhvc3Qge1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cblxuLmhlYWRlciB7XG4gIGZsZXg6IDAgMCBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgZ3JleTtcbiAgYm94LXNoYWRvdzogMnB4IDBweCAycHggMXB4IGxpZ2h0Z3JleTtcbiAgcGFkZGluZzogMCAxNXB4OyB9XG5cbi5jb250ZW50IHtcbiAgZmxleDogMSAxO1xuICBwYWRkaW5nOiAxNXB4O1xuICBvdmVyZmxvdzogYXV0bzsgfVxuXG5cbmgyIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbm9sIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgbWFyZ2luOiAwIDAgMCAzMHB4O1xuICBwYWRkaW5nOiAwOyB9XG5cbmxpIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICB0cmFuc2l0aW9uOiBjb2xvciAwLjJzO1xuICBjdXJzb3I6IHBvaW50ZXI7XG5cbiAgJjpob3ZlciB7XG4gICAgY29sb3I6ICRjb2xvci10aHJlZTsgfVxuXG4gICYuYWN0aXZlIHtcbiAgICBjb2xvcjogJGNvbG9yLWZvdXI7IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
+module.exports = ":host {\n  height: 100%;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column; }\n\n.header {\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  border-bottom: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgrey;\n  padding: 0 15px; }\n\n.content {\n  flex: 1 1;\n  padding: 15px;\n  overflow: auto; }\n\nh2 {\n  margin-top: 50px;\n  border-bottom: 1px solid lightgrey; }\n\nol {\n  list-style: none;\n  margin: 0 0 0 30px;\n  padding: 0; }\n\nli {\n  display: inline-block;\n  margin: 0;\n  padding: 5px 10px;\n  transition: color 0.2s;\n  cursor: pointer; }\n\nli:hover {\n    color: #FF793F; }\n\nli.active {\n    color: #FF4D00; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1kb2N1bWVudGF0aW9uL2NvbXBvbmVudC1kb2N1bWVudGF0aW9uLmNvbXBvbmVudC5zYXNzIiwiL2hvbWUvdHJhdmlzL2J1aWxkL2tldmlubWVyY2t4L25nLWRvY3VtZW50YXRpb24vcHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL3N0eWxlcy9fdmFyaWFibGVzLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUM7RUFDQyxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixzQkFBc0IsRUFBQTs7QUFFeEI7RUFDRSxjQUFjO0VBQ2QsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixtQkFBbUI7RUFDbkIsNkJBQTZCO0VBQzdCLHFDQUFxQztFQUNyQyxlQUFlLEVBQUE7O0FBRWpCO0VBQ0UsU0FBUztFQUNULGFBQWE7RUFDYixjQUFjLEVBQUE7O0FBR2hCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtDQ25CMEIsRUFBQTs7QURxQjVCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixVQUFVLEVBQUE7O0FBRVo7RUFDRSxxQkFBcUI7RUFDckIsU0FBUztFQUNULGlCQUFpQjtFQUNqQixzQkFBc0I7RUFDdEIsZUFBZSxFQUFBOztBQUxqQjtJQVFJLGNDdENpQixFQUFBOztBRDhCckI7SUFXSSxjQ3hDZ0IsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb21wb25lbnQtZG9jdW1lbnRhdGlvbi9jb21wb25lbnQtZG9jdW1lbnRhdGlvbi5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG4gOmhvc3Qge1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cblxuLmhlYWRlciB7XG4gIGZsZXg6IDAgMCBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgZ3JleTtcbiAgYm94LXNoYWRvdzogMnB4IDBweCAycHggMXB4IGxpZ2h0Z3JleTtcbiAgcGFkZGluZzogMCAxNXB4OyB9XG5cbi5jb250ZW50IHtcbiAgZmxleDogMSAxO1xuICBwYWRkaW5nOiAxNXB4O1xuICBvdmVyZmxvdzogYXV0bzsgfVxuXG5cbmgyIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbm9sIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgbWFyZ2luOiAwIDAgMCAzMHB4O1xuICBwYWRkaW5nOiAwOyB9XG5cbmxpIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICB0cmFuc2l0aW9uOiBjb2xvciAwLjJzO1xuICBjdXJzb3I6IHBvaW50ZXI7XG5cbiAgJjpob3ZlciB7XG4gICAgY29sb3I6ICRjb2xvci10aHJlZTsgfVxuXG4gICYuYWN0aXZlIHtcbiAgICBjb2xvcjogJGNvbG9yLWZvdXI7IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.ts":
-/*!********************************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-documentation/component-documentation.component.ts ***!
-  \********************************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts":
+/*!*****************************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts ***!
+  \*****************************************************************************************************/
 /*! exports provided: ComponentDocumentationComponent, AnchorContainerDirective, AnchorDirective, ComponentExampleDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -576,8 +576,8 @@ var ComponentDocumentationComponent = /** @class */ (function () {
     ComponentDocumentationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-documentation',
-            template: __webpack_require__(/*! ./component-documentation.component.html */ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.html"),
-            styles: [__webpack_require__(/*! ./component-documentation.component.sass */ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.sass")]
+            template: __webpack_require__(/*! ./component-documentation.component.html */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html"),
+            styles: [__webpack_require__(/*! ./component-documentation.component.sass */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
@@ -660,10 +660,10 @@ var ComponentExampleDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-example/component-example.component.html":
-/*!**********************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-example/component-example.component.html ***!
-  \**********************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-example/component-example.component.html":
+/*!*******************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-example/component-example.component.html ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -671,21 +671,21 @@ module.exports = "<h3>{{example.docsComponentExample}}</h3>\n\n<ng-container [ng
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-example/component-example.component.sass":
-/*!**********************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-example/component-example.component.sass ***!
-  \**********************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-example/component-example.component.sass":
+/*!*******************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-example/component-example.component.sass ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvY29yZS9jb21wb25lbnQtZXhhbXBsZS9jb21wb25lbnQtZXhhbXBsZS5jb21wb25lbnQuc2FzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb21wb25lbnQtZXhhbXBsZS9jb21wb25lbnQtZXhhbXBsZS5jb21wb25lbnQuc2FzcyJ9 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/component-example/component-example.component.ts":
-/*!********************************************************************************!*\
-  !*** ../ng-docs/src/lib/core/component-example/component-example.component.ts ***!
-  \********************************************************************************/
+/***/ "../ng-documentation/src/lib/core/component-example/component-example.component.ts":
+/*!*****************************************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/component-example/component-example.component.ts ***!
+  \*****************************************************************************************/
 /*! exports provided: ComponentExampleComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -694,7 +694,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentExampleComponent", function() { return ComponentExampleComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../component-documentation/component-documentation.component */ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.ts");
+/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../component-documentation/component-documentation.component */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts");
 
 
 
@@ -708,8 +708,8 @@ var ComponentExampleComponent = /** @class */ (function () {
     ComponentExampleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-example',
-            template: __webpack_require__(/*! ./component-example.component.html */ "../ng-docs/src/lib/core/component-example/component-example.component.html"),
-            styles: [__webpack_require__(/*! ./component-example.component.sass */ "../ng-docs/src/lib/core/component-example/component-example.component.sass")]
+            template: __webpack_require__(/*! ./component-example.component.html */ "../ng-documentation/src/lib/core/component-example/component-example.component.html"),
+            styles: [__webpack_require__(/*! ./component-example.component.sass */ "../ng-documentation/src/lib/core/component-example/component-example.component.sass")]
         })
     ], ComponentExampleComponent);
     return ComponentExampleComponent;
@@ -719,10 +719,10 @@ var ComponentExampleComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/core.module.ts":
-/*!**********************************************!*\
-  !*** ../ng-docs/src/lib/core/core.module.ts ***!
-  \**********************************************/
+/***/ "../ng-documentation/src/lib/core/core.module.ts":
+/*!*******************************************************!*\
+  !*** ../ng-documentation/src/lib/core/core.module.ts ***!
+  \*******************************************************/
 /*! exports provided: CoreModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -734,14 +734,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "../../node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
 /* harmony import */ var iwerk_angular_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! iwerk-angular-ui */ "../../node_modules/iwerk-angular-ui/fesm5/iwerk-angular-ui.js");
-/* harmony import */ var _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./code-line/code-line.component */ "../ng-docs/src/lib/core/code-line/code-line.component.ts");
-/* harmony import */ var _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./code-sample/code-sample.module */ "../ng-docs/src/lib/core/code-sample/code-sample.module.ts");
-/* harmony import */ var _code_code_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./code/code.component */ "../ng-docs/src/lib/core/code/code.component.ts");
-/* harmony import */ var _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component-api/component-api.component */ "../ng-docs/src/lib/core/component-api/component-api.component.ts");
-/* harmony import */ var _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component-description/component-description.component */ "../ng-docs/src/lib/core/component-description/component-description.component.ts");
-/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component-documentation/component-documentation.component */ "../ng-docs/src/lib/core/component-documentation/component-documentation.component.ts");
-/* harmony import */ var _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component-example/component-example.component */ "../ng-docs/src/lib/core/component-example/component-example.component.ts");
-/* harmony import */ var _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tabs/tabs.component */ "../ng-docs/src/lib/core/tabs/tabs.component.ts");
+/* harmony import */ var _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./code-line/code-line.component */ "../ng-documentation/src/lib/core/code-line/code-line.component.ts");
+/* harmony import */ var _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./code-sample/code-sample.module */ "../ng-documentation/src/lib/core/code-sample/code-sample.module.ts");
+/* harmony import */ var _code_code_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./code/code.component */ "../ng-documentation/src/lib/core/code/code.component.ts");
+/* harmony import */ var _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component-api/component-api.component */ "../ng-documentation/src/lib/core/component-api/component-api.component.ts");
+/* harmony import */ var _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component-description/component-description.component */ "../ng-documentation/src/lib/core/component-description/component-description.component.ts");
+/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component-documentation/component-documentation.component */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts");
+/* harmony import */ var _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component-example/component-example.component */ "../ng-documentation/src/lib/core/component-example/component-example.component.ts");
+/* harmony import */ var _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tabs/tabs.component */ "../ng-documentation/src/lib/core/tabs/tabs.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
 
 
@@ -807,10 +807,10 @@ var CoreModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/documentation.service.ts":
-/*!********************************************************!*\
-  !*** ../ng-docs/src/lib/core/documentation.service.ts ***!
-  \********************************************************/
+/***/ "../ng-documentation/src/lib/core/documentation.service.ts":
+/*!*****************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/documentation.service.ts ***!
+  \*****************************************************************/
 /*! exports provided: DocumentationService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -822,7 +822,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "../../node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../../node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _documentation_token__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../documentation.token */ "../ng-docs/src/lib/documentation.token.ts");
+/* harmony import */ var _documentation_token__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../documentation.token */ "../ng-documentation/src/lib/documentation.token.ts");
 
 
 
@@ -905,10 +905,10 @@ var DocumentationService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/tabs/tabs.component.html":
-/*!********************************************************!*\
-  !*** ../ng-docs/src/lib/core/tabs/tabs.component.html ***!
-  \********************************************************/
+/***/ "../ng-documentation/src/lib/core/tabs/tabs.component.html":
+/*!*****************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/tabs/tabs.component.html ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -916,21 +916,21 @@ module.exports = "<ol>\n  <li *ngFor=\"let tab of tabs\"\n    (click)=\"selected
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/tabs/tabs.component.sass":
-/*!********************************************************!*\
-  !*** ../ng-docs/src/lib/core/tabs/tabs.component.sass ***!
-  \********************************************************/
+/***/ "../ng-documentation/src/lib/core/tabs/tabs.component.sass":
+/*!*****************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/tabs/tabs.component.sass ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 300px;\n  overflow: hidden;\n  border: lightgrey 1px solid; }\n\nol {\n  margin: 0;\n  padding: 0; }\n\nli {\n  list-style: none;\n  display: inline-block;\n  cursor: pointer;\n  padding: 0;\n  margin: 0; }\n\n.content {\n  flex: 1 1;\n  overflow: auto; }\n\n:host {\n  margin-top: 20px; }\n\n:host .content {\n    background-color: whitesmoke; }\n\n:host pre {\n    margin-top: 0; }\n\n:host li {\n    padding: 0 15px;\n    line-height: 40px;\n    height: 40px;\n    border-bottom: 2px solid transparent;\n    transition: border-bottom 0.2s; }\n\n:host li:hover:not(.active) {\n      border-bottom-color: lightgrey; }\n\n:host li.active {\n      color: #FF4D00;\n      border-bottom-color: #FF4D00; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9jb3JlL3RhYnMvdGFicy5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLDJCQUFtQyxFQUFBOztBQUVyQztFQUNFLFNBQVM7RUFDVCxVQUFVLEVBQUE7O0FBRVo7RUFDRSxnQkFBZ0I7RUFDaEIscUJBQXFCO0VBQ3JCLGVBQWU7RUFDZixVQUFVO0VBQ1YsU0FBUyxFQUFBOztBQUVYO0VBQ0UsU0FBUztFQUNULGNBQWMsRUFBQTs7QUFHZjtFQUNDLGdCQUFnQixFQUFBOztBQURqQjtJQUlHLDRCQUE0QixFQUFBOztBQUovQjtJQU1HLGFBQWEsRUFBQTs7QUFOaEI7SUFRRyxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixvQ0FBb0M7SUFDcEMsOEJBQThCLEVBQUE7O0FBWmpDO01BZUssOEJDbENzQixFQUFBOztBRG1CM0I7TUFrQkssY0N4Q2M7TUR5Q2QsNEJDekNjLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jcy9zcmMvbGliL2NvcmUvdGFicy90YWJzLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcyc7XG5cbiA6aG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGhlaWdodDogMzAwcHg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGJvcmRlcjogJGNvbG9yLWxpZ2h0LWdyZXkgMXB4IHNvbGlkOyB9XG5cbm9sIHtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwOyB9XG5cbmxpIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDsgfVxuXG4uY29udGVudCB7XG4gIGZsZXg6IDEgMTtcbiAgb3ZlcmZsb3c6IGF1dG87IH1cblxuLy8gaW1wbGVtZW50ZWQgdG8gZGlzcGxheSBjb2RlXG4gOmhvc3Qge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuXG4gIC5jb250ZW50IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlOyB9XG4gIHByZSB7XG4gICAgbWFyZ2luLXRvcDogMDsgfVxuICBsaSB7XG4gICAgcGFkZGluZzogMCAxNXB4O1xuICAgIGxpbmUtaGVpZ2h0OiA0MHB4O1xuICAgIGhlaWdodDogNDBweDtcbiAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWJvdHRvbSAwLjJzO1xuXG4gICAgJjpob3Zlcjpub3QoLmFjdGl2ZSkge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogJGNvbG9yLWxpZ2h0LWdyZXk7IH1cblxuICAgICYuYWN0aXZlIHtcbiAgICAgIGNvbG9yOiAkY29sb3ItZm91cjtcbiAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjb2xvci1mb3VyOyB9IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
+module.exports = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 300px;\n  overflow: hidden;\n  border: lightgrey 1px solid; }\n\nol {\n  margin: 0;\n  padding: 0; }\n\nli {\n  list-style: none;\n  display: inline-block;\n  cursor: pointer;\n  padding: 0;\n  margin: 0; }\n\n.content {\n  flex: 1 1;\n  overflow: auto; }\n\n:host {\n  margin-top: 20px; }\n\n:host .content {\n    background-color: whitesmoke; }\n\n:host pre {\n    margin-top: 0; }\n\n:host li {\n    padding: 0 15px;\n    line-height: 40px;\n    height: 40px;\n    border-bottom: 2px solid transparent;\n    transition: border-bottom 0.2s; }\n\n:host li:hover:not(.active) {\n      border-bottom-color: lightgrey; }\n\n:host li.active {\n      color: #FF4D00;\n      border-bottom-color: #FF4D00; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3RhYnMvdGFicy5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLDJCQUFtQyxFQUFBOztBQUVyQztFQUNFLFNBQVM7RUFDVCxVQUFVLEVBQUE7O0FBRVo7RUFDRSxnQkFBZ0I7RUFDaEIscUJBQXFCO0VBQ3JCLGVBQWU7RUFDZixVQUFVO0VBQ1YsU0FBUyxFQUFBOztBQUVYO0VBQ0UsU0FBUztFQUNULGNBQWMsRUFBQTs7QUFHZjtFQUNDLGdCQUFnQixFQUFBOztBQURqQjtJQUlHLDRCQUE0QixFQUFBOztBQUovQjtJQU1HLGFBQWEsRUFBQTs7QUFOaEI7SUFRRyxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixvQ0FBb0M7SUFDcEMsOEJBQThCLEVBQUE7O0FBWmpDO01BZUssOEJDbENzQixFQUFBOztBRG1CM0I7TUFrQkssY0N4Q2M7TUR5Q2QsNEJDekNjLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvdGFicy90YWJzLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcyc7XG5cbiA6aG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGhlaWdodDogMzAwcHg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGJvcmRlcjogJGNvbG9yLWxpZ2h0LWdyZXkgMXB4IHNvbGlkOyB9XG5cbm9sIHtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwOyB9XG5cbmxpIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDsgfVxuXG4uY29udGVudCB7XG4gIGZsZXg6IDEgMTtcbiAgb3ZlcmZsb3c6IGF1dG87IH1cblxuLy8gaW1wbGVtZW50ZWQgdG8gZGlzcGxheSBjb2RlXG4gOmhvc3Qge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuXG4gIC5jb250ZW50IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlOyB9XG4gIHByZSB7XG4gICAgbWFyZ2luLXRvcDogMDsgfVxuICBsaSB7XG4gICAgcGFkZGluZzogMCAxNXB4O1xuICAgIGxpbmUtaGVpZ2h0OiA0MHB4O1xuICAgIGhlaWdodDogNDBweDtcbiAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWJvdHRvbSAwLjJzO1xuXG4gICAgJjpob3Zlcjpub3QoLmFjdGl2ZSkge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogJGNvbG9yLWxpZ2h0LWdyZXk7IH1cblxuICAgICYuYWN0aXZlIHtcbiAgICAgIGNvbG9yOiAkY29sb3ItZm91cjtcbiAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjb2xvci1mb3VyOyB9IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/core/tabs/tabs.component.ts":
-/*!******************************************************!*\
-  !*** ../ng-docs/src/lib/core/tabs/tabs.component.ts ***!
-  \******************************************************/
+/***/ "../ng-documentation/src/lib/core/tabs/tabs.component.ts":
+/*!***************************************************************!*\
+  !*** ../ng-documentation/src/lib/core/tabs/tabs.component.ts ***!
+  \***************************************************************/
 /*! exports provided: TabsComponent, TabDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -949,8 +949,8 @@ var TabsComponent = /** @class */ (function () {
     TabsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-tabs',
-            template: __webpack_require__(/*! ./tabs.component.html */ "../ng-docs/src/lib/core/tabs/tabs.component.html"),
-            styles: [__webpack_require__(/*! ./tabs.component.sass */ "../ng-docs/src/lib/core/tabs/tabs.component.sass")]
+            template: __webpack_require__(/*! ./tabs.component.html */ "../ng-documentation/src/lib/core/tabs/tabs.component.html"),
+            styles: [__webpack_require__(/*! ./tabs.component.sass */ "../ng-documentation/src/lib/core/tabs/tabs.component.sass")]
         })
     ], TabsComponent);
     return TabsComponent;
@@ -994,10 +994,10 @@ var TabDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/default-welcome/default-welcome.component.html":
-/*!*************************************************************************!*\
-  !*** ../ng-docs/src/lib/default-welcome/default-welcome.component.html ***!
-  \*************************************************************************/
+/***/ "../ng-documentation/src/lib/default-welcome/default-welcome.component.html":
+/*!**********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/default-welcome/default-welcome.component.html ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1005,21 +1005,21 @@ module.exports = "<h1>Default Welcome Page</h1>\n\n<h2><i class=\"fa fa-check-sq
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/default-welcome/default-welcome.component.sass":
-/*!*************************************************************************!*\
-  !*** ../ng-docs/src/lib/default-welcome/default-welcome.component.sass ***!
-  \*************************************************************************/
+/***/ "../ng-documentation/src/lib/default-welcome/default-welcome.component.sass":
+/*!**********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/default-welcome/default-welcome.component.sass ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n  padding: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9kZWZhdWx0LXdlbGNvbWUvZGVmYXVsdC13ZWxjb21lLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0MsY0FBYztFQUNkLGFBQWEsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvZGVmYXVsdC13ZWxjb21lL2RlZmF1bHQtd2VsY29tZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIiA6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxNXB4OyB9XG4iXX0= */"
+module.exports = ":host {\n  display: block;\n  padding: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kZWZhdWx0LXdlbGNvbWUvZGVmYXVsdC13ZWxjb21lLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0MsY0FBYztFQUNkLGFBQWEsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvZGVmYXVsdC13ZWxjb21lL2RlZmF1bHQtd2VsY29tZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIiA6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxNXB4OyB9XG4iXX0= */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/default-welcome/default-welcome.component.ts":
-/*!***********************************************************************!*\
-  !*** ../ng-docs/src/lib/default-welcome/default-welcome.component.ts ***!
-  \***********************************************************************/
+/***/ "../ng-documentation/src/lib/default-welcome/default-welcome.component.ts":
+/*!********************************************************************************!*\
+  !*** ../ng-documentation/src/lib/default-welcome/default-welcome.component.ts ***!
+  \********************************************************************************/
 /*! exports provided: DefaultWelcomeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1036,8 +1036,8 @@ var DefaultWelcomeComponent = /** @class */ (function () {
     DefaultWelcomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-default-welcome',
-            template: __webpack_require__(/*! ./default-welcome.component.html */ "../ng-docs/src/lib/default-welcome/default-welcome.component.html"),
-            styles: [__webpack_require__(/*! ./default-welcome.component.sass */ "../ng-docs/src/lib/default-welcome/default-welcome.component.sass")]
+            template: __webpack_require__(/*! ./default-welcome.component.html */ "../ng-documentation/src/lib/default-welcome/default-welcome.component.html"),
+            styles: [__webpack_require__(/*! ./default-welcome.component.sass */ "../ng-documentation/src/lib/default-welcome/default-welcome.component.sass")]
         })
     ], DefaultWelcomeComponent);
     return DefaultWelcomeComponent;
@@ -1047,10 +1047,10 @@ var DefaultWelcomeComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/docs.module.ts":
-/*!*****************************************!*\
-  !*** ../ng-docs/src/lib/docs.module.ts ***!
-  \*****************************************/
+/***/ "../ng-documentation/src/lib/docs.module.ts":
+/*!**************************************************!*\
+  !*** ../ng-documentation/src/lib/docs.module.ts ***!
+  \**************************************************/
 /*! exports provided: DocsModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1061,11 +1061,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./core/core.module */ "../ng-docs/src/lib/core/core.module.ts");
-/* harmony import */ var _default_welcome_default_welcome_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./default-welcome/default-welcome.component */ "../ng-docs/src/lib/default-welcome/default-welcome.component.ts");
-/* harmony import */ var _docs_docs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./docs/docs.component */ "../ng-docs/src/lib/docs/docs.component.ts");
-/* harmony import */ var _routes_token__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./routes.token */ "../ng-docs/src/lib/routes.token.ts");
-/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./menu/menu.component */ "../ng-docs/src/lib/menu/menu.component.ts");
+/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./core/core.module */ "../ng-documentation/src/lib/core/core.module.ts");
+/* harmony import */ var _default_welcome_default_welcome_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./default-welcome/default-welcome.component */ "../ng-documentation/src/lib/default-welcome/default-welcome.component.ts");
+/* harmony import */ var _docs_docs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./docs/docs.component */ "../ng-documentation/src/lib/docs/docs.component.ts");
+/* harmony import */ var _routes_token__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./routes.token */ "../ng-documentation/src/lib/routes.token.ts");
+/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./menu/menu.component */ "../ng-documentation/src/lib/menu/menu.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "../../node_modules/@angular/forms/fesm5/forms.js");
 
 
@@ -1125,10 +1125,10 @@ var DocsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/docs/docs.component.html":
-/*!***************************************************!*\
-  !*** ../ng-docs/src/lib/docs/docs.component.html ***!
-  \***************************************************/
+/***/ "../ng-documentation/src/lib/docs/docs.component.html":
+/*!************************************************************!*\
+  !*** ../ng-documentation/src/lib/docs/docs.component.html ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1136,21 +1136,21 @@ module.exports = "<aside>\n  <docs-menu>\n    <ng-content></ng-content>\n  </doc
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/docs/docs.component.sass":
-/*!***************************************************!*\
-  !*** ../ng-docs/src/lib/docs/docs.component.sass ***!
-  \***************************************************/
+/***/ "../ng-documentation/src/lib/docs/docs.component.sass":
+/*!************************************************************!*\
+  !*** ../ng-documentation/src/lib/docs/docs.component.sass ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "docs-app {\n  display: block;\n  position: relative;\n  width: 100vw;\n  height: 100vh; }\n  docs-app a.app__logo {\n    width: calc(100% - 30px);\n    display: block;\n    height: 50px;\n    margin: 0 15px;\n    position: relative;\n    color: red;\n    background-size: 100%;\n    background-repeat: no-repeat; }\n  docs-app aside {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 200px;\n    overflow: auto;\n    background: white;\n    color: black;\n    padding: 15px 0px;\n    border-right: 1px solid grey;\n    box-shadow: 2px 0px 2px 1px lightgray; }\n  docs-app main {\n    position: absolute;\n    top: 0;\n    left: 200px;\n    height: 100%;\n    right: 0;\n    overflow: auto; }\n  docs-app ul {\n    padding: 0;\n    margin: 0; }\n  docs-app ul li {\n      list-style: none;\n      width: 100%;\n      padding: 0; }\n  docs-app ul li a {\n        display: inline-block;\n        width: 100%;\n        line-height: 20px;\n        text-decoration: none;\n        padding: 10px 15px;\n        color: black;\n        font-size: 1.6rem;\n        transition: all 0.2s; }\n  docs-app ul li a:hover {\n          color: #FF793F;\n          background: whitesmoke; }\n  docs-app ul li a.active-link {\n          color: #FF4D00;\n          background: whitesmoke; }\n  docs-app .extra-links li:first-child {\n    margin-top: 30px;\n    border-top: 1px solid lightgrey; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGFBQWEsRUFBQTtFQUpmO0lBU0ksd0JBQXdCO0lBQ3hCLGNBQWM7SUFDZCxZQUFZO0lBQ1osY0FBYztJQUNkLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLDRCQUE0QixFQUFBO0VBaEJoQztJQW1CSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLE9BQU87SUFDUCxZQUFZO0lBQ1osWUFqQmlCO0lBa0JqQixjQUFjO0lBQ2QsaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsNEJBQTRCO0lBQzVCLHFDQUFxQyxFQUFBO0VBN0J6QztJQWdDSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLFdBNUJpQjtJQTZCakIsWUFBWTtJQUNaLFFBQVE7SUFDUixjQUFjLEVBQUE7RUFyQ2xCO0lBd0NJLFVBQVU7SUFDVixTQUFTLEVBQUE7RUF6Q2I7TUE0Q00sZ0JBQWdCO01BQ2hCLFdBQVc7TUFDWCxVQUFVLEVBQUE7RUE5Q2hCO1FBaURRLHFCQUFxQjtRQUNyQixXQUFXO1FBQ1gsaUJBQWlCO1FBQ2pCLHFCQUFxQjtRQUNyQixrQkFBa0I7UUFDbEIsWUFBWTtRQUNaLGlCQUFpQjtRQUNqQixvQkFBb0IsRUFBQTtFQXhENUI7VUEyRFUsY0MzRFc7VUQ0RFgsc0JBQXNCLEVBQUE7RUE1RGhDO1VBK0RVLGNDOURVO1VEK0RWLHNCQUFzQixFQUFBO0VBaEVoQztJQW1FSSxnQkFBZ0I7SUFDaEIsK0JDaEV3QixFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9zdHlsZXMvX3ZhcmlhYmxlcyc7XG5cbmRvY3MtYXBwIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuXG4gICR3aWR0aF9hc2lkZTogMjAwcHg7XG5cbiAgYS5hcHBfX2xvZ28ge1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAzMHB4KTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgbWFyZ2luOiAwIDE1cHg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGNvbG9yOiByZWQ7XG4gICAgYmFja2dyb3VuZC1zaXplOiAxMDAlO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7IH1cblxuICBhc2lkZSB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogJHdpZHRoX2FzaWRlO1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xuICAgIGNvbG9yOiBibGFjaztcbiAgICBwYWRkaW5nOiAxNXB4IDBweDtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBncmV5O1xuICAgIGJveC1zaGFkb3c6IDJweCAwcHggMnB4IDFweCBsaWdodGdyYXk7IH1cblxuICBtYWluIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6ICR3aWR0aF9hc2lkZTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgcmlnaHQ6IDA7XG4gICAgb3ZlcmZsb3c6IGF1dG87IH1cblxuICB1bCB7XG4gICAgcGFkZGluZzogMDtcbiAgICBtYXJnaW46IDA7XG5cbiAgICBsaSB7XG4gICAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBwYWRkaW5nOiAwO1xuXG4gICAgICBhIHtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgcGFkZGluZzogMTBweCAxNXB4O1xuICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgIGZvbnQtc2l6ZTogMS42cmVtO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycztcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBjb2xvcjogJGNvbG9yLXRocmVlO1xuICAgICAgICAgIGJhY2tncm91bmQ6IHdoaXRlc21va2U7IH1cblxuICAgICAgICAmLmFjdGl2ZS1saW5rIHtcbiAgICAgICAgICBjb2xvcjogJGNvbG9yLWZvdXI7XG4gICAgICAgICAgYmFja2dyb3VuZDogd2hpdGVzbW9rZTsgfSB9IH0gfVxuXG4gIC5leHRyYS1saW5rcyBsaTpmaXJzdC1jaGlsZCB7XG4gICAgbWFyZ2luLXRvcDogMzBweDtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgJGNvbG9yLWxpZ2h0LWdyZXk7IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
+module.exports = "docs-app {\n  display: block;\n  position: relative;\n  width: 100vw;\n  height: 100vh; }\n  docs-app a.app__logo {\n    width: calc(100% - 30px);\n    display: block;\n    height: 50px;\n    margin: 0 15px;\n    position: relative;\n    color: red;\n    background-size: 100%;\n    background-repeat: no-repeat; }\n  docs-app aside {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 200px;\n    overflow: auto;\n    background: white;\n    color: black;\n    padding: 15px 0px;\n    border-right: 1px solid grey;\n    box-shadow: 2px 0px 2px 1px lightgray; }\n  docs-app main {\n    position: absolute;\n    top: 0;\n    left: 200px;\n    height: 100%;\n    right: 0;\n    overflow: auto; }\n  docs-app ul {\n    padding: 0;\n    margin: 0; }\n  docs-app ul li {\n      list-style: none;\n      width: 100%;\n      padding: 0; }\n  docs-app ul li a {\n        display: inline-block;\n        width: 100%;\n        line-height: 20px;\n        text-decoration: none;\n        padding: 10px 15px;\n        color: black;\n        font-size: 1.6rem;\n        transition: all 0.2s; }\n  docs-app ul li a:hover {\n          color: #FF793F;\n          background: whitesmoke; }\n  docs-app ul li a.active-link {\n          color: #FF4D00;\n          background: whitesmoke; }\n  docs-app .extra-links li:first-child {\n    margin-top: 30px;\n    border-top: 1px solid lightgrey; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGFBQWEsRUFBQTtFQUpmO0lBU0ksd0JBQXdCO0lBQ3hCLGNBQWM7SUFDZCxZQUFZO0lBQ1osY0FBYztJQUNkLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLDRCQUE0QixFQUFBO0VBaEJoQztJQW1CSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLE9BQU87SUFDUCxZQUFZO0lBQ1osWUFqQmlCO0lBa0JqQixjQUFjO0lBQ2QsaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsNEJBQTRCO0lBQzVCLHFDQUFxQyxFQUFBO0VBN0J6QztJQWdDSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLFdBNUJpQjtJQTZCakIsWUFBWTtJQUNaLFFBQVE7SUFDUixjQUFjLEVBQUE7RUFyQ2xCO0lBd0NJLFVBQVU7SUFDVixTQUFTLEVBQUE7RUF6Q2I7TUE0Q00sZ0JBQWdCO01BQ2hCLFdBQVc7TUFDWCxVQUFVLEVBQUE7RUE5Q2hCO1FBaURRLHFCQUFxQjtRQUNyQixXQUFXO1FBQ1gsaUJBQWlCO1FBQ2pCLHFCQUFxQjtRQUNyQixrQkFBa0I7UUFDbEIsWUFBWTtRQUNaLGlCQUFpQjtRQUNqQixvQkFBb0IsRUFBQTtFQXhENUI7VUEyRFUsY0MzRFc7VUQ0RFgsc0JBQXNCLEVBQUE7RUE1RGhDO1VBK0RVLGNDOURVO1VEK0RWLHNCQUFzQixFQUFBO0VBaEVoQztJQW1FSSxnQkFBZ0I7SUFDaEIsK0JDaEV3QixFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9zdHlsZXMvX3ZhcmlhYmxlcyc7XG5cbmRvY3MtYXBwIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuXG4gICR3aWR0aF9hc2lkZTogMjAwcHg7XG5cbiAgYS5hcHBfX2xvZ28ge1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAzMHB4KTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgbWFyZ2luOiAwIDE1cHg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGNvbG9yOiByZWQ7XG4gICAgYmFja2dyb3VuZC1zaXplOiAxMDAlO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7IH1cblxuICBhc2lkZSB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogJHdpZHRoX2FzaWRlO1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xuICAgIGNvbG9yOiBibGFjaztcbiAgICBwYWRkaW5nOiAxNXB4IDBweDtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBncmV5O1xuICAgIGJveC1zaGFkb3c6IDJweCAwcHggMnB4IDFweCBsaWdodGdyYXk7IH1cblxuICBtYWluIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6ICR3aWR0aF9hc2lkZTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgcmlnaHQ6IDA7XG4gICAgb3ZlcmZsb3c6IGF1dG87IH1cblxuICB1bCB7XG4gICAgcGFkZGluZzogMDtcbiAgICBtYXJnaW46IDA7XG5cbiAgICBsaSB7XG4gICAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBwYWRkaW5nOiAwO1xuXG4gICAgICBhIHtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgcGFkZGluZzogMTBweCAxNXB4O1xuICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgIGZvbnQtc2l6ZTogMS42cmVtO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycztcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBjb2xvcjogJGNvbG9yLXRocmVlO1xuICAgICAgICAgIGJhY2tncm91bmQ6IHdoaXRlc21va2U7IH1cblxuICAgICAgICAmLmFjdGl2ZS1saW5rIHtcbiAgICAgICAgICBjb2xvcjogJGNvbG9yLWZvdXI7XG4gICAgICAgICAgYmFja2dyb3VuZDogd2hpdGVzbW9rZTsgfSB9IH0gfVxuXG4gIC5leHRyYS1saW5rcyBsaTpmaXJzdC1jaGlsZCB7XG4gICAgbWFyZ2luLXRvcDogMzBweDtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgJGNvbG9yLWxpZ2h0LWdyZXk7IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/docs/docs.component.ts":
-/*!*************************************************!*\
-  !*** ../ng-docs/src/lib/docs/docs.component.ts ***!
-  \*************************************************/
+/***/ "../ng-documentation/src/lib/docs/docs.component.ts":
+/*!**********************************************************!*\
+  !*** ../ng-documentation/src/lib/docs/docs.component.ts ***!
+  \**********************************************************/
 /*! exports provided: DocsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1194,9 +1194,9 @@ var DocsComponent = /** @class */ (function () {
     DocsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-app',
-            template: __webpack_require__(/*! ./docs.component.html */ "../ng-docs/src/lib/docs/docs.component.html"),
+            template: __webpack_require__(/*! ./docs.component.html */ "../ng-documentation/src/lib/docs/docs.component.html"),
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-            styles: [__webpack_require__(/*! ./docs.component.sass */ "../ng-docs/src/lib/docs/docs.component.sass")]
+            styles: [__webpack_require__(/*! ./docs.component.sass */ "../ng-documentation/src/lib/docs/docs.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
@@ -1208,10 +1208,10 @@ var DocsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/documentation.token.ts":
-/*!*************************************************!*\
-  !*** ../ng-docs/src/lib/documentation.token.ts ***!
-  \*************************************************/
+/***/ "../ng-documentation/src/lib/documentation.token.ts":
+/*!**********************************************************!*\
+  !*** ../ng-documentation/src/lib/documentation.token.ts ***!
+  \**********************************************************/
 /*! exports provided: DOCUMENTATION_PATH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1225,10 +1225,10 @@ var DOCUMENTATION_PATH = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injecti
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/menu/menu.component.html":
-/*!***************************************************!*\
-  !*** ../ng-docs/src/lib/menu/menu.component.html ***!
-  \***************************************************/
+/***/ "../ng-documentation/src/lib/menu/menu.component.html":
+/*!************************************************************!*\
+  !*** ../ng-documentation/src/lib/menu/menu.component.html ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1236,21 +1236,21 @@ module.exports = "<div class=\"header\">\n  <a class=\"app__logo\" [style.backgr
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/menu/menu.component.sass":
-/*!***************************************************!*\
-  !*** ../ng-docs/src/lib/menu/menu.component.sass ***!
-  \***************************************************/
+/***/ "../ng-documentation/src/lib/menu/menu.component.sass":
+/*!************************************************************!*\
+  !*** ../ng-documentation/src/lib/menu/menu.component.sass ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".search {\n  height: 40px;\n  line-height: 14px;\n  font-size: 14px;\n  padding: 13.5px 15px;\n  width: 100%;\n  border-radius: 0;\n  color: #28A2FF;\n  outline: none;\n  border: none;\n  border-top: lightgrey 1px solid;\n  border-bottom: lightgrey 1px solid; }\n  .search.no-result {\n    border-color: #EE2200;\n    color: #EE2200; }\n  .search-helper {\n  width: 100%;\n  padding: 0 15px;\n  line-height: 20px;\n  height: 20px;\n  background-color: #28A2FF;\n  color: white;\n  font-size: 1rem;\n  transition: opacity 0.2s;\n  opacity: 1; }\n  .search-helper.no-result {\n    background-color: #EE2200; }\n  .search-helper.hidden {\n    opacity: 0; }\n  :host {\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  flex-direction: column; }\n  .links {\n  flex: 1 1;\n  overflow: auto; }\n  .extra-links, .header {\n  flex: 0 0 auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2NzL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGNDVmlCO0VEV2pCLGFBQWE7RUFDYixZQUFZO0VBQ1osK0JBQXVDO0VBQ3ZDLGtDQUEwQyxFQUFBO0VBWDVDO0lBY0kscUJDZGdCO0lEZWhCLGNDZmdCLEVBQUE7RURpQnBCO0VBQ0UsV0FBVztFQUNYLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsWUFBWTtFQUNaLHlCQ3pCaUI7RUQwQmpCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysd0JBQXdCO0VBQ3hCLFVBQVUsRUFBQTtFQVRaO0lBWUkseUJDN0JnQixFQUFBO0VEaUJwQjtJQWVJLFVBQVUsRUFBQTtFQUViO0VBQ0MsYUFBYTtFQUNiLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsc0JBQXNCLEVBQUE7RUFFeEI7RUFDRSxTQUFTO0VBQ1QsY0FBYyxFQUFBO0VBRWhCO0VBQ0UsY0FBYyxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3Mvc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9zdHlsZXMvdmFyaWFibGVzJztcblxuJHNlYXJjaC1jb2xvcjogJGNvbG9yLXR3bztcblxuLnNlYXJjaCB7XG4gIGhlaWdodDogNDBweDtcbiAgbGluZS1oZWlnaHQ6IDE0cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgcGFkZGluZzogMTMuNXB4IDE1cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBjb2xvcjogJHNlYXJjaC1jb2xvcjtcbiAgb3V0bGluZTogbm9uZTtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItdG9wOiAkY29sb3ItbGlnaHQtZ3JleSAxcHggc29saWQ7XG4gIGJvcmRlci1ib3R0b206ICRjb2xvci1saWdodC1ncmV5IDFweCBzb2xpZDtcblxuICAmLm5vLXJlc3VsdCB7XG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZml2ZTtcbiAgICBjb2xvcjogJGNvbG9yLWZpdmU7IH0gfVxuXG4uc2VhcmNoLWhlbHBlciB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAwIDE1cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICRzZWFyY2gtY29sb3I7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxcmVtO1xuICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMnM7XG4gIG9wYWNpdHk6IDE7XG5cbiAgJi5uby1yZXN1bHQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1maXZlOyB9XG5cbiAgJi5oaWRkZW4ge1xuICAgIG9wYWNpdHk6IDA7IH0gfVxuXG4gOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cblxuLmxpbmtzIHtcbiAgZmxleDogMSAxO1xuICBvdmVyZmxvdzogYXV0bzsgfVxuXG4uZXh0cmEtbGlua3MsIC5oZWFkZXIge1xuICBmbGV4OiAwIDAgYXV0bzsgfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
+module.exports = ".search {\n  height: 40px;\n  line-height: 14px;\n  font-size: 14px;\n  padding: 13.5px 15px;\n  width: 100%;\n  border-radius: 0;\n  color: #28A2FF;\n  outline: none;\n  border: none;\n  border-top: lightgrey 1px solid;\n  border-bottom: lightgrey 1px solid; }\n  .search.no-result {\n    border-color: #EE2200;\n    color: #EE2200; }\n  .search-helper {\n  width: 100%;\n  padding: 0 15px;\n  line-height: 20px;\n  height: 20px;\n  background-color: #28A2FF;\n  color: white;\n  font-size: 1rem;\n  transition: opacity 0.2s;\n  opacity: 1; }\n  .search-helper.no-result {\n    background-color: #EE2200; }\n  .search-helper.hidden {\n    opacity: 0; }\n  :host {\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  flex-direction: column; }\n  .links {\n  flex: 1 1;\n  overflow: auto; }\n  .extra-links, .header {\n  flex: 0 0 auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGNDVmlCO0VEV2pCLGFBQWE7RUFDYixZQUFZO0VBQ1osK0JBQXVDO0VBQ3ZDLGtDQUEwQyxFQUFBO0VBWDVDO0lBY0kscUJDZGdCO0lEZWhCLGNDZmdCLEVBQUE7RURpQnBCO0VBQ0UsV0FBVztFQUNYLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsWUFBWTtFQUNaLHlCQ3pCaUI7RUQwQmpCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysd0JBQXdCO0VBQ3hCLFVBQVUsRUFBQTtFQVRaO0lBWUkseUJDN0JnQixFQUFBO0VEaUJwQjtJQWVJLFVBQVUsRUFBQTtFQUViO0VBQ0MsYUFBYTtFQUNiLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsc0JBQXNCLEVBQUE7RUFFeEI7RUFDRSxTQUFTO0VBQ1QsY0FBYyxFQUFBO0VBRWhCO0VBQ0UsY0FBYyxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9zdHlsZXMvdmFyaWFibGVzJztcblxuJHNlYXJjaC1jb2xvcjogJGNvbG9yLXR3bztcblxuLnNlYXJjaCB7XG4gIGhlaWdodDogNDBweDtcbiAgbGluZS1oZWlnaHQ6IDE0cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgcGFkZGluZzogMTMuNXB4IDE1cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBjb2xvcjogJHNlYXJjaC1jb2xvcjtcbiAgb3V0bGluZTogbm9uZTtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItdG9wOiAkY29sb3ItbGlnaHQtZ3JleSAxcHggc29saWQ7XG4gIGJvcmRlci1ib3R0b206ICRjb2xvci1saWdodC1ncmV5IDFweCBzb2xpZDtcblxuICAmLm5vLXJlc3VsdCB7XG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZml2ZTtcbiAgICBjb2xvcjogJGNvbG9yLWZpdmU7IH0gfVxuXG4uc2VhcmNoLWhlbHBlciB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAwIDE1cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICRzZWFyY2gtY29sb3I7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxcmVtO1xuICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMnM7XG4gIG9wYWNpdHk6IDE7XG5cbiAgJi5uby1yZXN1bHQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1maXZlOyB9XG5cbiAgJi5oaWRkZW4ge1xuICAgIG9wYWNpdHk6IDA7IH0gfVxuXG4gOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cblxuLmxpbmtzIHtcbiAgZmxleDogMSAxO1xuICBvdmVyZmxvdzogYXV0bzsgfVxuXG4uZXh0cmEtbGlua3MsIC5oZWFkZXIge1xuICBmbGV4OiAwIDAgYXV0bzsgfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuIl19 */"
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/menu/menu.component.ts":
-/*!*************************************************!*\
-  !*** ../ng-docs/src/lib/menu/menu.component.ts ***!
-  \*************************************************/
+/***/ "../ng-documentation/src/lib/menu/menu.component.ts":
+/*!**********************************************************!*\
+  !*** ../ng-documentation/src/lib/menu/menu.component.ts ***!
+  \**********************************************************/
 /*! exports provided: MenuComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1262,8 +1262,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "../../node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../../node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _docs_docs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../docs/docs.component */ "../ng-docs/src/lib/docs/docs.component.ts");
-/* harmony import */ var _routes_token__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routes.token */ "../ng-docs/src/lib/routes.token.ts");
+/* harmony import */ var _docs_docs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../docs/docs.component */ "../ng-documentation/src/lib/docs/docs.component.ts");
+/* harmony import */ var _routes_token__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routes.token */ "../ng-documentation/src/lib/routes.token.ts");
 
 
 
@@ -1308,8 +1308,8 @@ var MenuComponent = /** @class */ (function () {
     MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-menu',
-            template: __webpack_require__(/*! ./menu.component.html */ "../ng-docs/src/lib/menu/menu.component.html"),
-            styles: [__webpack_require__(/*! ./menu.component.sass */ "../ng-docs/src/lib/menu/menu.component.sass")]
+            template: __webpack_require__(/*! ./menu.component.html */ "../ng-documentation/src/lib/menu/menu.component.html"),
+            styles: [__webpack_require__(/*! ./menu.component.sass */ "../ng-documentation/src/lib/menu/menu.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_routes_token__WEBPACK_IMPORTED_MODULE_6__["COMPONENT_PAGES"])),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Array, _docs_docs_component__WEBPACK_IMPORTED_MODULE_5__["DocsComponent"],
@@ -1322,10 +1322,10 @@ var MenuComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-docs/src/lib/routes.token.ts":
-/*!******************************************!*\
-  !*** ../ng-docs/src/lib/routes.token.ts ***!
-  \******************************************/
+/***/ "../ng-documentation/src/lib/routes.token.ts":
+/*!***************************************************!*\
+  !*** ../ng-documentation/src/lib/routes.token.ts ***!
+  \***************************************************/
 /*! exports provided: COMPONENT_PAGES */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1339,16 +1339,16 @@ var COMPONENT_PAGES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionT
 
 /***/ }),
 
-/***/ "../ng-docs/src/public-api.ts":
-/*!************************************!*\
-  !*** ../ng-docs/src/public-api.ts ***!
-  \************************************/
+/***/ "../ng-documentation/src/public-api.ts":
+/*!*********************************************!*\
+  !*** ../ng-documentation/src/public-api.ts ***!
+  \*********************************************/
 /*! exports provided: DocsModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lib_docs_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/docs.module */ "../ng-docs/src/lib/docs.module.ts");
+/* harmony import */ var _lib_docs_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/docs.module */ "../ng-documentation/src/lib/docs.module.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DocsModule", function() { return _lib_docs_module__WEBPACK_IMPORTED_MODULE_0__["DocsModule"]; });
 
 /*
@@ -1452,7 +1452,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "../../node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var projects_ng_docs_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-docs/src/public-api */ "../ng-docs/src/public-api.ts");
+/* harmony import */ var projects_ng_documentation_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-documentation/src/public-api */ "../ng-documentation/src/public-api.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _features_code_line_code_line_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./features/code-line/code-line.module */ "./src/app/features/code-line/code-line.module.ts");
 /* harmony import */ var _features_code_line_code_line_code_line_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./features/code-line/code-line/code-line.component */ "./src/app/features/code-line/code-line/code-line.component.ts");
@@ -1501,7 +1501,7 @@ var AppModule = /** @class */ (function () {
                 _features_home_home_module__WEBPACK_IMPORTED_MODULE_11__["HomeModule"],
                 _features_component_api_component_api_module__WEBPACK_IMPORTED_MODULE_9__["ComponentApiModule"],
                 _features_component_documentation_component_documentation_module__WEBPACK_IMPORTED_MODULE_16__["ComponentDocumentationModule"],
-                projects_ng_docs_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"].configure({
+                projects_ng_documentation_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"].configure({
                     welcomePage: _features_home_home_home_component__WEBPACK_IMPORTED_MODULE_12__["HomeComponent"],
                     componentPages: {
                         tabs: {
@@ -1872,8 +1872,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentApiExample1Component", function() { return ComponentApiExample1Component; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var projects_ng_docs_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/ng-docs/src/lib/core/documentation.service */ "../ng-docs/src/lib/core/documentation.service.ts");
-/* harmony import */ var projects_ng_docs_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-docs/src/lib/documentation.token */ "../ng-docs/src/lib/documentation.token.ts");
+/* harmony import */ var projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/ng-documentation/src/lib/core/documentation.service */ "../ng-documentation/src/lib/core/documentation.service.ts");
+/* harmony import */ var projects_ng_documentation_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-documentation/src/lib/documentation.token */ "../ng-documentation/src/lib/documentation.token.ts");
 
 
 
@@ -1886,9 +1886,9 @@ var ComponentApiExample1Component = /** @class */ (function () {
             selector: 'app-component-api-example1',
             template: __webpack_require__(/*! ./component-api-example1.component.html */ "./src/app/features/component-api/component-api-example1/component-api-example1.component.html"),
             providers: [
-                projects_ng_docs_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
+                projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
                 {
-                    provide: projects_ng_docs_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__["DOCUMENTATION_PATH"],
+                    provide: projects_ng_documentation_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__["DOCUMENTATION_PATH"],
                     useValue: 'assets/internal-documentation/documentation.json'
                 }
             ],
@@ -2030,8 +2030,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentDocumentationExample1Component", function() { return ComponentDocumentationExample1Component; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var projects_ng_docs_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/ng-docs/src/lib/core/documentation.service */ "../ng-docs/src/lib/core/documentation.service.ts");
-/* harmony import */ var projects_ng_docs_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-docs/src/lib/documentation.token */ "../ng-docs/src/lib/documentation.token.ts");
+/* harmony import */ var projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/ng-documentation/src/lib/core/documentation.service */ "../ng-documentation/src/lib/core/documentation.service.ts");
+/* harmony import */ var projects_ng_documentation_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-documentation/src/lib/documentation.token */ "../ng-documentation/src/lib/documentation.token.ts");
 
 
 
@@ -2044,9 +2044,9 @@ var ComponentDocumentationExample1Component = /** @class */ (function () {
             selector: 'app-component-documentation-example1',
             template: __webpack_require__(/*! ./component-documentation-example1.component.html */ "./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html"),
             providers: [
-                projects_ng_docs_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
+                projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
                 {
-                    provide: projects_ng_docs_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__["DOCUMENTATION_PATH"],
+                    provide: projects_ng_documentation_src_lib_documentation_token__WEBPACK_IMPORTED_MODULE_3__["DOCUMENTATION_PATH"],
                     useValue: 'assets/internal-documentation/documentation.json'
                 }
             ],
@@ -2200,7 +2200,7 @@ var HomeModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-docs</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
+module.exports = "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
 
 /***/ }),
 
@@ -2475,7 +2475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var projects_ng_docs_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-docs/src/public-api */ "../ng-docs/src/public-api.ts");
+/* harmony import */ var projects_ng_documentation_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ng-documentation/src/public-api */ "../ng-documentation/src/public-api.ts");
 /* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/shared/profile/profile.component.ts");
 
 
@@ -2490,10 +2490,10 @@ var SharedModule = /** @class */ (function () {
             declarations: [_profile_profile_component__WEBPACK_IMPORTED_MODULE_4__["ProfileComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                projects_ng_docs_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"]
+                projects_ng_documentation_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"]
             ],
             exports: [
-                projects_ng_docs_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"],
+                projects_ng_documentation_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DocsModule"],
                 _profile_profile_component__WEBPACK_IMPORTED_MODULE_4__["ProfileComponent"]
             ]
         })

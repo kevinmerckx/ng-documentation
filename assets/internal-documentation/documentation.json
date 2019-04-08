@@ -252,7 +252,7 @@
         },
         {
             "name": "ComponentApiExample1Component",
-            "id": "component-ComponentApiExample1Component-2faaaeed1d66421ba2ddcdb5d81505a8",
+            "id": "component-ComponentApiExample1Component-19c947a8a259749fdb225a3a79f6a019",
             "file": "projects/docs/src/app/features/component-api/component-api-example1/component-api-example1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -284,7 +284,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-documentation/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-documentation/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-api-example1',\n  templateUrl: './component-api-example1.component.html',\n  styleUrls: ['./component-api-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentApiExample1Component {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -335,7 +335,7 @@
         },
         {
             "name": "ComponentDocumentationExample1Component",
-            "id": "component-ComponentDocumentationExample1Component-3af4cc959c35456e4725e995ab81462c",
+            "id": "component-ComponentDocumentationExample1Component-f9aa5c3cf5140759db555ddc311dde2d",
             "file": "projects/docs/src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -367,7 +367,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-docs/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-docs/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-documentation-example1',\n  templateUrl: './component-documentation-example1.component.html',\n  styleUrls: ['./component-documentation-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentDocumentationExample1Component {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { DocumentationService } from 'projects/ng-documentation/src/lib/core/documentation.service';\nimport { DOCUMENTATION_PATH } from 'projects/ng-documentation/src/lib/documentation.token';\n\n@Component({\n  selector: 'app-component-documentation-example1',\n  templateUrl: './component-documentation-example1.component.html',\n  styleUrls: ['./component-documentation-example1.component.sass'],\n  providers: [\n    DocumentationService,\n    {\n      provide: DOCUMENTATION_PATH,\n      useValue: 'assets/internal-documentation/documentation.json'\n    }\n  ]\n})\nexport class ComponentDocumentationExample1Component {}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -414,7 +414,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-docs</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
+            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
         },
         {
             "name": "ProfileComponent",
