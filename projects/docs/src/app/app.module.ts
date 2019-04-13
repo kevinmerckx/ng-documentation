@@ -30,6 +30,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     HomeModule,
     ComponentApiModule,
     ComponentDocumentationModule,
+    DocsModule,
     DocsModule.configure({
       welcomePage: HomeComponent,
       componentPages: {

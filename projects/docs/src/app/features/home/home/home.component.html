@@ -11,12 +11,52 @@
 
 <h2>Get Started</h2>
 
-<docs-code-line>npm install --save-dev ng-documentation</docs-code-line>
-generate json
-add styles
-<docs-code path="app.module.ts"></docs-code>
-configure your documentation app
+<ol>
+  <li>
+    Install
+    <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>
+  </li>
+
+  <li>Create a documentation application with the Angular CLI</li>
+
+  <li>
+    Setup helper tools
+    <p>
+      Add the following to the scripts section of your package.json.
+    </p>
+    
+    <docs-code-line>
+      "postinstall": "cp -R node_modules/ng-documentation/scripts .",
+      <br/>
+      "build:docs": "./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT",
+      <br/>
+      "watch:docs": "./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT"
+    </docs-code-line>
+  </li>
+
+  
+  <li>Add the styles to your Angular project styles property in the angular.json.
+    <docs-code-line>
+      styles: [ "node_modules/ng-documentation/ng-docs.css" ]
+    </docs-code-line>
+  </li>
+  
+  <li>When you want to live serve the documentation app, you must generate the documentation files:
+    <docs-code-line>npm run watch:docs</docs-code-line>
+  </li>
+  
+  <li>When you want to build the documentation app, you must generate the documentation files:
+    <docs-code-line>npm run build:docs</docs-code-line>
+  </li>
+  
+  <li>
+    Configure the documentation
+    <docs-tabs>
+      <docs-code *docsTab="'app.module.ts'" path="app.module.ts"></docs-code>
+      <docs-code *docsTab="'app.component.html'" path="app.component.html"></docs-code>
+    </docs-tabs>
+  </li>
+</ol>
 
 
-<docs-code path="app.component.html"></docs-code>
-add the template for the documentation in your root component
+

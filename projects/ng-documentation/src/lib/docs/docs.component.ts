@@ -1,7 +1,6 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { Component, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -11,14 +10,9 @@ import { map } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None
 })
 export class DocsComponent {
-  @Input() set brandLogo(v: string) {
-    this.secureBrandLogo = this.sanitizer.bypassSecurityTrustStyle(`url(${v})`);
-  }
-
-  secureBrandLogo: SafeStyle;
+  brandHeaderTemplate: TemplateRef<any>;
 
   constructor(
-    private sanitizer: DomSanitizer,
     private route: ActivatedRoute
   ) {
   }

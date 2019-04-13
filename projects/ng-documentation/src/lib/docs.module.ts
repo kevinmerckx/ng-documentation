@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     DocsComponent,
-    CoreModule
+    CoreModule,
+    RouterModule
   ]
 })
 export class DocsModule {
