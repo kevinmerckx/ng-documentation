@@ -53,12 +53,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".brand-area\n  padding: 0 15px 5px 15px\n  margin: 0 -15px\n  border-bottom: 1px solid black",
                     "styleUrl": "./app.component.sass"
                 }
             ],
             "stylesData": "",
-            "templateData": "<docs-app [brandLogo]=\"'assets/logo.svg'\">\n  <li><a href=\"https://github.com/interfacewerk/iwerk-angular-ui\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n  <li><a href=\"https://interfacewerk.de/jobs\"><fa-icon [icon]=\"faHandshake\"></fa-icon> We are hiring!</a></li>\n  <li><a href=\"https://interfacewerk.de\">interfacewerk.de</a></li>\n</docs-app>\n"
+            "templateData": "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/interfacewerk/iwerk-angular-ui\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n  <li><a href=\"https://interfacewerk.de/jobs\"><fa-icon [icon]=\"faHandshake\"></fa-icon> We are hiring!</a></li>\n  <li><a href=\"https://interfacewerk.de\">interfacewerk.de</a></li>\n</docs-app>\n"
         },
         {
             "name": "CodeComponent",
@@ -414,7 +414,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\ngenerate json\nadd styles\n<docs-code path=\"app.module.ts\"></docs-code>\nconfigure your documentation app\n\n\n<docs-code path=\"app.component.html\"></docs-code>\nadd the template for the documentation in your root component\n"
+            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<ol>\n  <li>\n    Install\n    <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\n  </li>\n\n  <li>Create a documentation application with the Angular CLI</li>\n\n  <li>\n    Setup helper tools\n    <p>\n      Add the following to the scripts section of your package.json.\n    </p>\n    \n    <docs-code-line>\n      \"postinstall\": \"cp -R node_modules/ng-documentation/scripts .\",\n      <br/>\n      \"build:docs\": \"./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT\",\n      <br/>\n      \"watch:docs\": \"./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT\"\n    </docs-code-line>\n  </li>\n\n  \n  <li>Add the styles to your Angular project styles property in the angular.json.\n    <docs-code-line>\n      styles: [ \"node_modules/ng-documentation/ng-docs.css\" ]\n    </docs-code-line>\n  </li>\n  \n  <li>When you want to live serve the documentation app, you must generate the documentation files:\n    <docs-code-line>npm run watch:docs</docs-code-line>\n  </li>\n  \n  <li>When you want to build the documentation app, you must generate the documentation files:\n    <docs-code-line>npm run build:docs</docs-code-line>\n  </li>\n  \n  <li>\n    Configure the documentation\n    <docs-tabs>\n      <docs-code *docsTab=\"'app.module.ts'\" path=\"app.module.ts\"></docs-code>\n      <docs-code *docsTab=\"'app.component.html'\" path=\"app.component.html\"></docs-code>\n    </docs-tabs>\n  </li>\n</ol>\n\n\n\n"
         },
         {
             "name": "ProfileComponent",
