@@ -1498,7 +1498,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/interfacewerk/iwerk-angular-ui\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n  <li><a href=\"https://interfacewerk.de/jobs\"><fa-icon [icon]=\"faHandshake\"></fa-icon> We are hiring!</a></li>\n  <li><a href=\"https://interfacewerk.de\">interfacewerk.de</a></li>\n</docs-app>\n"
+module.exports = "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/interfacewerk/ng-documentation\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n</docs-app>\n"
 
 /***/ }),
 
