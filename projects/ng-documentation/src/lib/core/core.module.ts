@@ -17,6 +17,7 @@ import { ComponentExampleComponent } from './component-example/component-example
 import { TabDirective, TabsComponent } from './tabs/tabs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CopyButtonComponent } from './copy-button/copy-button.component';
+import { BrandHeaderDirective } from './directives/brand-header.directive';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { CopyButtonComponent } from './copy-button/copy-button.component';
     TabDirective,
     CodeComponent,
     FontAwesomeModule,
-    CodeLineComponent
+    CodeLineComponent,
+    BrandHeaderDirective
   ],
   declarations: [
     ComponentDescriptionComponent,
@@ -54,7 +56,8 @@ import { CopyButtonComponent } from './copy-button/copy-button.component';
     TabDirective,
     CodeComponent,
     CodeLineComponent,
-    CopyButtonComponent
+    CopyButtonComponent,
+    BrandHeaderDirective
   ]
 })
 export class CoreModule { }
