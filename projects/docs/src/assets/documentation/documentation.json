@@ -657,6 +657,65 @@
             }
         },
         {
+            "name": "BrandHeaderDirective",
+            "id": "directive-BrandHeaderDirective-18937147368c44436dce4672874b23bc",
+            "file": "projects/ng-documentation/src/lib/core/directives/brand-header.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, OnInit, TemplateRef } from '@angular/core';\nimport { DocsComponent } from '../../docs/docs.component';\n\n@Directive({\n  selector: '[docsBrandHeader]'\n})\nexport class BrandHeaderDirective implements OnInit {\n\n  constructor(\n    private docs: DocsComponent,\n    private templateRef: TemplateRef<any>\n  ) { }\n\n  ngOnInit() {\n    this.docs.brandHeaderTemplate = this.templateRef;\n  }\n}\n",
+            "selector": "[docsBrandHeader]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "implements": [
+                "OnInit"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "docs",
+                        "type": "DocsComponent"
+                    },
+                    {
+                        "name": "templateRef",
+                        "type": "TemplateRef<any>"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "docs",
+                        "type": "DocsComponent",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "templateRef",
+                        "type": "TemplateRef<any>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
             "name": "ComponentExampleDirective",
             "id": "directive-ComponentExampleDirective-7d89b1daf5e4c2df9f2df5b4b08ab813",
             "file": "projects/ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts",
@@ -1412,7 +1471,7 @@
         },
         {
             "name": "DocsComponent",
-            "id": "component-DocsComponent-b14e168fef6da5ed851b15bae9cf8966",
+            "id": "component-DocsComponent-2dff64ec5ca2b659cc4d0627de3b77b6",
             "file": "projects/ng-documentation/src/lib/docs/docs.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1430,21 +1489,15 @@
                 "./docs.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "brandLogo",
-                    "line": 14,
-                    "type": "string"
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "secureBrandLogo",
-                    "type": "SafeStyle",
+                    "name": "brandHeaderTemplate",
+                    "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 13
                 }
             ],
             "methodsClass": [],
@@ -1453,11 +1506,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\nimport { DomSanitizer, SafeStyle } from '@angular/platform-browser';\nimport { Observable } from 'rxjs';\nimport { ActivatedRoute } from '@angular/router';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-app',\n  templateUrl: './docs.component.html',\n  styleUrls: ['./docs.component.sass'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class DocsComponent {\n  @Input() set brandLogo(v: string) {\n    this.secureBrandLogo = this.sanitizer.bypassSecurityTrustStyle(`url(${v})`);\n  }\n\n  secureBrandLogo: SafeStyle;\n\n  constructor(\n    private sanitizer: DomSanitizer,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  get search$(): Observable<string> {\n    return this.route.queryParams.pipe(map(p => p.search || ''));\n  }\n}\n",
+            "sourceCode": "import { Component, TemplateRef, ViewEncapsulation } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n@Component({\n  selector: 'docs-app',\n  templateUrl: './docs.component.html',\n  styleUrls: ['./docs.component.sass'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class DocsComponent {\n  brandHeaderTemplate: TemplateRef<any>;\n\n  constructor(\n    private route: ActivatedRoute\n  ) {\n  }\n\n  get search$(): Observable<string> {\n    return this.route.queryParams.pipe(map(p => p.search || ''));\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/_variables'\n\ndocs-app\n  display: block\n  position: relative\n  width: 100vw\n  height: 100vh\n\n  $width_aside: 200px\n\n  a.app__logo\n    width: calc(100% - 30px)\n    display: block\n    height: 50px\n    margin: 0 15px\n    position: relative\n    color: red\n    background-size: 100%\n    background-repeat: no-repeat\n\n  aside\n    position: absolute\n    top: 0\n    left: 0\n    height: 100%\n    width: $width_aside\n    overflow: auto\n    background: white\n    color: black\n    padding: 15px 0px\n    border-right: 1px solid grey\n    box-shadow: 2px 0px 2px 1px lightgray\n\n  main\n    position: absolute\n    top: 0\n    left: $width_aside\n    height: 100%\n    right: 0\n    overflow: auto\n\n  ul\n    padding: 0\n    margin: 0\n\n    li\n      list-style: none\n      width: 100%\n      padding: 0\n\n      a\n        display: inline-block\n        width: 100%\n        line-height: 20px\n        text-decoration: none\n        padding: 10px 15px\n        color: black\n        font-size: 1.6rem\n        transition: all 0.2s\n\n        &:hover\n          color: $color-three\n          background: whitesmoke\n\n        &.active-link\n          color: $color-four\n          background: whitesmoke\n  \n  .extra-links li:first-child\n    margin-top: 30px\n    border-top: 1px solid $color-light-grey",
+                    "data": "@import '../styles/_variables'\n\ndocs-app\n  display: block\n  position: relative\n  width: 100vw\n  height: 100vh\n\n  $width_aside: 200px\n\n  a.brand-header\n    width: calc(100% - 30px)\n    display: block\n    margin: 0 15px\n    &, &:hover, &:focus\n      text-decoration: none\n    \n  aside\n    position: absolute\n    top: 0\n    left: 0\n    height: 100%\n    width: $width_aside\n    overflow: auto\n    background: white\n    color: black\n    padding: 15px 0px\n    border-right: 1px solid grey\n    box-shadow: 2px 0px 2px 1px lightgray\n\n  main\n    position: absolute\n    top: 0\n    left: $width_aside\n    height: 100%\n    right: 0\n    overflow: auto\n\n  ul\n    padding: 0\n    margin: 0\n\n    li\n      list-style: none\n      width: 100%\n      padding: 0\n\n      a\n        display: inline-block\n        width: 100%\n        line-height: 20px\n        text-decoration: none\n        padding: 10px 15px\n        color: black\n        font-size: 1.6rem\n        transition: all 0.2s\n\n        &:hover\n          color: $color-three\n          background: whitesmoke\n\n        &.active-link\n          color: $color-four\n          background: whitesmoke\n  \n  .extra-links li:first-child\n    margin-top: 30px\n    border-top: 1px solid $color-light-grey",
                     "styleUrl": "./docs.component.sass"
                 }
             ],
@@ -1467,23 +1520,12 @@
                 "description": "",
                 "args": [
                     {
-                        "name": "sanitizer",
-                        "type": "DomSanitizer"
-                    },
-                    {
                         "name": "route",
                         "type": "ActivatedRoute"
                     }
                 ],
-                "line": 18,
+                "line": 13,
                 "jsdoctags": [
-                    {
-                        "name": "sanitizer",
-                        "type": "DomSanitizer",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
                     {
                         "name": "route",
                         "type": "ActivatedRoute",
@@ -1494,37 +1536,13 @@
                 ]
             },
             "accessors": {
-                "brandLogo": {
-                    "name": "brandLogo",
-                    "setSignature": {
-                        "name": "brandLogo",
-                        "type": "void",
-                        "args": [
-                            {
-                                "name": "v",
-                                "type": "string"
-                            }
-                        ],
-                        "returnType": "void",
-                        "line": 14,
-                        "jsdoctags": [
-                            {
-                                "name": "v",
-                                "type": "string",
-                                "tagName": {
-                                    "text": "param"
-                                }
-                            }
-                        ]
-                    }
-                },
                 "search$": {
                     "name": "search$",
                     "getSignature": {
                         "name": "search$",
                         "type": "",
                         "returnType": "Observable<string>",
-                        "line": 26
+                        "line": 20
                     }
                 }
             },
@@ -1570,7 +1588,7 @@
         },
         {
             "name": "MenuComponent",
-            "id": "component-MenuComponent-b29069802220572a2cf676ae75ec6bc8",
+            "id": "component-MenuComponent-5515d3e7f311f2913e21a585951d5c31",
             "file": "projects/ng-documentation/src/lib/menu/menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1626,11 +1644,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { combineLatest, Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DocsComponent } from '../docs/docs.component';\nimport { ComponentPages, COMPONENT_PAGES } from '../routes.token';\n\n@Component({\n  selector: 'docs-menu',\n  templateUrl: './menu.component.html',\n  styleUrls: ['./menu.component.sass']\n})\nexport class MenuComponent {\n\n  get secureBrandLogo() {\n    return this.docs.secureBrandLogo;\n  }\n\n  get search$() {\n    return this.docs.search$;\n  }\n\n  pages$: Observable<ComponentPages>;\n\n  constructor(\n    @Inject(COMPONENT_PAGES) private componentPages: ComponentPages,\n    private docs: DocsComponent,\n    private router: Router\n  ) {\n    this.pages$ = combineLatest(of(this.componentPages), this.search$)\n      .pipe(map(([pages, search]) => {\n        const normalized = (search || '').toLowerCase();\n        return pages.filter(p => p.title.toLowerCase().indexOf(normalized) > -1);\n      }));\n  }\n\n  setSearch(v: string) {\n    this.router.navigate([], {\n      queryParams: {\n        search: v\n      },\n      queryParamsHandling: 'merge'\n    });\n  }\n}\n",
+            "sourceCode": "import { Component, Inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { combineLatest, Observable, of } from 'rxjs';\nimport { map } from 'rxjs/operators';\nimport { DocsComponent } from '../docs/docs.component';\nimport { ComponentPages, COMPONENT_PAGES } from '../routes.token';\n\n@Component({\n  selector: 'docs-menu',\n  templateUrl: './menu.component.html',\n  styleUrls: ['./menu.component.sass']\n})\nexport class MenuComponent {\n\n  get brandHeaderTemplate() {\n    return this.docs.brandHeaderTemplate;\n  }\n\n  get search$() {\n    return this.docs.search$;\n  }\n\n  pages$: Observable<ComponentPages>;\n\n  constructor(\n    @Inject(COMPONENT_PAGES) private componentPages: ComponentPages,\n    private docs: DocsComponent,\n    private router: Router\n  ) {\n    this.pages$ = combineLatest(of(this.componentPages), this.search$)\n      .pipe(map(([pages, search]) => {\n        const normalized = (search || '').toLowerCase();\n        return pages.filter(p => p.title.toLowerCase().indexOf(normalized) > -1);\n      }));\n  }\n\n  setSearch(v: string) {\n    this.router.navigate([], {\n      queryParams: {\n        search: v\n      },\n      queryParamsHandling: 'merge'\n    });\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/variables'\n\n$search-color: $color-two\n\n.search\n  height: 40px\n  line-height: 14px\n  font-size: 14px\n  padding: 13.5px 15px\n  width: 100%\n  border-radius: 0\n  color: $search-color\n  outline: none\n  border: none\n  border-top: $color-light-grey 1px solid\n  border-bottom: $color-light-grey 1px solid\n\n  &.no-result\n    border-color: $color-five\n    color: $color-five\n\n.search-helper\n  width: 100%\n  padding: 0 15px\n  line-height: 20px\n  height: 20px\n  background-color: $search-color\n  color: white\n  font-size: 1rem\n  transition: opacity 0.2s\n  opacity: 1\n\n  &.no-result\n    background-color: $color-five\n\n  &.hidden\n    opacity: 0\n\n\\:host\n  display: flex\n  height: 100%\n  overflow: hidden\n  flex-direction: column\n\n.links\n  flex: 1 1\n  overflow: auto\n\n.extra-links, .header\n  flex: 0 0 auto",
+                    "data": "@import '../styles/variables'\n\n$search-color: $color-two\n\n.brand-area\n  padding: 13.5px 15px\n\n.search\n  height: 40px\n  line-height: 14px\n  font-size: 14px\n  padding: 13.5px 15px\n  width: 100%\n  border-radius: 0\n  color: $search-color\n  outline: none\n  border: none\n  border-top: $color-light-grey 1px solid\n  border-bottom: $color-light-grey 1px solid\n\n  &.no-result\n    border-color: $color-five\n    color: $color-five\n\n.search-helper\n  width: 100%\n  padding: 0 15px\n  line-height: 20px\n  height: 20px\n  background-color: $search-color\n  color: white\n  font-size: 1rem\n  transition: opacity 0.2s\n  opacity: 1\n\n  &.no-result\n    background-color: $color-five\n\n  &.hidden\n    opacity: 0\n\n\\:host\n  display: flex\n  height: 100%\n  overflow: hidden\n  flex-direction: column\n\n.links\n  flex: 1 1\n  overflow: auto\n\n.extra-links, .header\n  flex: 0 0 auto",
                     "styleUrl": "./menu.component.sass"
                 }
             ],
@@ -1678,10 +1696,10 @@
                 ]
             },
             "accessors": {
-                "secureBrandLogo": {
-                    "name": "secureBrandLogo",
+                "brandHeaderTemplate": {
+                    "name": "brandHeaderTemplate",
                     "getSignature": {
-                        "name": "secureBrandLogo",
+                        "name": "brandHeaderTemplate",
                         "type": "",
                         "returnType": "",
                         "line": 15
@@ -1697,7 +1715,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"header\">\n  <a class=\"app__logo\" [style.backgroundImage]=\"secureBrandLogo\" routerLink=\"/\"></a>\n  <ul class=\"links\">\n    <li><a routerLink=\"/\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact: true}\">Get started</a></li>\n  </ul>\n  <input type=\"text\"\n    class=\"search\"\n    [class.active]=\"search$ | async\"\n    [class.no-result]=\"(pages$ | async).length === 0\"\n    [ngModel]=\"search$ | async\"\n    (ngModelChange)=\"setSearch($event)\"\n    placeholder=\"Search for a component\"\n    autofocus\n    autocomplete=\"off\"\n  />\n  <div class=\"search-helper\"\n    [class.hidden]=\"!(search$ | async)\"\n    [class.no-result]=\"(pages$ | async).length === 0\">\n    <ng-container *ngIf=\"search$ | async\">\n      {{(pages$ | async).length}} <ng-container *ngIf=\"(pages$ | async).length > 1\">results</ng-container><ng-container *ngIf=\"(pages$ | async).length === 1\">result</ng-container> found\n    </ng-container>\n  </div>\n</div>\n<ul class=\"links\">\n  <ng-container *ngIf=\"pages$ | async as pages; else noResults\">\n    <li *ngFor=\"let page of pages\">\n      <a\n        [routerLink]=\"page.path\"\n        routerLinkActive=\"active-link\"\n      >{{page.title}}</a>\n    </li>\n  </ng-container>\n</ul>\n<ul class=\"extra-links\">\n  <ng-content></ng-content>\n</ul>\n\n<ng-template #noResults>\n  No result for this search!\n</ng-template>"
+            "templateData": "<div class=\"header\">\n  <div class=\"brand-area\">\n    <ng-container [ngTemplateOutlet]=\"brandHeaderTemplate\"></ng-container>\n  </div>\n    \n  <ul class=\"links\">\n    <li><a routerLink=\"/\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact: true}\">Get started</a></li>\n  </ul>\n  <input type=\"text\"\n    class=\"search\"\n    [class.active]=\"search$ | async\"\n    [class.no-result]=\"(pages$ | async).length === 0\"\n    [ngModel]=\"search$ | async\"\n    (ngModelChange)=\"setSearch($event)\"\n    placeholder=\"Search for a component\"\n    autofocus\n    autocomplete=\"off\"\n  />\n  <div class=\"search-helper\"\n    [class.hidden]=\"!(search$ | async)\"\n    [class.no-result]=\"(pages$ | async).length === 0\">\n    <ng-container *ngIf=\"search$ | async\">\n      {{(pages$ | async).length}} <ng-container *ngIf=\"(pages$ | async).length > 1\">results</ng-container><ng-container *ngIf=\"(pages$ | async).length === 1\">result</ng-container> found\n    </ng-container>\n  </div>\n</div>\n<ul class=\"links\">\n  <ng-container *ngIf=\"pages$ | async as pages; else noResults\">\n    <li *ngFor=\"let page of pages\">\n      <a\n        [routerLink]=\"page.path\"\n        routerLinkActive=\"active-link\"\n      >{{page.title}}</a>\n    </li>\n  </ng-container>\n</ul>\n<ul class=\"extra-links\">\n  <ng-content></ng-content>\n</ul>\n\n<ng-template #noResults>\n  No result for this search!\n</ng-template>"
         },
         {
             "name": "TabsComponent",
@@ -1815,6 +1833,9 @@
                             "name": "AnchorDirective"
                         },
                         {
+                            "name": "BrandHeaderDirective"
+                        },
+                        {
                             "name": "CodeComponent"
                         },
                         {
@@ -1862,6 +1883,9 @@
                         },
                         {
                             "name": "AnchorDirective"
+                        },
+                        {
+                            "name": "BrandHeaderDirective"
                         },
                         {
                             "name": "CodeComponent"
@@ -2228,6 +2252,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ng-documentation/src/lib/core/directives/brand-header.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "BrandHeaderDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ng-documentation/src/lib/core/documentation.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -2314,7 +2347,7 @@
                 "linktype": "component",
                 "name": "DocsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

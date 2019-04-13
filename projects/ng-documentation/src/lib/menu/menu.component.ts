@@ -12,8 +12,8 @@ import { ComponentPages, COMPONENT_PAGES } from '../routes.token';
 })
 export class MenuComponent {
 
-  get secureBrandLogo() {
-    return this.docs.secureBrandLogo;
+  get brandHeaderTemplate() {
+    return this.docs.brandHeaderTemplate;
   }
 
   get search$() {
