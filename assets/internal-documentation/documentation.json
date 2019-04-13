@@ -58,7 +58,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/interfacewerk/ng-documentation\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n</docs-app>\n"
+            "templateData": "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/kevinmerckx/ng-documentation\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n</docs-app>\n"
         },
         {
             "name": "CodeComponent",
