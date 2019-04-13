@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.0...v1.0.1) (2019-04-13)
+
+
+### Bug Fixes
+
+* **docs:** uptate README ([af389ce](https://github.com/kevinmerckx/ng-documentation/commit/af389ce))
+
 # [1.0.0](https://github.com/kevinmerckx/ng-documentation/compare/v0.2.0...v1.0.0) (2019-04-13)
 
 
