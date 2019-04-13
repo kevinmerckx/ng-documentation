@@ -871,7 +871,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  position: relative\n  display: block\n  overflow: auto\n\npre\n  margin: 0\n  padding: 0\n  height: 100%\n  overflow: auto\n  \n  code\n    margin: 0\n\n.source-actions\n  position: absolute\n  right: 0\n  top: 0\n  display: flex\n  flex-direction: column\n  align-items: flex-end\n  padding: 5px 15px\n\n.copy\n  outline: none\n  background: none\n  box-shadow: none\n  color: grey\n  padding: 0\n\n  &:hover\n    color: black\n",
+                    "data": "\\:host\n  position: relative\n  display: block\n  overflow: auto\n\npre\n  margin: 0\n  padding: 0\n  height: 100%\n  overflow: auto\n  \n  code\n    margin: 0\n\n.source-actions\n  position: absolute\n  right: 0\n  top: 0\n  display: flex\n  flex-direction: column\n  align-items: flex-end\n  padding: 5px 15px\n",
                     "styleUrl": "./code.component.sass"
                 }
             ],
@@ -879,7 +879,7 @@
             "implements": [
                 "OnDestroy"
             ],
-            "templateData": "<pre><code #code>{{ path | codeSample }}</code></pre>\n<div class=\"source-actions\">\n  <button class=\"copy\" (click)=\"copy()\">\n    <fa-icon [icon]=\"faCopy\"></fa-icon>\n    <ng-template iwTooltip [horizontal]=\"true\">Copy this code sample</ng-template>\n  </button>\n  <div *ngIf=\"copied\" class=\"copied\">Copied!</div>\n</div>\n"
+            "templateData": "<pre><code #code>{{ path | codeSample }}</code></pre>\n<div class=\"source-actions\">\n  <docs-copy-button [element]=\"code\"></docs-copy-button>\n</div>\n"
         },
         {
             "name": "CodeLineComponent",
@@ -949,7 +949,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  display: block\n  margin: 5px 0\n\n.code-container\n  display: flex\n  flex-direction: row\n  background: whitesmoke\n  align-items: center\n\npre\n  flex: 1 1\n  background: transparent\n  margin: 0\n\ncode\n  margin: 0\n\n.hidden\n  visibility: hidden\n\n.copy\n  background: none\n  color: #7a7272\n  border: none\n  border-radius: 0\n  box-shadow: none\n  padding: 0\n  margin: 0 0 0 15px\n\n.copied\n  font-size: 11px\n  color: #7a7272\n",
+                    "data": "\\:host\n  display: block\n  margin: 5px 0\n  position: relative\n\ndocs-copy-button\n  position: absolute\n  right: 15px\n  top: 50%\n  transform: translateY(-50%)\n\n.code-container\n  display: flex\n  flex-direction: row\n  background: whitesmoke\n  align-items: center\n\npre\n  flex: 1 1\n  background: transparent\n  margin: 0\n\ncode\n  margin: 0\n\n",
                     "styleUrl": "./code-line.component.sass"
                 }
             ],
@@ -957,7 +957,7 @@
             "implements": [
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"code-container\">\n  <button class=\"copy\" (click)=\"copy()\">\n    <fa-icon [icon]=\"faCopy\"></fa-icon>\n    <ng-template [ngIf]=\"!copied\">\n      <ng-template iwTooltip>Copy this code sample</ng-template>\n    </ng-template>\n  </button>\n  <pre><code #code><ng-content></ng-content></code></pre>\n</div>\n\n<div [class.hidden]=\"!copied\" class=\"copied\">Copied!</div>\n"
+            "templateData": "<div class=\"code-container\">\n  <pre><code #code><ng-content></ng-content></code></pre>\n</div>\n\n<docs-copy-button [element]=\"code\"></docs-copy-button>\n"
         },
         {
             "name": "ComponentApiComponent",
@@ -1310,6 +1310,69 @@
             "templateData": "<h3>{{example.docsComponentExample}}</h3>\n\n<ng-container [ngTemplateOutlet]=\"example.template\"></ng-container>\n"
         },
         {
+            "name": "CopyButtonComponent",
+            "id": "component-CopyButtonComponent-fbcc2f6854437c791a208f060e94a484",
+            "file": "projects/ng-documentation/src/lib/core/copy-button/copy-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "docs-copy-button",
+            "styleUrls": [
+                "./copy-button.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./copy-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "element",
+                    "line": 9,
+                    "type": "HTMLElement"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "copied",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "copiedTimeout",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'docs-copy-button',\n  templateUrl: './copy-button.component.html',\n  styleUrls: ['./copy-button.component.sass']\n})\nexport class CopyButtonComponent {\n  @Input() element: HTMLElement;\n\n  copied = false;\n\n  private copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.element.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\\:host\n  display: block\n\nbutton\n  border: none\n  box-shadow: none\n  background: transparent\n  height: auto\n  line-height: normal\n  color: grey\n  outline: none\n  padding: 0\n\n  &:hover\n    color: black",
+                    "styleUrl": "./copy-button.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"copy\" (click)=\"copy()\">\n  <ng-container *ngIf=\"!copied\">copy</ng-container>\n  <ng-container *ngIf=\"copied\">copied!</ng-container>\n  <ng-template [ngIf]=\"!copied\">\n    <ng-template iwTooltip [horizontal]=\"true\">Copy this code sample</ng-template>\n  </ng-template>\n</button>\n\n"
+        },
+        {
             "name": "DefaultWelcomeComponent",
             "id": "component-DefaultWelcomeComponent-fb6df549c192c9062b3d33d0c142c6c5",
             "file": "projects/ng-documentation/src/lib/default-welcome/default-welcome.component.ts",
@@ -1394,7 +1457,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/_variables'\n\ndocs-app\n  display: block\n  position: relative\n  width: 100vw\n  height: 100vh\n\n  $width_aside: 200px\n\n  a.app__logo\n    width: calc(100% - 30px)\n    display: block\n    height: 50px\n    margin: 0 15px\n    position: relative\n    color: red\n    background-size: 100%\n    background-repeat: no-repeat\n\n  aside\n    position: absolute\n    top: 0\n    left: 0\n    height: 100%\n    width: $width_aside\n    overflow: auto\n    background: white\n    color: black\n    padding: 15px 0px\n    border-right: 1px solid grey\n    box-shadow: 2px 0px 2px 1px lightgray\n\n  main\n    position: absolute\n    top: 0\n    left: $width_aside\n    height: 100%\n    right: 0\n    overflow: auto\n\n  ul\n    padding: 0\n    margin: 0\n\n    li\n      list-style: none\n      width: 100%\n      padding: 0\n\n      a\n        display: inline-block\n        width: 100%\n        height: 40px\n        line-height: 40px\n        text-decoration: none\n        padding: 0px 15px\n        color: black\n        font-size: 1.6rem\n        transition: color 0.2s\n\n        &:hover\n          color: $color-three\n\n        &.active-link\n          color: $color-four\n  \n  .extra-links li:first-child\n    margin-top: 30px\n    border-top: 1px solid $color-light-grey",
+                    "data": "@import '../styles/_variables'\n\ndocs-app\n  display: block\n  position: relative\n  width: 100vw\n  height: 100vh\n\n  $width_aside: 200px\n\n  a.app__logo\n    width: calc(100% - 30px)\n    display: block\n    height: 50px\n    margin: 0 15px\n    position: relative\n    color: red\n    background-size: 100%\n    background-repeat: no-repeat\n\n  aside\n    position: absolute\n    top: 0\n    left: 0\n    height: 100%\n    width: $width_aside\n    overflow: auto\n    background: white\n    color: black\n    padding: 15px 0px\n    border-right: 1px solid grey\n    box-shadow: 2px 0px 2px 1px lightgray\n\n  main\n    position: absolute\n    top: 0\n    left: $width_aside\n    height: 100%\n    right: 0\n    overflow: auto\n\n  ul\n    padding: 0\n    margin: 0\n\n    li\n      list-style: none\n      width: 100%\n      padding: 0\n\n      a\n        display: inline-block\n        width: 100%\n        line-height: 20px\n        text-decoration: none\n        padding: 10px 15px\n        color: black\n        font-size: 1.6rem\n        transition: all 0.2s\n\n        &:hover\n          color: $color-three\n          background: whitesmoke\n\n        &.active-link\n          color: $color-four\n          background: whitesmoke\n  \n  .extra-links li:first-child\n    margin-top: 30px\n    border-top: 1px solid $color-light-grey",
                     "styleUrl": "./docs.component.sass"
                 }
             ],
@@ -1771,6 +1834,9 @@
                         },
                         {
                             "name": "ComponentExampleDirective"
+                        },
+                        {
+                            "name": "CopyButtonComponent"
                         },
                         {
                             "name": "TabDirective"
@@ -2150,6 +2216,15 @@
                 "name": "ComponentExampleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-documentation/src/lib/core/copy-button/copy-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
