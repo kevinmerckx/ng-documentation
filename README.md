@@ -26,7 +26,10 @@
   ```
 * add the template for the documentation in your root component
 ```
-<docs-app [brandLogo]="…'">
+<docs-app>
+  <ng-template docsBrandHeader>
+    … your logo here, some text, whatever
+  </ng-template>
   <li><a>…</a></li>
   <li><a>…</a></li>
   <li><a>…</a></li>
