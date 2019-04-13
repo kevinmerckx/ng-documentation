@@ -1,3 +1,34 @@
+## [1.0.2](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.1...v1.0.2) (2019-04-13)
+
+
+### Bug Fixes
+
+* **docs:** update links ([e2f1848](https://github.com/kevinmerckx/ng-documentation/commit/e2f1848))
+
+## [1.0.1](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.0...v1.0.1) (2019-04-13)
+
+
+### Bug Fixes
+
+* **docs:** uptate README ([af389ce](https://github.com/kevinmerckx/ng-documentation/commit/af389ce))
+
+# [1.0.0](https://github.com/kevinmerckx/ng-documentation/compare/v0.2.0...v1.0.0) (2019-04-13)
+
+
+### Bug Fixes
+
+* **documentation:** improve documentation ([c824a43](https://github.com/kevinmerckx/ng-documentation/commit/c824a43))
+
+
+### Features
+
+* **brand:** fully customizable brand area ([381e71d](https://github.com/kevinmerckx/ng-documentation/commit/381e71d))
+
+
+### BREAKING CHANGES
+
+* **brand:** the brandLogo input can not be used anymore, replace it by using the docsBrandHeader directive
+
 # [0.2.0](https://github.com/kevinmerckx/ng-documentation/compare/v0.1.1...v0.2.0) (2019-04-09)
 
 
