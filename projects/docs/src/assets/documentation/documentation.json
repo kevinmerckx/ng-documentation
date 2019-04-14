@@ -1008,7 +1008,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  display: block\n  margin: 5px 0\n  position: relative\n\ndocs-copy-button\n  position: absolute\n  right: 15px\n  top: 50%\n  transform: translateY(-50%)\n\n.code-container\n  display: flex\n  flex-direction: row\n  background: whitesmoke\n  align-items: center\n\npre\n  flex: 1 1\n  background: transparent\n  margin: 0\n\ncode\n  margin: 0\n\n",
+                    "data": "\\:host\n  display: flex\n  flex-direction: row\n  margin: 5px 0\n  position: relative\n  overflow: hidden\n  background: whitesmoke\n  align-items: center\n\ndocs-copy-button\n  flex: 0 0 auto\n  margin: 0 15px 0 15px\n\n.code-container\n  flex: 1 1\n  display: flex\n  flex-direction: row\n  align-items: center\n  overflow: auto\n\npre\n  flex: 1 1\n  background: transparent\n  margin: 0\n\ncode\n  margin: 0\n\n",
                     "styleUrl": "./code-line.component.sass"
                 }
             ],
