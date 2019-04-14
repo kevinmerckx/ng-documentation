@@ -64,7 +64,7 @@
             "styles": [
               "projects/playground/src/styles.sass",
               "projects/ng-documentation/src/lib/styles.sass",
-              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
+              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -198,7 +198,7 @@
             "styles": [
               "projects/docs/src/styles.sass",
               "projects/ng-documentation/src/lib/styles.sass",
-              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.css"
+              "projects/ng-documentation/src/lib/styles/font-awesome-4.7.0/css/font-awesome.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
