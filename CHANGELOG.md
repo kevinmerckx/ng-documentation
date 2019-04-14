@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.2...v1.0.3) (2019-04-14)
+
+
+### Bug Fixes
+
+* **core/code-line:** fix overflow issue ([bdec713](https://github.com/kevinmerckx/ng-documentation/commit/bdec713))
+
 ## [1.0.2](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.1...v1.0.2) (2019-04-13)
 
 
