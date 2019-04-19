@@ -3,7 +3,14 @@
   [componentId]="'CodeComponent'"
   [componentType]="'components'"
 >
-  <ng-template docsComponentExample="Display Code">
+  <ng-template docsComponentExample="Display Code from a file">
     <app-code-example1></app-code-example1>
+  </ng-template>
+
+  <ng-template docsComponentExample="Display Code from the template">
+    <app-code-example2></app-code-example2>
+    <docs-tabs>
+      <docs-code *docsTab="'HTML'" path="code-example2.component.html"></docs-code>
+    </docs-tabs>
   </ng-template>
 </docs-component-documentation>
