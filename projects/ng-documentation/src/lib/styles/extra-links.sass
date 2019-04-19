@@ -1,0 +1,31 @@
+
+ul.ng-documentation__menu-links
+  padding: 0
+  margin: 0
+
+  li
+    list-style: none
+    width: 100%
+    padding: 0
+
+    a
+      display: inline-block
+      width: 100%
+      line-height: 20px
+      text-decoration: none
+      padding: 10px 15px
+      color: black
+      font-size: 1.6rem
+      transition: all 0.2s
+
+      &:hover
+        color: $color-three
+        background: whitesmoke
+
+      &.active-link
+        color: $color-four
+        background: whitesmoke
+
+  &.ng-documentation__menu-extra-links li:first-child
+    margin-top: 30px
+    border-top: 1px solid $color-light-grey
