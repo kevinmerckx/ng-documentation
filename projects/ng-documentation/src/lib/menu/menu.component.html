@@ -3,7 +3,7 @@
     <ng-container [ngTemplateOutlet]="brandHeaderTemplate"></ng-container>
   </div>
     
-  <ul class="links">
+  <ul class="ng-documentation__menu-links links">
     <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Get started</a></li>
   </ul>
   <input type="text"
@@ -24,7 +24,7 @@
     </ng-container>
   </div>
 </div>
-<ul class="links">
+<ul class="ng-documentation__menu-links links">
   <ng-container *ngIf="pages$ | async as pages; else noResults">
     <li *ngFor="let page of pages">
       <a
@@ -34,7 +34,7 @@
     </li>
   </ng-container>
 </ul>
-<ul class="extra-links">
+<ul class="ng-documentation__menu-links ng-documentation__menu-extra-links">
   <ng-content></ng-content>
 </ul>
 
