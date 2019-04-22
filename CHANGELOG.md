@@ -1,3 +1,17 @@
+## [1.0.5](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.4...v1.0.5) (2019-04-19)
+
+
+### Bug Fixes
+
+* **style:** remove useless button styles ([8ea22cc](https://github.com/kevinmerckx/ng-documentation/commit/8ea22cc))
+
+## [1.0.4](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.3...v1.0.4) (2019-04-19)
+
+
+### Bug Fixes
+
+* **styles:** fix styles that leak outside ([f78df73](https://github.com/kevinmerckx/ng-documentation/commit/f78df73))
+
 ## [1.0.3](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.2...v1.0.3) (2019-04-14)
 
 
