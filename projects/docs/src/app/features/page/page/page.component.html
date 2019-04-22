@@ -1,0 +1,12 @@
+<docs-component-documentation
+  [componentTitle]="'Documentation Page'"
+  [componentId]="'PageComponent'"
+  [componentType]="'components'"
+>
+  <ng-template docsComponentExample="Render a standard page">
+    <docs-tabs>
+      <app-page-example1 *docsTab="'Example'"></app-page-example1>
+      <docs-code *docsTab="'HTML'" path="page-example1.component.html"></docs-code>
+    </docs-tabs>
+  </ng-template>
+</docs-component-documentation>
