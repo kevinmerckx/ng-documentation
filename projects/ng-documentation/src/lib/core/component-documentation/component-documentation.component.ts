@@ -1,7 +1,4 @@
-import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef, OnChanges } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { AfterViewChecked, Component, Directive, ElementRef, Input, TemplateRef } from '@angular/core';
 
 /**
  * Component that displays a component's or a directive's information: an overview, examples and API.
@@ -11,7 +8,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './component-documentation.component.html',
   styleUrls: ['./component-documentation.component.sass']
 })
-export class ComponentDocumentationComponent implements OnChanges {
+export class ComponentDocumentationComponent {
   /**
    * The component class name.
    */
@@ -31,25 +28,6 @@ export class ComponentDocumentationComponent implements OnChanges {
 
   examples: ComponentExampleDirective[] = [];
 
-  tab$: Observable<'overview' | 'examples' | 'api'>;
-  isOverview$: Observable<boolean>;
-  isExamples$: Observable<boolean>;
-  isApi$: Observable<boolean>;
-
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
-  }
-
-  /**
-   * @ignore
-   */
-  ngOnChanges() {
-    this.tab$ = this.disableRoutedNavigation ? of('overview') : this.route.queryParams.pipe(map(p => p.tab || 'overview'));
-    this.updateIsObservables();
-  }
-
   /**
    * @ignore
    */
@@ -57,32 +35,6 @@ export class ComponentDocumentationComponent implements OnChanges {
     this.examples.push(example);
   }
 
-  /**
-   * @ignore
-   */
-  select(tab: 'overview' | 'examples' | 'api') {
-    if (this.disableRoutedNavigation) {
-      this.tab$ = of(tab);
-      this.updateIsObservables();
-    } else {
-      this.router.navigate(['.'], {
-        queryParamsHandling: 'merge',
-        queryParams: {
-          tab
-        },
-        relativeTo: this.route,
-      });
-    }
-  }
-
-  /**
-   * @ignore
-   */
-  private updateIsObservables() {
-    this.isOverview$ = this.tab$.pipe(map(v => v === 'overview'));
-    this.isExamples$ = this.tab$.pipe(map(v => v === 'examples'));
-    this.isApi$ = this.tab$.pipe(map(v => v === 'api'));
-  }
 }
 
 @Directive({
@@ -106,9 +58,12 @@ export class AnchorContainerDirective implements AfterViewChecked {
 
     this.currentAnchor = this.docsAnchorContainer;
     const element = this.elementRef.nativeElement as HTMLElement;
-    const anchor = (this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer).elementRef.nativeElement) as HTMLElement;
-
-    element.scrollTop = anchor.offsetTop - element.offsetTop - 15;
+    const anchor = this.anchors.find(a => a.docsAnchor === this.docsAnchorContainer);
+    if (!anchor) {
+      return;
+    }
+    const anchorElement = anchor.elementRef.nativeElement as HTMLElement;
+    element.scrollTop = anchorElement.offsetTop - element.offsetTop - 15;
   }
 }
 
