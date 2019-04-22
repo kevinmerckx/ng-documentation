@@ -96,7 +96,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Code'\"\n  [componentId]=\"'CodeComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Code\">\n    <app-code-example1></app-code-example1>\n  </ng-template>\n</docs-component-documentation>\n"
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Code'\"\n  [componentId]=\"'CodeComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Code from a file\">\n    <app-code-example1></app-code-example1>\n  </ng-template>\n\n  <ng-template docsComponentExample=\"Display Code from the template\">\n    <app-code-example2></app-code-example2>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
         },
         {
             "name": "CodeExample1Component",
@@ -135,6 +135,44 @@
             ],
             "stylesData": "",
             "templateData": "<docs-code path=\"code-example1.component.html\"></docs-code>"
+        },
+        {
+            "name": "CodeExample2Component",
+            "id": "component-CodeExample2Component-fde61a865b0534aa5bf5beb632efd26c",
+            "file": "projects/docs/src/app/features/code/code-example2/code-example2.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-code-example2",
+            "styleUrls": [
+                "./code-example2.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-example2.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-code-example2',\n  templateUrl: './code-example2.component.html',\n  styleUrls: ['./code-example2.component.sass']\n})\nexport class CodeExample2Component {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./code-example2.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-code>Some code here</docs-code>"
         },
         {
             "name": "CodeLineComponent",
@@ -409,12 +447,126 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  padding: 0 15px\n  display: block",
+                    "data": "",
                     "styleUrl": "./home.component.sass"
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1>Angular Library Documentation</h1>\n\n<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>\n\n<ul>\n  <li>Get the API documentation directly from the code.</li>\n  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n</ul>\n\n<p>This web page has been built with this library!</p>\n\n<h2>Get Started</h2>\n\n<ol>\n  <li>\n    Install\n    <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\n  </li>\n\n  <li>Create a documentation application with the Angular CLI</li>\n\n  <li>\n    Setup helper tools\n    <p>\n      Add the following to the scripts section of your package.json.\n    </p>\n    \n    <docs-code-line>\n      \"postinstall\": \"cp -R node_modules/ng-documentation/scripts .\",\n      <br/>\n      \"build:docs\": \"./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT\",\n      <br/>\n      \"watch:docs\": \"./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT\"\n    </docs-code-line>\n  </li>\n\n  \n  <li>Add the styles to your Angular project styles property in the angular.json.\n    <docs-code-line>\n      styles: [ \"node_modules/ng-documentation/ng-documentation.css\" ]\n    </docs-code-line>\n  </li>\n  \n  <li>When you want to live serve the documentation app, you must generate the documentation files:\n    <docs-code-line>npm run watch:docs</docs-code-line>\n  </li>\n  \n  <li>When you want to build the documentation app, you must generate the documentation files:\n    <docs-code-line>npm run build:docs</docs-code-line>\n  </li>\n  \n  <li>\n    Configure the documentation\n    <docs-tabs>\n      <docs-code *docsTab=\"'app.module.ts'\" path=\"app.module.ts\"></docs-code>\n      <docs-code *docsTab=\"'app.component.html'\" path=\"app.component.html\"></docs-code>\n    </docs-tabs>\n  </li>\n</ol>\n\n\n\n"
+            "templateData": "<docs-page [noNavigation]=\"true\">\n  <ng-template docsPageSection>\n    <p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.\n    </p>\n\n    <ul>\n      <li>Get the API documentation directly from the code.</li>\n      <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n    </ul>\n\n    <p>This web page has been built with this library!</p>\n  </ng-template>\n\n  <ng-template docsPageSection=\"Get Started\">\n    <ol>\n      <li>\n        Install\n        <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\n      </li>\n\n      <li>Create a documentation application with the Angular CLI</li>\n\n      <li>\n        Setup helper tools\n        <p>\n          Add the following to the scripts section of your package.json.\n        </p>\n\n        <docs-code-line>\n          \"postinstall\": \"cp -R node_modules/ng-documentation/scripts .\",\n          <br />\n          \"build:docs\": \"./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT\",\n          <br />\n          \"watch:docs\": \"./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT\"\n        </docs-code-line>\n      </li>\n\n\n      <li>Add the styles to your Angular project styles property in the angular.json.\n        <docs-code-line>\n          styles: [ \"node_modules/ng-documentation/ng-documentation.css\" ]\n        </docs-code-line>\n      </li>\n\n      <li>When you want to live serve the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run watch:docs</docs-code-line>\n      </li>\n\n      <li>When you want to build the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run build:docs</docs-code-line>\n      </li>\n\n      <li>\n        Configure the documentation\n        <docs-tabs>\n          <docs-code *docsTab=\"'app.module.ts'\" path=\"app.module.ts\"></docs-code>\n          <docs-code *docsTab=\"'app.component.html'\" path=\"app.component.html\"></docs-code>\n        </docs-tabs>\n      </li>\n    </ol>\n  </ng-template>\n</docs-page>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-fd07bb4ba0b22629718da72960790636",
+            "file": "projects/docs/src/app/features/page/page/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-page",
+            "styleUrls": [
+                "./page.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.sass']\n})\nexport class PageComponent {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./page.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-component-documentation\n  [componentTitle]=\"'Documentation Page'\"\n  [componentId]=\"'PageComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Render a standard page\">\n    <docs-tabs>\n      <app-page-example1 *docsTab=\"'Example'\"></app-page-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n  <ng-template docsComponentExample=\"No navigation bar\">\n    <docs-tabs>\n      <app-page-example2 *docsTab=\"'Example'\"></app-page-example2>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+        },
+        {
+            "name": "PageExample1Component",
+            "id": "component-PageExample1Component-a2850a02bf00a559f73b061db7f4e070",
+            "file": "projects/docs/src/app/features/page/page-example1/page-example1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-page-example1",
+            "styleUrls": [
+                "./page-example1.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page-example1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-example1',\n  templateUrl: './page-example1.component.html',\n  styleUrls: ['./page-example1.component.sass']\n})\nexport class PageExample1Component {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./page-example1.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
+        },
+        {
+            "name": "PageExample2Component",
+            "id": "component-PageExample2Component-e057f387605ddd072ff06241ef19c11a",
+            "file": "projects/docs/src/app/features/page/page-example2/page-example2.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-page-example2",
+            "styleUrls": [
+                "./page-example2.component.sass"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page-example2.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-example2',\n  templateUrl: './page-example2.component.html',\n  styleUrls: ['./page-example2.component.sass']\n})\nexport class PageExample2Component {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./page-example2.component.sass"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\" [noNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
         },
         {
             "name": "ProfileComponent",
@@ -584,6 +736,9 @@
                             "name": "HomeModule"
                         },
                         {
+                            "name": "PageModule"
+                        },
+                        {
                             "name": "TabsModule"
                         }
                     ]
@@ -661,6 +816,9 @@
                         },
                         {
                             "name": "CodeExample1Component"
+                        },
+                        {
+                            "name": "CodeExample2Component"
                         }
                     ]
                 },
@@ -778,6 +936,49 @@
                     "elements": [
                         {
                             "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PageModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "PageComponent"
+                        },
+                        {
+                            "name": "PageExample1Component"
+                        },
+                        {
+                            "name": "PageExample2Component"
                         }
                     ]
                 },
@@ -963,7 +1164,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -998,6 +1199,15 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CodeExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/code/code-example2/code-example2.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeExample2Component",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1052,6 +1262,33 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/page/page-example1/page-example1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageExample1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/page/page-example2/page-example2.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageExample2Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/docs/src/app/features/page/page/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
