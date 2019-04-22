@@ -9,7 +9,7 @@ interface Section {
 }
 
 /**
- * This component displays a standard page layout.
+ * This component displays a standard page layout: a top bar with a title and links to sections.
  */
 @Component({
   selector: 'docs-page',
