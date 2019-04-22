@@ -23,6 +23,11 @@ export class PageComponent implements OnChanges {
   @Input() title: string;
 
   /**
+   * Remove the navigation bar.
+   */
+  @Input() noNavigation = false;
+
+  /**
    * @ignore
    */
   @Input() disableRoutedNavigation = false;
