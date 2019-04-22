@@ -1,62 +1,64 @@
-<h1>Angular Library Documentation</h1>
-
-<p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.</p>
-
-<ul>
-  <li>Get the API documentation directly from the code.</li>
-  <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>
-</ul>
-
-<p>This web page has been built with this library!</p>
-
-<h2>Get Started</h2>
-
-<ol>
-  <li>
-    Install
-    <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>
-  </li>
-
-  <li>Create a documentation application with the Angular CLI</li>
-
-  <li>
-    Setup helper tools
-    <p>
-      Add the following to the scripts section of your package.json.
+<docs-page [noNavigation]="true">
+  <ng-template docsPageSection>
+    <p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.
     </p>
-    
-    <docs-code-line>
-      "postinstall": "cp -R node_modules/ng-documentation/scripts .",
-      <br/>
-      "build:docs": "./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT",
-      <br/>
-      "watch:docs": "./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE NAME_OF_ANGULAR_PROJECT"
-    </docs-code-line>
-  </li>
 
-  
-  <li>Add the styles to your Angular project styles property in the angular.json.
-    <docs-code-line>
-      styles: [ "node_modules/ng-documentation/ng-documentation.css" ]
-    </docs-code-line>
-  </li>
-  
-  <li>When you want to live serve the documentation app, you must generate the documentation files:
-    <docs-code-line>npm run watch:docs</docs-code-line>
-  </li>
-  
-  <li>When you want to build the documentation app, you must generate the documentation files:
-    <docs-code-line>npm run build:docs</docs-code-line>
-  </li>
-  
-  <li>
-    Configure the documentation
-    <docs-tabs>
-      <docs-code *docsTab="'app.module.ts'" path="app.module.ts"></docs-code>
-      <docs-code *docsTab="'app.component.html'" path="app.component.html"></docs-code>
-    </docs-tabs>
-  </li>
-</ol>
+    <ul>
+      <li>Get the API documentation directly from the code.</li>
+      <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>
+    </ul>
+
+    <p>This web page has been built with this library!</p>
+  </ng-template>
+
+  <ng-template docsPageSection="Get Started">
+    <ol>
+      <li>
+        Install
+        <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>
+      </li>
+
+      <li>Create a documentation application with the Angular CLI</li>
+
+      <li>
+        Setup helper tools
+        <p>
+          Add the following to the scripts section of your package.json.
+        </p>
+
+        <docs-code-line>
+          "postinstall": "cp -R node_modules/ng-documentation/scripts .",
+          <br />
+          "build:docs": "./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE
+          NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT",
+          <br />
+          "watch:docs": "./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE
+          NAME_OF_ANGULAR_PROJECT"
+        </docs-code-line>
+      </li>
 
 
+      <li>Add the styles to your Angular project styles property in the angular.json.
+        <docs-code-line>
+          styles: [ "node_modules/ng-documentation/ng-documentation.css" ]
+        </docs-code-line>
+      </li>
 
+      <li>When you want to live serve the documentation app, you must generate the documentation files:
+        <docs-code-line>npm run watch:docs</docs-code-line>
+      </li>
+
+      <li>When you want to build the documentation app, you must generate the documentation files:
+        <docs-code-line>npm run build:docs</docs-code-line>
+      </li>
+
+      <li>
+        Configure the documentation
+        <docs-tabs>
+          <docs-code *docsTab="'app.module.ts'" path="app.module.ts"></docs-code>
+          <docs-code *docsTab="'app.component.html'" path="app.component.html"></docs-code>
+        </docs-tabs>
+      </li>
+    </ol>
+  </ng-template>
+</docs-page>

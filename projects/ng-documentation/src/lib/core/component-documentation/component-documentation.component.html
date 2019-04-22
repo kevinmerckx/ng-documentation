@@ -1,31 +1,21 @@
-<div class="header">
-  <h1>{{componentTitle}}</h1>
-
-  <ol>
-    <li [class.active]="isOverview$ | async" (click)="select('overview')">Overview</li>
-    <li [class.active]="isExamples$ | async" (click)="select('examples')">Examples</li>
-    <li [class.active]="isApi$ | async" (click)="select('api')">API</li>
-  </ol>
-</div>
-
-<div class="content" [docsAnchorContainer]="tab$ | async">
-  <docs-component-description
-    docsAnchor="overview"
-    [componentId]="componentId"
-    [componentType]="componentType"
-  ></docs-component-description>
-
-  <h2 docsAnchor="examples">Examples</h2>
-  <ng-template ngFor [ngForOf]="examples" let-example>
-    <docs-component-example [example]="example"></docs-component-example>
+<docs-page [title]="componentTitle" [disableRoutedNavigation]="disableRoutedNavigation">
+  <ng-template docsPageSection="Overview">
+    <docs-component-description
+      [componentId]="componentId"
+      [componentType]="componentType"
+    ></docs-component-description>
   </ng-template>
 
-  <h2 docsAnchor="api">API</h2>
-  
-  <docs-component-api
-    [componentId]="componentId"
-    [componentType]="componentType"
-  ></docs-component-api>
-  
-</div>
+  <ng-template docsPageSection="Examples">
+    <ng-template ngFor [ngForOf]="examples" let-example>
+      <docs-component-example [example]="example"></docs-component-example>
+    </ng-template>
+  </ng-template>
 
+  <ng-template docsPageSection="API">
+    <docs-component-api
+      [componentId]="componentId"
+      [componentType]="componentType"
+    ></docs-component-api>
+  </ng-template>
+</docs-page>

@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * This component displays a line of code. It provides a "copy" button and basic code styles.
+ */
 @Component({
   selector: 'docs-code-line',
   templateUrl: './code-line.component.html',
