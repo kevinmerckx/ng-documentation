@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.5...v1.1.0) (2019-04-22)
+
+
+### Bug Fixes
+
+* **core/documentation:** get type from default value when type is not explicitly defined ([a6c61ad](https://github.com/kevinmerckx/ng-documentation/commit/a6c61ad))
+
+
+### Features
+
+* **code:** enable content projection ([c22343c](https://github.com/kevinmerckx/ng-documentation/commit/c22343c))
+* **core/page:** introduce page component that renders standard page layout ([b1c9e51](https://github.com/kevinmerckx/ng-documentation/commit/b1c9e51))
+* **core/page:** navigation can be disabled ([85262e6](https://github.com/kevinmerckx/ng-documentation/commit/85262e6))
+* **page:** add noNavigation ([c05092a](https://github.com/kevinmerckx/ng-documentation/commit/c05092a))
+
 ## [1.0.5](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.4...v1.0.5) (2019-04-19)
 
 
