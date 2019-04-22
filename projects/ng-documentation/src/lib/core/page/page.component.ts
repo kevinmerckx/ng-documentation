@@ -28,7 +28,7 @@ export class PageComponent implements OnChanges {
   @Input() noNavigation = false;
 
   /**
-   * @ignore
+   * Do not use the URL query parameter.
    */
   @Input() disableRoutedNavigation = false;
 

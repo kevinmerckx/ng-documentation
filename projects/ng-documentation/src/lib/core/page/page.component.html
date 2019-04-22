@@ -16,7 +16,7 @@
   [docsAnchor]="firstSectionTitle$ | async">
   <ng-template ngFor [ngForOf]="sections$ | async" let-section let-first="first">
     <h2
-      *ngIf="!first"
+      *ngIf="(!first || noNavigation) && section.title"
       [docsAnchor]="section.title"
     >{{section.title}}</h2>
 
