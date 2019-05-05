@@ -1,4 +1,6 @@
-<pre><code #code>{{ path | codeSample }}</code></pre>
+<pre><code #code><ng-container *ngIf="path; else: contentTemplate">{{ path | codeSample }}</ng-container></code></pre>
 <div class="source-actions">
   <docs-copy-button [element]="code"></docs-copy-button>
 </div>
+
+<ng-template #contentTemplate><ng-content></ng-content></ng-template>

@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+documentation.json
+examples.json
+projects/docs/src/assets/internal-documentation/documentation.json

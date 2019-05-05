@@ -1,5 +1,8 @@
 import { Component, OnInit, Directive, OnDestroy, TemplateRef, Input } from '@angular/core';
 
+/**
+ * This component displays inner tabs. It provides basic styles and a convenient API to setup tabs.
+ */
 @Component({
   selector: 'docs-tabs',
   templateUrl: './tabs.component.html',

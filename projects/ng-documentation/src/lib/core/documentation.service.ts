@@ -7,7 +7,8 @@ import { DOCUMENTATION_PATH } from '../documentation.token';
 export interface InputType {
     name: string;
     description: string;
-    type: string;
+    type?: string;
+    defaultValue: string;
 }
 
 export interface OutputType {
@@ -99,6 +100,9 @@ export class DocumentationService {
             .pipe(map(d => {
                 const defaultResult = options.input.type;
                 if (!d.accessors) {
+                    if (!defaultResult) {
+                        return this.getTypeFromDefaultValue(options.input.defaultValue);
+                    }
                     return defaultResult;
                 }
                 const acc = d.accessors[options.input.name];
@@ -108,5 +112,12 @@ export class DocumentationService {
                     return defaultResult;
                 }
             }));
+    }
+
+    getTypeFromDefaultValue(defaultValue: string) {
+        if (defaultValue === 'false' || defaultValue === 'true') {
+            return 'boolean';
+        }
+        throw new Error('Type not found');
     }
 }
