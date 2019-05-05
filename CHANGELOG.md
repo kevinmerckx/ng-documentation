@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.0...v1.1.1) (2019-05-05)
+
+
+### Bug Fixes
+
+* **package:** update iwerk-angular-ui to version 4.0.0 ([b83ebea](https://github.com/kevinmerckx/ng-documentation/commit/b83ebea))
+* **package:** update iwerk-angular-ui to version 4.0.0 ([24fb3f0](https://github.com/kevinmerckx/ng-documentation/commit/24fb3f0))
+
 # [1.1.0](https://github.com/kevinmerckx/ng-documentation/compare/v1.0.5...v1.1.0) (2019-04-22)
 
 
