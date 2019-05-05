@@ -1,6 +1,9 @@
 import { Component, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * This component displays code from a given file or from the template. It provides a "copy" button and basic code styles.
+ */
 @Component({
   selector: 'docs-code',
   templateUrl: './code.component.html',

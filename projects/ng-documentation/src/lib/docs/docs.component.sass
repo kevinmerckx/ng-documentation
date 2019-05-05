@@ -1,68 +1,30 @@
 @import '../styles/_variables'
 
-docs-app
+\:host
   display: block
   position: relative
   width: 100vw
   height: 100vh
 
-  $width_aside: 200px
+$width_aside: 200px
 
-  a.brand-header
-    width: calc(100% - 30px)
-    display: block
-    margin: 0 15px
-    &, &:hover, &:focus
-      text-decoration: none
-    
-  aside
-    position: absolute
-    top: 0
-    left: 0
-    height: 100%
-    width: $width_aside
-    overflow: auto
-    background: white
-    color: black
-    padding: 15px 0px
-    border-right: 1px solid grey
-    box-shadow: 2px 0px 2px 1px lightgray
+aside
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: $width_aside
+  overflow: auto
+  background: white
+  color: black
+  padding: 15px 0px
+  border-right: 1px solid grey
+  box-shadow: 2px 0px 2px 1px lightgray
 
-  main
-    position: absolute
-    top: 0
-    left: $width_aside
-    height: 100%
-    right: 0
-    overflow: auto
-
-  ul
-    padding: 0
-    margin: 0
-
-    li
-      list-style: none
-      width: 100%
-      padding: 0
-
-      a
-        display: inline-block
-        width: 100%
-        line-height: 20px
-        text-decoration: none
-        padding: 10px 15px
-        color: black
-        font-size: 1.6rem
-        transition: all 0.2s
-
-        &:hover
-          color: $color-three
-          background: whitesmoke
-
-        &.active-link
-          color: $color-four
-          background: whitesmoke
-  
-  .extra-links li:first-child
-    margin-top: 30px
-    border-top: 1px solid $color-light-grey
+main
+  position: absolute
+  top: 0
+  left: $width_aside
+  height: 100%
+  right: 0
+  overflow: auto
