@@ -1,3 +1,4 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DocsModule } from 'projects/ng-documentation/src/public-api';
@@ -8,15 +9,16 @@ import { CodeModule } from './features/code/code.module';
 import { CodeComponent } from './features/code/code/code.component';
 import { ComponentApiModule } from './features/component-api/component-api.module';
 import { ComponentApiComponent } from './features/component-api/component-api/component-api.component';
-import { HomeModule } from './features/home/home.module';
-import { HomeComponent } from './features/home/home/home.component';
-import { TabsModule } from './features/tabs/tabs.module';
-import { TabsComponent } from './features/tabs/tabs/tabs.component';
+import { ComponentDocumentationModule } from './features/component-documentation/component-documentation.module';
 import {
   ComponentDocumentationComponent
 } from './features/component-documentation/component-documentation/component-documentation.component';
-import { ComponentDocumentationModule } from './features/component-documentation/component-documentation.module';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HomeModule } from './features/home/home.module';
+import { HomeComponent } from './features/home/home/home.component';
+import { PageModule } from './features/page/page.module';
+import { PageComponent } from './features/page/page/page.component';
+import { TabsModule } from './features/tabs/tabs.module';
+import { TabsComponent } from './features/tabs/tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ComponentApiModule,
     ComponentDocumentationModule,
     DocsModule,
+    PageModule,
     DocsModule.configure({
       welcomePage: HomeComponent,
       componentPages: {
@@ -53,6 +56,10 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
         componentDocumentation: {
           component: ComponentDocumentationComponent,
           title: 'Component Documentation'
+        },
+        page: {
+          component: PageComponent,
+          title: 'Page'
         }
       }
     })
