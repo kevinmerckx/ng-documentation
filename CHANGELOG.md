@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.1...v1.1.2) (2019-05-17)
+
+
+### Bug Fixes
+
+* **LICENSE, git:** add repo url and LICENSE ([c4ad8af](https://github.com/kevinmerckx/ng-documentation/commit/c4ad8af))
+
 ## [1.1.1](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.0...v1.1.1) (2019-05-05)
 
 

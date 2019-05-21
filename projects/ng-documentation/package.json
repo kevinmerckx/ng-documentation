@@ -14,5 +14,9 @@
     "@compodoc/compodoc": "^1.1.9",
     "node-html-parser": "^1.1.13",
     "nodemon": "^1.18.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinmerckx/ng-documentation.git"
   }
 }
