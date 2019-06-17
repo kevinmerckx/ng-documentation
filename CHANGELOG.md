@@ -1,3 +1,18 @@
+# [1.2.0](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.2...v1.2.0) (2019-06-17)
+
+
+### Bug Fixes
+
+* **package:** update @fortawesome/angular-fontawesome to version 0.4.0 ([7edc6ba](https://github.com/kevinmerckx/ng-documentation/commit/7edc6ba))
+* **package:** update @fortawesome/angular-fontawesome to version 0.4.0 ([55329eb](https://github.com/kevinmerckx/ng-documentation/commit/55329eb))
+* **package:** update iwerk-angular-ui to version 5.0.0 ([baa526c](https://github.com/kevinmerckx/ng-documentation/commit/baa526c))
+* **package:** update iwerk-angular-ui to version 5.0.0 ([ba7d348](https://github.com/kevinmerckx/ng-documentation/commit/ba7d348))
+
+
+### Features
+
+* **code:** code is dark ([c34d716](https://github.com/kevinmerckx/ng-documentation/commit/c34d716))
+
 ## [1.1.2](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.1...v1.1.2) (2019-05-17)
 
 
