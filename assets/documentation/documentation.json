@@ -970,7 +970,7 @@
     "components": [
         {
             "name": "CodeComponent",
-            "id": "component-CodeComponent-eb9ba2a9696f78bd9c7751bbace1afe2",
+            "id": "component-CodeComponent-49edaa2a005dda468c48bba3acb82408",
             "file": "projects/ng-documentation/src/lib/core/code/code.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -990,7 +990,7 @@
                 {
                     "name": "path",
                     "description": "<p>Path or name of the file that you want to display.</p>\n",
-                    "line": 16,
+                    "line": 15,
                     "type": "string"
                 }
             ],
@@ -1001,11 +1001,11 @@
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 16,
                     "decorators": [
                         {
                             "name": "ViewChild",
-                            "stringifiedArguments": "'code'"
+                            "stringifiedArguments": "'code', {static: false}"
                         }
                     ]
                 },
@@ -1015,19 +1015,11 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 17
                 },
                 {
                     "name": "copiedTimeout",
                     "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "faCopy",
-                    "defaultValue": "faCopy",
-                    "type": "",
                     "optional": false,
                     "description": "",
                     "line": 18
@@ -1039,7 +1031,7 @@
             "description": "<p>This component displays code from a given file or from the template. It provides a &quot;copy&quot; button and basic code styles.</p>\n",
             "rawdescription": "This component displays code from a given file or from the template. It provides a \"copy\" button and basic code styles.",
             "type": "component",
-            "sourceCode": "import { Component, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';\nimport { faCopy } from '@fortawesome/free-solid-svg-icons';\n\n/**\n * This component displays code from a given file or from the template. It provides a \"copy\" button and basic code styles.\n */\n@Component({\n  selector: 'docs-code',\n  templateUrl: './code.component.html',\n  styleUrls: ['./code.component.sass']\n})\nexport class CodeComponent implements OnDestroy {\n  /**\n   * Path or name of the file that you want to display.\n   */\n  @Input() path: string;\n  @ViewChild('code') code: ElementRef;\n  faCopy = faCopy;\n  copied = false;\n  copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  ngOnDestroy() {\n    clearTimeout(this.copiedTimeout);\n  }\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.code.nativeElement.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';\n\n/**\n * This component displays code from a given file or from the template. It provides a \"copy\" button and basic code styles.\n */\n@Component({\n  selector: 'docs-code',\n  templateUrl: './code.component.html',\n  styleUrls: ['./code.component.sass']\n})\nexport class CodeComponent implements OnDestroy {\n  /**\n   * Path or name of the file that you want to display.\n   */\n  @Input() path: string;\n  @ViewChild('code', { static: false }) code: ElementRef;\n  copied = false;\n  copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  ngOnDestroy() {\n    clearTimeout(this.copiedTimeout);\n  }\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.code.nativeElement.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1055,7 +1047,7 @@
         },
         {
             "name": "CodeLineComponent",
-            "id": "component-CodeLineComponent-e040760996ea1fb0557b826ba32413fb",
+            "id": "component-CodeLineComponent-0063c2c3a1d237ae7d23bdfee33866a1",
             "file": "projects/ng-documentation/src/lib/core/code-line/code-line.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1079,11 +1071,11 @@
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 12,
                     "decorators": [
                         {
                             "name": "ViewChild",
-                            "stringifiedArguments": "'code'"
+                            "stringifiedArguments": "'code', {static: false}"
                         }
                     ]
                 },
@@ -1093,19 +1085,11 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 13
                 },
                 {
                     "name": "copiedTimeout",
                     "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
-                },
-                {
-                    "name": "faCopy",
-                    "defaultValue": "faCopy",
-                    "type": "",
                     "optional": false,
                     "description": "",
                     "line": 14
@@ -1117,7 +1101,7 @@
             "description": "<p>This component displays a line of code. It provides a &quot;copy&quot; button and basic code styles.</p>\n",
             "rawdescription": "This component displays a line of code. It provides a \"copy\" button and basic code styles.",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';\nimport { faCopy } from '@fortawesome/free-solid-svg-icons';\n\n/**\n * This component displays a line of code. It provides a \"copy\" button and basic code styles.\n */\n@Component({\n  selector: 'docs-code-line',\n  templateUrl: './code-line.component.html',\n  styleUrls: ['./code-line.component.sass']\n})\nexport class CodeLineComponent implements OnDestroy {\n  @ViewChild('code') code: ElementRef;\n  faCopy = faCopy;\n  copied = false;\n  copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  ngOnDestroy() {\n    clearTimeout(this.copiedTimeout);\n  }\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.code.nativeElement.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n}\n",
+            "sourceCode": "import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';\n\n/**\n * This component displays a line of code. It provides a \"copy\" button and basic code styles.\n */\n@Component({\n  selector: 'docs-code-line',\n  templateUrl: './code-line.component.html',\n  styleUrls: ['./code-line.component.sass']\n})\nexport class CodeLineComponent implements OnDestroy {\n  @ViewChild('code', { static: false }) code: ElementRef;\n  copied = false;\n  copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  ngOnDestroy() {\n    clearTimeout(this.copiedTimeout);\n  }\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.code.nativeElement.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1421,7 +1405,7 @@
         },
         {
             "name": "CopyButtonComponent",
-            "id": "component-CopyButtonComponent-fbcc2f6854437c791a208f060e94a484",
+            "id": "component-CopyButtonComponent-415d8357620ad35f45acc3eadfd0b431",
             "file": "projects/ng-documentation/src/lib/core/copy-button/copy-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1471,7 +1455,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'docs-copy-button',\n  templateUrl: './copy-button.component.html',\n  styleUrls: ['./copy-button.component.sass']\n})\nexport class CopyButtonComponent {\n  @Input() element: HTMLElement;\n\n  copied = false;\n\n  private copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.element.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'docs-copy-button',\n  templateUrl: './copy-button.component.html',\n  styleUrls: ['./copy-button.component.sass']\n})\nexport class CopyButtonComponent {\n  @Input() element: HTMLElement;\n\n  copied = false;\n\n  private copiedTimeout: any;\n\n  /**\n   * @ignore\n   */\n  copy() {\n    this.copyToClipboard(this.element.innerText);\n    this.copied = true;\n    clearTimeout(this.copiedTimeout);\n    this.copiedTimeout = setTimeout(() => this.copied = false, 3000);\n  }\n\n  /**\n   * @ignore\n   */\n  private copyToClipboard(str: string) {\n    const el = document.createElement('textarea');\n    el.value = str;\n    document.body.appendChild(el);\n    el.select();\n    document.execCommand('copy');\n    document.body.removeChild(el);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2306,7 +2290,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -2314,8 +2298,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CodeLineComponent",
-                "coveragePercent": 20,
-                "coverageCount": "1/5",
+                "coveragePercent": 25,
+                "coverageCount": "1/4",
                 "status": "low"
             },
             {
@@ -2341,8 +2325,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CodeComponent",
-                "coveragePercent": 33,
-                "coverageCount": "2/6",
+                "coveragePercent": 40,
+                "coverageCount": "2/5",
                 "status": "medium"
             },
             {

@@ -1,13 +1,321 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "../ng-documentation/src/lib/core/code-line/code-line.component.html":
-/*!***************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/code-line/code-line.component.html ***!
-  \***************************************************************************/
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/code-line/code-line.component.html":
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/code-line/code-line.component.html ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"code-container\">\n  <pre><code #code><ng-content></ng-content></code></pre>\n</div>\n\n<docs-copy-button [element]=\"code\"></docs-copy-button>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/code/code.component.html":
+/*!*****************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/code/code.component.html ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<pre><code #code><ng-container *ngIf=\"path; else: contentTemplate\">{{ path | codeSample }}</ng-container></code></pre>\n<div class=\"source-actions\">\n  <docs-copy-button [element]=\"code\"></docs-copy-button>\n</div>\n\n<ng-template #contentTemplate><ng-content></ng-content></ng-template>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-api/component-api.component.html":
+/*!***********************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/component-api/component-api.component.html ***!
+  \***********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Selector: <code>{{selector$ | async}}</code></h2>\n\n<ng-template [ngIf]=\"hasInputs$ | async\">\n  <h3>Inputs</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Input</th>\n        <th class=\"type\">Type</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"inputs$ | async\" let-input>\n        <tr>\n          <td><code>{{input.name}}</code></td>\n          <td><code>{{getInputType(input) | async}}</code></td>\n          <td [innerHTML]=\"input.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>\n\n<ng-template [ngIf]=\"hasOutputs$ | async\">\n  <h3>Outputs</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Output</th>\n        <th class=\"type\">Type</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"outputs$ | async\" let-output>\n        <tr>\n          <td><code>{{output.name}}</code></td>\n          <td><code>{{output.defaultValue}}</code></td>\n          <td [innerHTML]=\"output.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>\n\n<ng-template [ngIf]=\"hasMethods$ | async\">\n  <h3>Methods</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Method</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"methods$ | async\" let-output>\n        <tr>\n          <td><code>{{output.name}}</code></td>\n          <td [innerHTML]=\"output.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-description/component-description.component.html":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/component-description/component-description.component.html ***!
+  \***************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div [innerHTML]=\"componentId | componentDescription: componentType\"></div>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html ***!
+  \*******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-page [title]=\"componentTitle\" [disableRoutedNavigation]=\"disableRoutedNavigation\">\n  <ng-template docsPageSection=\"Overview\">\n    <docs-component-description\n      [componentId]=\"componentId\"\n      [componentType]=\"componentType\"\n    ></docs-component-description>\n  </ng-template>\n\n  <ng-template docsPageSection=\"Examples\">\n    <ng-template ngFor [ngForOf]=\"examples\" let-example>\n      <docs-component-example [example]=\"example\"></docs-component-example>\n    </ng-template>\n  </ng-template>\n\n  <ng-template docsPageSection=\"API\">\n    <docs-component-api\n      [componentId]=\"componentId\"\n      [componentType]=\"componentType\"\n    ></docs-component-api>\n  </ng-template>\n</docs-page>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-example/component-example.component.html":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/component-example/component-example.component.html ***!
+  \*******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h3>{{example.docsComponentExample}}</h3>\n\n<ng-container [ngTemplateOutlet]=\"example.template\"></ng-container>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/copy-button/copy-button.component.html":
+/*!*******************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/copy-button/copy-button.component.html ***!
+  \*******************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<button class=\"copy\" (click)=\"copy()\">\n  <ng-container *ngIf=\"!copied\">copy</ng-container>\n  <ng-container *ngIf=\"copied\">copied!</ng-container>\n  <ng-template [ngIf]=\"!copied\">\n    <ng-template iwTooltip [horizontal]=\"true\">Copy this code sample</ng-template>\n  </ng-template>\n</button>\n\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/page/page.component.html":
+/*!*****************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/page/page.component.html ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"header\" *ngIf=\"!noNavigation\">\n  <h1>{{title}}</h1>\n\n  <ol>\n    <ng-template ngFor [ngForOf]=\"sections$ | async\" let-section>\n      <li\n        [class.active]=\"(activeSection$ | async) === section\"\n        (click)=\"selectSection(section)\"\n      >{{section.title}}</li>\n    </ng-template>\n  </ol>\n</div>\n\n<div class=\"content\"\n  [docsAnchorContainer]=\"(activeSection$ | async).title\"\n  [docsAnchor]=\"firstSectionTitle$ | async\">\n  <ng-template ngFor [ngForOf]=\"sections$ | async\" let-section let-first=\"first\">\n    <h2\n      *ngIf=\"(!first || noNavigation) && section.title\"\n      [docsAnchor]=\"section.title\"\n    >{{section.title}}</h2>\n\n    <ng-container [ngTemplateOutlet]=\"section.template\"></ng-container>\n  </ng-template>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/tabs/tabs.component.html":
+/*!*****************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/core/tabs/tabs.component.html ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ol>\n  <li *ngFor=\"let tab of tabs\"\n    (click)=\"selectedTemplate = tab.template\"\n    [class.active]=\"tab.template === selectedTemplate\"\n  >{{tab.label}}</li>\n</ol>\n\n<div class=\"content\">\n  <ng-container *ngTemplateOutlet=\"selectedTemplate\"></ng-container>\n</div>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/default-welcome/default-welcome.component.html":
+/*!**********************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/default-welcome/default-welcome.component.html ***!
+  \**********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Default Welcome Page</h1>\n\n<h2><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Documentation & Demo</h2>\n<p>This documentation is a combination of automated comment extraction from your code and of component examples.\n</p>\n\n<h2><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Navigation</h2>\n<p>Use the menu on the left to navigate throught components.</p>\n\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/docs/docs.component.html":
+/*!************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/docs/docs.component.html ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<aside>\n  <docs-menu>\n    <ng-content></ng-content>\n  </docs-menu>\n</aside>\n\n<main>\n  <router-outlet></router-outlet>\n</main>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/menu/menu.component.html":
+/*!************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!../ng-documentation/src/lib/menu/menu.component.html ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"header\">\n  <div class=\"brand-area\">\n    <ng-container [ngTemplateOutlet]=\"brandHeaderTemplate\"></ng-container>\n  </div>\n    \n  <ul class=\"ng-documentation__menu-links links\">\n    <li><a routerLink=\"/\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact: true}\">Get started</a></li>\n  </ul>\n  <input type=\"text\"\n    class=\"search\"\n    [class.active]=\"search$ | async\"\n    [class.no-result]=\"(pages$ | async).length === 0\"\n    [ngModel]=\"search$ | async\"\n    (ngModelChange)=\"setSearch($event)\"\n    placeholder=\"Search for a component\"\n    autofocus\n    autocomplete=\"off\"\n  />\n  <div class=\"search-helper\"\n    [class.hidden]=\"!(search$ | async)\"\n    [class.no-result]=\"(pages$ | async).length === 0\">\n    <ng-container *ngIf=\"search$ | async\">\n      {{(pages$ | async).length}} <ng-container *ngIf=\"(pages$ | async).length > 1\">results</ng-container><ng-container *ngIf=\"(pages$ | async).length === 1\">result</ng-container> found\n    </ng-container>\n  </div>\n</div>\n<ul class=\"ng-documentation__menu-links links\">\n  <ng-container *ngIf=\"pages$ | async as pages; else noResults\">\n    <li *ngFor=\"let page of pages\">\n      <a\n        [routerLink]=\"page.path\"\n        routerLinkActive=\"active-link\"\n      >{{page.title}}</a>\n    </li>\n  </ng-container>\n</ul>\n<ul class=\"ng-documentation__menu-links ng-documentation__menu-extra-links\">\n  <ng-content></ng-content>\n</ul>\n\n<ng-template #noResults>\n  No result for this search!\n</ng-template>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/app.component.html":
+/*!************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/app.component.html ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/kevinmerckx/ng-documentation\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n</docs-app>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/code-line/code-line-example1/code-line-example1.component.html":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/code-line/code-line-example1/code-line-example1.component.html ***!
+  \*****************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-code-line>console.log('Hello world!');</docs-code-line>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/code-line/code-line/code-line.component.html":
+/*!***********************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/code-line/code-line/code-line.component.html ***!
+  \***********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Code Line'\"\n  [componentId]=\"'CodeLineComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display one line of code\">\n    <app-code-line-example1></app-code-line-example1>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-line-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/code/code-example1/code-example1.component.html":
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/code/code-example1/code-example1.component.html ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-code path=\"code-example1.component.html\"></docs-code>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/code/code-example2/code-example2.component.html":
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/code/code-example2/code-example2.component.html ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-code>Some code here</docs-code>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/code/code/code.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/code/code/code.component.html ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Code'\"\n  [componentId]=\"'CodeComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Code from a file\">\n    <app-code-example1></app-code-example1>\n  </ng-template>\n\n  <ng-template docsComponentExample=\"Display Code from the template\">\n    <app-code-example2></app-code-example2>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/component-api/component-api-example1/component-api-example1.component.html":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/component-api/component-api-example1/component-api-example1.component.html ***!
+  \*****************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-api\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n></docs-component-api>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/component-api/component-api/component-api.component.html":
+/*!***********************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/component-api/component-api/component-api.component.html ***!
+  \***********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Component API'\"\n  [componentId]=\"'ComponentApiComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display a component's API\">\n    <docs-tabs>\n      <app-component-api-example1 *docsTab=\"'Example'\"></app-component-api-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-api-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Profile'\"\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n  [disableRoutedNavigation]=\"true\"\n>\n  <ng-template docsComponentExample=\"Basic Usage\">\n    <app-profile [profileId]=\"'a76Hhjh6'\" [category]=\"'Admin'\"></app-profile>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/component-documentation/component-documentation/component-documentation.component.html":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/component-documentation/component-documentation/component-documentation.component.html ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Component Documentation'\"\n  [componentId]=\"'ComponentDocumentationComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Component Documentation\">\n    <docs-tabs>\n      <app-component-documentation-example1 *docsTab=\"'Example'\"></app-component-documentation-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-documentation-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/home/home/home.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/home/home/home.component.html ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-page [noNavigation]=\"true\">\n  <ng-template docsPageSection>\n    <p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.\n    </p>\n\n    <ul>\n      <li>Get the API documentation directly from the code.</li>\n      <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n    </ul>\n\n    <p>This web page has been built with this library!</p>\n  </ng-template>\n\n  <ng-template docsPageSection=\"Get Started\">\n    <ol>\n      <li>\n        Install\n        <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\n      </li>\n\n      <li>Create a documentation application with the Angular CLI</li>\n\n      <li>\n        Setup helper tools\n        <p>\n          Add the following to the scripts section of your package.json.\n        </p>\n\n        <docs-code-line>\n          \"postinstall\": \"cp -R node_modules/ng-documentation/scripts .\",\n          <br />\n          \"build:docs\": \"./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT\",\n          <br />\n          \"watch:docs\": \"./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT\"\n        </docs-code-line>\n      </li>\n\n\n      <li>Add the styles to your Angular project styles property in the angular.json.\n        <docs-code-line>\n          styles: [ \"node_modules/ng-documentation/ng-documentation.css\" ]\n        </docs-code-line>\n      </li>\n\n      <li>When you want to live serve the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run watch:docs</docs-code-line>\n      </li>\n\n      <li>When you want to build the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run build:docs</docs-code-line>\n      </li>\n\n      <li>\n        Configure the documentation\n        <docs-tabs>\n          <docs-code *docsTab=\"'app.module.ts'\" path=\"app.module.ts\"></docs-code>\n          <docs-code *docsTab=\"'app.component.html'\" path=\"app.component.html\"></docs-code>\n        </docs-tabs>\n      </li>\n    </ol>\n  </ng-template>\n</docs-page>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/page/page-example1/page-example1.component.html":
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/page/page-example1/page-example1.component.html ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/page/page-example2/page-example2.component.html":
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/page/page-example2/page-example2.component.html ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\" [noNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/page/page/page.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/page/page/page.component.html ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Documentation Page'\"\n  [componentId]=\"'PageComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Render a standard page\">\n    <docs-tabs>\n      <app-page-example1 *docsTab=\"'Example'\"></app-page-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n  <ng-template docsComponentExample=\"No navigation bar\">\n    <docs-tabs>\n      <app-page-example2 *docsTab=\"'Example'\"></app-page-example2>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/tabs/tabs-example1/tabs-example1.component.html":
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/tabs/tabs-example1/tabs-example1.component.html ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-tabs>\n  <docs-code *docsTab=\"'HTML'\" path=\"tabs-example1.component.html\"></docs-code>\n  <docs-code *docsTab=\"'TS'\" path=\"tabs-example1.component.ts\"></docs-code>\n</docs-tabs>"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/features/tabs/tabs/tabs.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/features/tabs/tabs/tabs.component.html ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Tabs'\"\n  [componentId]=\"'TabsComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Tabs to display code\">\n    <app-tabs-example1></app-tabs-example1>\n  </ng-template>\n</docs-component-documentation>\n"
+
+/***/ }),
+
+/***/ "../../node_modules/raw-loader/index.js!./src/app/shared/profile/profile.component.html":
+/*!*******************************************************************************************************************************!*\
+  !*** /home/travis/build/kevinmerckx/ng-documentation/node_modules/raw-loader!./src/app/shared/profile/profile.component.html ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<strong>Profile #{{profileId}}</strong> (category: {{category}})"
 
 /***/ }),
 
@@ -18,7 +326,7 @@ module.exports = "<div class=\"code-container\">\n  <pre><code #code><ng-content
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: flex;\n  flex-direction: row;\n  margin: 5px 0;\n  position: relative;\n  overflow: hidden;\n  background: whitesmoke;\n  align-items: center;\n}\n\ndocs-copy-button {\n  flex: 0 0 auto;\n  margin: 0 15px 0 15px;\n}\n\n.code-container {\n  flex: 1 1;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  overflow: auto;\n}\n\npre {\n  flex: 1 1;\n  background: transparent;\n  margin: 0;\n}\n\ncode {\n  margin: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiLCJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb2RlLWxpbmUvY29kZS1saW5lLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0MsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0FDQ0Y7O0FEQ0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7QUNFRjs7QURBQTtFQUNFLFNBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7QUNHRjs7QUREQTtFQUNFLFNBQUE7RUFDQSx1QkFBQTtFQUNBLFNBQUE7QUNJRjs7QURGQTtFQUNFLFNBQUE7QUNLRiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb2RlLWxpbmUvY29kZS1saW5lLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiXFw6aG9zdFxuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiByb3dcbiAgbWFyZ2luOiA1cHggMFxuICBwb3NpdGlvbjogcmVsYXRpdmVcbiAgb3ZlcmZsb3c6IGhpZGRlblxuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXJcblxuZG9jcy1jb3B5LWJ1dHRvblxuICBmbGV4OiAwIDAgYXV0b1xuICBtYXJnaW46IDAgMTVweCAwIDE1cHhcblxuLmNvZGUtY29udGFpbmVyXG4gIGZsZXg6IDEgMVxuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiByb3dcbiAgYWxpZ24taXRlbXM6IGNlbnRlclxuICBvdmVyZmxvdzogYXV0b1xuXG5wcmVcbiAgZmxleDogMSAxXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50XG4gIG1hcmdpbjogMFxuXG5jb2RlXG4gIG1hcmdpbjogMFxuXG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIG1hcmdpbjogNXB4IDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgYmFja2dyb3VuZDogd2hpdGVzbW9rZTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cblxuZG9jcy1jb3B5LWJ1dHRvbiB7XG4gIGZsZXg6IDAgMCBhdXRvO1xuICBtYXJnaW46IDAgMTVweCAwIDE1cHg7XG59XG5cbi5jb2RlLWNvbnRhaW5lciB7XG4gIGZsZXg6IDEgMTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbnByZSB7XG4gIGZsZXg6IDEgMTtcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIG1hcmdpbjogMDtcbn1cblxuY29kZSB7XG4gIG1hcmdpbjogMDtcbn0iXX0= */"
+module.exports = ":host {\n  display: flex;\n  flex-direction: row;\n  margin: 5px 0;\n  position: relative;\n  overflow: hidden;\n  background: whitesmoke;\n  align-items: center; }\n\ndocs-copy-button {\n  flex: 0 0 auto;\n  margin: 0 15px 0 15px; }\n\n.code-container {\n  flex: 1 1;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  overflow: auto; }\n\npre {\n  flex: 1 1;\n  background: transparent;\n  margin: 0; }\n\ncode {\n  margin: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUtbGluZS9jb2RlLWxpbmUuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUM7RUFDQyxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLHNCQUFzQjtFQUN0QixtQkFBbUIsRUFBQTs7QUFFckI7RUFDRSxjQUFjO0VBQ2QscUJBQXFCLEVBQUE7O0FBRXZCO0VBQ0UsU0FBUztFQUNULGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLGNBQWMsRUFBQTs7QUFFaEI7RUFDRSxTQUFTO0VBQ1QsdUJBQXVCO0VBQ3ZCLFNBQVMsRUFBQTs7QUFFWDtFQUNFLFNBQVMsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb2RlLWxpbmUvY29kZS1saW5lLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiIDpob3N0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgbWFyZ2luOiA1cHggMDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xuICBhbGlnbi1pdGVtczogY2VudGVyOyB9XG5cbmRvY3MtY29weS1idXR0b24ge1xuICBmbGV4OiAwIDAgYXV0bztcbiAgbWFyZ2luOiAwIDE1cHggMCAxNXB4OyB9XG5cbi5jb2RlLWNvbnRhaW5lciB7XG4gIGZsZXg6IDEgMTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgb3ZlcmZsb3c6IGF1dG87IH1cblxucHJlIHtcbiAgZmxleDogMSAxO1xuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgbWFyZ2luOiAwOyB9XG5cbmNvZGUge1xuICBtYXJnaW46IDA7IH1cblxuIl19 */"
 
 /***/ }),
 
@@ -34,8 +342,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeLineComponent", function() { return CodeLineComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "../../node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-
 
 
 /**
@@ -43,7 +349,6 @@ __webpack_require__.r(__webpack_exports__);
  */
 var CodeLineComponent = /** @class */ (function () {
     function CodeLineComponent() {
-        this.faCopy = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCopy"];
         this.copied = false;
     }
     /**
@@ -74,13 +379,13 @@ var CodeLineComponent = /** @class */ (function () {
         document.body.removeChild(el);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('code'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('code', { static: false }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
     ], CodeLineComponent.prototype, "code", void 0);
     CodeLineComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-code-line',
-            template: __webpack_require__(/*! ./code-line.component.html */ "../ng-documentation/src/lib/core/code-line/code-line.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code-line.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/code-line/code-line.component.html"),
             styles: [__webpack_require__(/*! ./code-line.component.sass */ "../ng-documentation/src/lib/core/code-line/code-line.component.sass")]
         })
     ], CodeLineComponent);
@@ -207,17 +512,6 @@ var ComponentDescriptionPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/code/code.component.html":
-/*!*****************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/code/code.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<pre><code #code><ng-container *ngIf=\"path; else: contentTemplate\">{{ path | codeSample }}</ng-container></code></pre>\n<div class=\"source-actions\">\n  <docs-copy-button [element]=\"code\"></docs-copy-button>\n</div>\n\n<ng-template #contentTemplate><ng-content></ng-content></ng-template>"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/code/code.component.sass":
 /*!*****************************************************************!*\
   !*** ../ng-documentation/src/lib/core/code/code.component.sass ***!
@@ -225,7 +519,7 @@ module.exports = "<pre><code #code><ng-container *ngIf=\"path; else: contentTemp
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: block;\n  overflow: auto;\n}\n\npre {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  overflow: auto;\n  background: #3b3b3b;\n}\n\npre code {\n  margin: 0;\n}\n\n.source-actions {\n  position: absolute;\n  right: 0;\n  top: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  padding: 5px 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsInByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0Msa0JBQUE7RUFDQSxjQUFBO0VBQ0EsY0FBQTtBQ0RGOztBREdBO0VBQ0UsU0FBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLG1CRUxjO0FES2hCOztBREVFO0VBQ0UsU0FBQTtBQ0FKOztBREVBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsTUFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHFCQUFBO0VBQ0EsaUJBQUE7QUNDRiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvY29yZS9jb2RlL2NvZGUuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IC4uLy4uL3N0eWxlcy92YXJpYWJsZXNcblxuXFw6aG9zdFxuICBwb3NpdGlvbjogcmVsYXRpdmVcbiAgZGlzcGxheTogYmxvY2tcbiAgb3ZlcmZsb3c6IGF1dG9cblxucHJlXG4gIG1hcmdpbjogMFxuICBwYWRkaW5nOiAwXG4gIGhlaWdodDogMTAwJVxuICBvdmVyZmxvdzogYXV0b1xuICBiYWNrZ3JvdW5kOiAkY29sb3ItYmctY29kZVxuICBcbiAgY29kZVxuICAgIG1hcmdpbjogMFxuXG4uc291cmNlLWFjdGlvbnNcbiAgcG9zaXRpb246IGFic29sdXRlXG4gIHJpZ2h0OiAwXG4gIHRvcDogMFxuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW5cbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kXG4gIHBhZGRpbmc6IDVweCAxNXB4XG4iLCI6aG9zdCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93OiBhdXRvO1xufVxuXG5wcmUge1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDA7XG4gIGhlaWdodDogMTAwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJhY2tncm91bmQ6ICMzYjNiM2I7XG59XG5wcmUgY29kZSB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnNvdXJjZS1hY3Rpb25zIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XG4gIHBhZGRpbmc6IDVweCAxNXB4O1xufSIsIiRjb2xvci1vbmU6ICMyOEM4RkZcbiRjb2xvci10d286ICMyOEEyRkZcbiRjb2xvci10aHJlZTogI0ZGNzkzRlxuJGNvbG9yLWZvdXI6ICNGRjREMDBcbiRjb2xvci1maXZlOiAjRUUyMjAwXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5XG5cbiRjb2xvci1iZy1jb2RlOiAjM2IzYjNiXG4kY29sb3ItdGV4dC1jb2RlOiAjY2RjZGNkXG4iXX0= */"
+module.exports = ":host {\n  position: relative;\n  display: block;\n  overflow: auto; }\n\npre {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  overflow: auto;\n  background: #3b3b3b; }\n\npre code {\n    margin: 0; }\n\n.source-actions {\n  position: absolute;\n  right: 0;\n  top: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  padding: 5px 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0Msa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxjQUFjLEVBQUE7O0FBRWhCO0VBQ0UsU0FBUztFQUNULFVBQVU7RUFDVixZQUFZO0VBQ1osY0FBYztFQUNkLG1CQ0xxQixFQUFBOztBREF2QjtJQVFJLFNBQVMsRUFBQTs7QUFFYjtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsTUFBTTtFQUNOLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIscUJBQXFCO0VBQ3JCLGlCQUFpQixFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvZGUvY29kZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi8uLi9zdHlsZXMvdmFyaWFibGVzXCI7XG5cbiA6aG9zdCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93OiBhdXRvOyB9XG5cbnByZSB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogYXV0bztcbiAgYmFja2dyb3VuZDogJGNvbG9yLWJnLWNvZGU7XG5cbiAgY29kZSB7XG4gICAgbWFyZ2luOiAwOyB9IH1cblxuLnNvdXJjZS1hY3Rpb25zIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XG4gIHBhZGRpbmc6IDVweCAxNXB4OyB9XG4iLCIkY29sb3Itb25lOiAjMjhDOEZGO1xuJGNvbG9yLXR3bzogIzI4QTJGRjtcbiRjb2xvci10aHJlZTogI0ZGNzkzRjtcbiRjb2xvci1mb3VyOiAjRkY0RDAwO1xuJGNvbG9yLWZpdmU6ICNFRTIyMDA7XG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuXG4kY29sb3ItYmctY29kZTogIzNiM2IzYjtcbiRjb2xvci10ZXh0LWNvZGU6ICNjZGNkY2Q7XG4iXX0= */"
 
 /***/ }),
 
@@ -241,8 +535,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeComponent", function() { return CodeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "../../node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-
 
 
 /**
@@ -250,7 +542,6 @@ __webpack_require__.r(__webpack_exports__);
  */
 var CodeComponent = /** @class */ (function () {
     function CodeComponent() {
-        this.faCopy = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCopy"];
         this.copied = false;
     }
     /**
@@ -285,13 +576,13 @@ var CodeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], CodeComponent.prototype, "path", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('code'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('code', { static: false }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
     ], CodeComponent.prototype, "code", void 0);
     CodeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-code',
-            template: __webpack_require__(/*! ./code.component.html */ "../ng-documentation/src/lib/core/code/code.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/code/code.component.html"),
             styles: [__webpack_require__(/*! ./code.component.sass */ "../ng-documentation/src/lib/core/code/code.component.sass")]
         })
     ], CodeComponent);
@@ -302,17 +593,6 @@ var CodeComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/component-api/component-api.component.html":
-/*!***********************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/component-api/component-api.component.html ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h2>Selector: <code>{{selector$ | async}}</code></h2>\n\n<ng-template [ngIf]=\"hasInputs$ | async\">\n  <h3>Inputs</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Input</th>\n        <th class=\"type\">Type</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"inputs$ | async\" let-input>\n        <tr>\n          <td><code>{{input.name}}</code></td>\n          <td><code>{{getInputType(input) | async}}</code></td>\n          <td [innerHTML]=\"input.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>\n\n<ng-template [ngIf]=\"hasOutputs$ | async\">\n  <h3>Outputs</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Output</th>\n        <th class=\"type\">Type</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"outputs$ | async\" let-output>\n        <tr>\n          <td><code>{{output.name}}</code></td>\n          <td><code>{{output.defaultValue}}</code></td>\n          <td [innerHTML]=\"output.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>\n\n<ng-template [ngIf]=\"hasMethods$ | async\">\n  <h3>Methods</h3>\n\n  <table>\n    <thead>\n      <tr>\n        <th class=\"name\">Method</th>\n        <th class=\"description\">Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <ng-template ngFor [ngForOf]=\"methods$ | async\" let-output>\n        <tr>\n          <td><code>{{output.name}}</code></td>\n          <td [innerHTML]=\"output.description\"></td>\n        </tr>\n      </ng-template>\n    </tbody>\n  </table>\n</ng-template>"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/component-api/component-api.component.sass":
 /*!***********************************************************************************!*\
   !*** ../ng-documentation/src/lib/core/component-api/component-api.component.sass ***!
@@ -320,7 +600,7 @@ module.exports = "<h2>Selector: <code>{{selector$ | async}}</code></h2>\n\n<ng-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-collapse: collapse;\n  border: 1px solid lightgrey;\n  border-radius: 1px;\n  width: 100%;\n}\n\nthead {\n  background: lightgrey;\n}\n\nth {\n  text-align: left;\n}\n\nth, td {\n  padding: 3px 20px 3px 3px;\n}\n\ntr {\n  border-bottom: 1px solid lightgrey;\n}\n\n.name, .type {\n  width: 30%;\n}\n\n.description {\n  width: 40%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsInByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0kseUJBQUE7RUFDQSwyQkFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtBQ0RKOztBREdBO0VBQ0kscUJFSmU7QURJbkI7O0FERUE7RUFDSSxnQkFBQTtBQ0NKOztBRENBO0VBQ0kseUJBQUE7QUNFSjs7QURBQTtFQUNJLGtDQUFBO0FDR0o7O0FEREE7RUFDSSxVQUFBO0FDSUo7O0FERkE7RUFDSSxVQUFBO0FDS0oiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvY29tcG9uZW50LWFwaS9jb21wb25lbnQtYXBpLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcydcblxudGFibGVcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlXG4gICAgYm9yZGVyOiAxcHggc29saWQgJGNvbG9yLWxpZ2h0LWdyZXlcbiAgICBib3JkZXItcmFkaXVzOiAxcHhcbiAgICB3aWR0aDogMTAwJVxuXG50aGVhZFxuICAgIGJhY2tncm91bmQ6ICRjb2xvci1saWdodC1ncmV5XG5cbnRoXG4gICAgdGV4dC1hbGlnbjogbGVmdFxuXG50aCwgdGRcbiAgICBwYWRkaW5nOiAzcHggMjBweCAzcHggM3B4XG5cbnRyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5XG5cbi5uYW1lLCAudHlwZVxuICAgIHdpZHRoOiAzMCVcblxuLmRlc2NyaXB0aW9uXG4gICAgd2lkdGg6IDQwJVxuIiwidGFibGUge1xuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICBib3JkZXI6IDFweCBzb2xpZCBsaWdodGdyZXk7XG4gIGJvcmRlci1yYWRpdXM6IDFweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbnRoZWFkIHtcbiAgYmFja2dyb3VuZDogbGlnaHRncmV5O1xufVxuXG50aCB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbnRoLCB0ZCB7XG4gIHBhZGRpbmc6IDNweCAyMHB4IDNweCAzcHg7XG59XG5cbnRyIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIGxpZ2h0Z3JleTtcbn1cblxuLm5hbWUsIC50eXBlIHtcbiAgd2lkdGg6IDMwJTtcbn1cblxuLmRlc2NyaXB0aW9uIHtcbiAgd2lkdGg6IDQwJTtcbn0iLCIkY29sb3Itb25lOiAjMjhDOEZGXG4kY29sb3ItdHdvOiAjMjhBMkZGXG4kY29sb3ItdGhyZWU6ICNGRjc5M0ZcbiRjb2xvci1mb3VyOiAjRkY0RDAwXG4kY29sb3ItZml2ZTogI0VFMjIwMFxuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleVxuXG4kY29sb3ItYmctY29kZTogIzNiM2IzYlxuJGNvbG9yLXRleHQtY29kZTogI2NkY2RjZFxuIl19 */"
+module.exports = "table {\n  border-collapse: collapse;\n  border: 1px solid lightgrey;\n  border-radius: 1px;\n  width: 100%; }\n\nthead {\n  background: lightgrey; }\n\nth {\n  text-align: left; }\n\nth, td {\n  padding: 3px 20px 3px 3px; }\n\ntr {\n  border-bottom: 1px solid lightgrey; }\n\n.name, .type {\n  width: 30%; }\n\n.description {\n  width: 40%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0kseUJBQXlCO0VBQ3pCLDJCQ0N3QjtFREF4QixrQkFBa0I7RUFDbEIsV0FBVyxFQUFBOztBQUVmO0VBQ0kscUJDSndCLEVBQUE7O0FETTVCO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0kseUJBQXlCLEVBQUE7O0FBRTdCO0VBQ0ksa0NDYndCLEVBQUE7O0FEZTVCO0VBQ0ksVUFBVSxFQUFBOztBQUVkO0VBQ0ksVUFBVSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvbXBvbmVudC1hcGkvY29tcG9uZW50LWFwaS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG50YWJsZSB7XG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItbGlnaHQtZ3JleTtcbiAgICBib3JkZXItcmFkaXVzOiAxcHg7XG4gICAgd2lkdGg6IDEwMCU7IH1cblxudGhlYWQge1xuICAgIGJhY2tncm91bmQ6ICRjb2xvci1saWdodC1ncmV5OyB9XG5cbnRoIHtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0OyB9XG5cbnRoLCB0ZCB7XG4gICAgcGFkZGluZzogM3B4IDIwcHggM3B4IDNweDsgfVxuXG50ciB7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbi5uYW1lLCAudHlwZSB7XG4gICAgd2lkdGg6IDMwJTsgfVxuXG4uZGVzY3JpcHRpb24ge1xuICAgIHdpZHRoOiA0MCU7IH1cbiIsIiRjb2xvci1vbmU6ICMyOEM4RkY7XG4kY29sb3ItdHdvOiAjMjhBMkZGO1xuJGNvbG9yLXRocmVlOiAjRkY3OTNGO1xuJGNvbG9yLWZvdXI6ICNGRjREMDA7XG4kY29sb3ItZml2ZTogI0VFMjIwMDtcbiRjb2xvci1saWdodC1ncmV5OiBsaWdodGdyZXk7XG5cbiRjb2xvci1iZy1jb2RlOiAjM2IzYjNiO1xuJGNvbG9yLXRleHQtY29kZTogI2NkY2RjZDtcbiJdfQ== */"
 
 /***/ }),
 
@@ -386,7 +666,7 @@ var ComponentApiComponent = /** @class */ (function () {
     ComponentApiComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-api',
-            template: __webpack_require__(/*! ./component-api.component.html */ "../ng-documentation/src/lib/core/component-api/component-api.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-api.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-api/component-api.component.html"),
             styles: [__webpack_require__(/*! ./component-api.component.sass */ "../ng-documentation/src/lib/core/component-api/component-api.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_documentation_service__WEBPACK_IMPORTED_MODULE_3__["DocumentationService"]])
@@ -402,17 +682,6 @@ function sortByName(arr) {
     return result;
 }
 
-
-/***/ }),
-
-/***/ "../ng-documentation/src/lib/core/component-description/component-description.component.html":
-/*!***************************************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/component-description/component-description.component.html ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div [innerHTML]=\"componentId | componentDescription: componentType\"></div>"
 
 /***/ }),
 
@@ -455,7 +724,7 @@ var ComponentDescriptionComponent = /** @class */ (function () {
     ComponentDescriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-description',
-            template: __webpack_require__(/*! ./component-description.component.html */ "../ng-documentation/src/lib/core/component-description/component-description.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-description.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-description/component-description.component.html"),
             styles: [__webpack_require__(/*! ./component-description.component.sass */ "../ng-documentation/src/lib/core/component-description/component-description.component.sass")]
         })
     ], ComponentDescriptionComponent);
@@ -463,17 +732,6 @@ var ComponentDescriptionComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html":
-/*!*******************************************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html ***!
-  \*******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-page [title]=\"componentTitle\" [disableRoutedNavigation]=\"disableRoutedNavigation\">\n  <ng-template docsPageSection=\"Overview\">\n    <docs-component-description\n      [componentId]=\"componentId\"\n      [componentType]=\"componentType\"\n    ></docs-component-description>\n  </ng-template>\n\n  <ng-template docsPageSection=\"Examples\">\n    <ng-template ngFor [ngForOf]=\"examples\" let-example>\n      <docs-component-example [example]=\"example\"></docs-component-example>\n    </ng-template>\n  </ng-template>\n\n  <ng-template docsPageSection=\"API\">\n    <docs-component-api\n      [componentId]=\"componentId\"\n      [componentType]=\"componentType\"\n    ></docs-component-api>\n  </ng-template>\n</docs-page>\n"
 
 /***/ }),
 
@@ -541,7 +799,7 @@ var ComponentDocumentationComponent = /** @class */ (function () {
     ComponentDocumentationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-documentation',
-            template: __webpack_require__(/*! ./component-documentation.component.html */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-documentation.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-documentation/component-documentation.component.html"),
             styles: [__webpack_require__(/*! ./component-documentation.component.sass */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.sass")]
         })
     ], ComponentDocumentationComponent);
@@ -627,17 +885,6 @@ var ComponentExampleDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/component-example/component-example.component.html":
-/*!*******************************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/component-example/component-example.component.html ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h3>{{example.docsComponentExample}}</h3>\n\n<ng-container [ngTemplateOutlet]=\"example.template\"></ng-container>\n"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/component-example/component-example.component.sass":
 /*!*******************************************************************************************!*\
   !*** ../ng-documentation/src/lib/core/component-example/component-example.component.sass ***!
@@ -675,7 +922,7 @@ var ComponentExampleComponent = /** @class */ (function () {
     ComponentExampleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-component-example',
-            template: __webpack_require__(/*! ./component-example.component.html */ "../ng-documentation/src/lib/core/component-example/component-example.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-example.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/component-example/component-example.component.html"),
             styles: [__webpack_require__(/*! ./component-example.component.sass */ "../ng-documentation/src/lib/core/component-example/component-example.component.sass")]
         })
     ], ComponentExampleComponent);
@@ -686,17 +933,6 @@ var ComponentExampleComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/copy-button/copy-button.component.html":
-/*!*******************************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/copy-button/copy-button.component.html ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<button class=\"copy\" (click)=\"copy()\">\n  <ng-container *ngIf=\"!copied\">copy</ng-container>\n  <ng-container *ngIf=\"copied\">copied!</ng-container>\n  <ng-template [ngIf]=\"!copied\">\n    <ng-template iwTooltip [horizontal]=\"true\">Copy this code sample</ng-template>\n  </ng-template>\n</button>\n\n"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/copy-button/copy-button.component.sass":
 /*!*******************************************************************************!*\
   !*** ../ng-documentation/src/lib/core/copy-button/copy-button.component.sass ***!
@@ -704,7 +940,7 @@ module.exports = "<button class=\"copy\" (click)=\"copy()\">\n  <ng-container *n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n}\n\nbutton {\n  border: none;\n  box-shadow: none;\n  background: transparent;\n  height: auto;\n  line-height: normal;\n  color: #cdcdcd;\n  outline: none;\n  padding: 0;\n  cursor: pointer;\n}\n\nbutton:hover {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvcHktYnV0dG9uL2NvcHktYnV0dG9uLmNvbXBvbmVudC5zYXNzIiwicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvY29weS1idXR0b24vY29weS1idXR0b24uY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQztFQUNDLGNBQUE7QUNERjs7QURHQTtFQUNFLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHVCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsY0VIZ0I7RUZJaEIsYUFBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0FDQUY7O0FERUU7RUFDRSxZQUFBO0FDQUoiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvY29weS1idXR0b24vY29weS1idXR0b24uY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IC4uLy4uL3N0eWxlcy92YXJpYWJsZXNcblxuXFw6aG9zdFxuICBkaXNwbGF5OiBibG9ja1xuXG5idXR0b25cbiAgYm9yZGVyOiBub25lXG4gIGJveC1zaGFkb3c6IG5vbmVcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnRcbiAgaGVpZ2h0OiBhdXRvXG4gIGxpbmUtaGVpZ2h0OiBub3JtYWxcbiAgY29sb3I6ICRjb2xvci10ZXh0LWNvZGVcbiAgb3V0bGluZTogbm9uZVxuICBwYWRkaW5nOiAwXG4gIGN1cnNvcjogcG9pbnRlclxuXG4gICY6aG92ZXJcbiAgICBjb2xvcjogd2hpdGUiLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG5idXR0b24ge1xuICBib3JkZXI6IG5vbmU7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICBoZWlnaHQ6IGF1dG87XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGNvbG9yOiAjY2RjZGNkO1xuICBvdXRsaW5lOiBub25lO1xuICBwYWRkaW5nOiAwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5idXR0b246aG92ZXIge1xuICBjb2xvcjogd2hpdGU7XG59IiwiJGNvbG9yLW9uZTogIzI4QzhGRlxuJGNvbG9yLXR3bzogIzI4QTJGRlxuJGNvbG9yLXRocmVlOiAjRkY3OTNGXG4kY29sb3ItZm91cjogI0ZGNEQwMFxuJGNvbG9yLWZpdmU6ICNFRTIyMDBcbiRjb2xvci1saWdodC1ncmV5OiBsaWdodGdyZXlcblxuJGNvbG9yLWJnLWNvZGU6ICMzYjNiM2JcbiRjb2xvci10ZXh0LWNvZGU6ICNjZGNkY2RcbiJdfQ== */"
+module.exports = ":host {\n  display: block; }\n\nbutton {\n  border: none;\n  box-shadow: none;\n  background: transparent;\n  height: auto;\n  line-height: normal;\n  color: #cdcdcd;\n  outline: none;\n  padding: 0;\n  cursor: pointer; }\n\nbutton:hover {\n    color: white; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL2NvcHktYnV0dG9uL2NvcHktYnV0dG9uLmNvbXBvbmVudC5zYXNzIiwiL2hvbWUvdHJhdmlzL2J1aWxkL2tldmlubWVyY2t4L25nLWRvY3VtZW50YXRpb24vcHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL3N0eWxlcy9fdmFyaWFibGVzLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUM7RUFDQyxjQUFjLEVBQUE7O0FBRWhCO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQix1QkFBdUI7RUFDdkIsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixjQ0h1QjtFREl2QixhQUFhO0VBQ2IsVUFBVTtFQUNWLGVBQWUsRUFBQTs7QUFUakI7SUFZSSxZQUFZLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvY29weS1idXR0b24vY29weS1idXR0b24uY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vc3R5bGVzL3ZhcmlhYmxlc1wiO1xuXG4gOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jazsgfVxuXG5idXR0b24ge1xuICBib3JkZXI6IG5vbmU7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICBoZWlnaHQ6IGF1dG87XG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XG4gIGNvbG9yOiAkY29sb3ItdGV4dC1jb2RlO1xuICBvdXRsaW5lOiBub25lO1xuICBwYWRkaW5nOiAwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG5cbiAgJjpob3ZlciB7XG4gICAgY29sb3I6IHdoaXRlOyB9IH1cbiIsIiRjb2xvci1vbmU6ICMyOEM4RkY7XG4kY29sb3ItdHdvOiAjMjhBMkZGO1xuJGNvbG9yLXRocmVlOiAjRkY3OTNGO1xuJGNvbG9yLWZvdXI6ICNGRjREMDA7XG4kY29sb3ItZml2ZTogI0VFMjIwMDtcbiRjb2xvci1saWdodC1ncmV5OiBsaWdodGdyZXk7XG5cbiRjb2xvci1iZy1jb2RlOiAjM2IzYjNiO1xuJGNvbG9yLXRleHQtY29kZTogI2NkY2RjZDtcbiJdfQ== */"
 
 /***/ }),
 
@@ -754,7 +990,7 @@ var CopyButtonComponent = /** @class */ (function () {
     CopyButtonComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-copy-button',
-            template: __webpack_require__(/*! ./copy-button.component.html */ "../ng-documentation/src/lib/core/copy-button/copy-button.component.html"),
+            template: __webpack_require__(/*! raw-loader!./copy-button.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/copy-button/copy-button.component.html"),
             styles: [__webpack_require__(/*! ./copy-button.component.sass */ "../ng-documentation/src/lib/core/copy-button/copy-button.component.sass")]
         })
     ], CopyButtonComponent);
@@ -778,21 +1014,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "../../node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
-/* harmony import */ var iwerk_angular_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! iwerk-angular-ui */ "../../node_modules/iwerk-angular-ui/fesm5/iwerk-angular-ui.js");
-/* harmony import */ var _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./code-line/code-line.component */ "../ng-documentation/src/lib/core/code-line/code-line.component.ts");
-/* harmony import */ var _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./code-sample/code-sample.module */ "../ng-documentation/src/lib/core/code-sample/code-sample.module.ts");
-/* harmony import */ var _code_code_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./code/code.component */ "../ng-documentation/src/lib/core/code/code.component.ts");
-/* harmony import */ var _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component-api/component-api.component */ "../ng-documentation/src/lib/core/component-api/component-api.component.ts");
-/* harmony import */ var _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component-description/component-description.component */ "../ng-documentation/src/lib/core/component-description/component-description.component.ts");
-/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component-documentation/component-documentation.component */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts");
-/* harmony import */ var _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component-example/component-example.component */ "../ng-documentation/src/lib/core/component-example/component-example.component.ts");
-/* harmony import */ var _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tabs/tabs.component */ "../ng-documentation/src/lib/core/tabs/tabs.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _copy_button_copy_button_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./copy-button/copy-button.component */ "../ng-documentation/src/lib/core/copy-button/copy-button.component.ts");
-/* harmony import */ var _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/brand-header.directive */ "../ng-documentation/src/lib/core/directives/brand-header.directive.ts");
-/* harmony import */ var _page_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./page/page.component */ "../ng-documentation/src/lib/core/page/page.component.ts");
-
+/* harmony import */ var iwerk_angular_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! iwerk-angular-ui */ "../../node_modules/iwerk-angular-ui/fesm5/iwerk-angular-ui.js");
+/* harmony import */ var _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./code-line/code-line.component */ "../ng-documentation/src/lib/core/code-line/code-line.component.ts");
+/* harmony import */ var _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./code-sample/code-sample.module */ "../ng-documentation/src/lib/core/code-sample/code-sample.module.ts");
+/* harmony import */ var _code_code_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./code/code.component */ "../ng-documentation/src/lib/core/code/code.component.ts");
+/* harmony import */ var _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./component-api/component-api.component */ "../ng-documentation/src/lib/core/component-api/component-api.component.ts");
+/* harmony import */ var _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component-description/component-description.component */ "../ng-documentation/src/lib/core/component-description/component-description.component.ts");
+/* harmony import */ var _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component-documentation/component-documentation.component */ "../ng-documentation/src/lib/core/component-documentation/component-documentation.component.ts");
+/* harmony import */ var _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component-example/component-example.component */ "../ng-documentation/src/lib/core/component-example/component-example.component.ts");
+/* harmony import */ var _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tabs/tabs.component */ "../ng-documentation/src/lib/core/tabs/tabs.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _copy_button_copy_button_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./copy-button/copy-button.component */ "../ng-documentation/src/lib/core/copy-button/copy-button.component.ts");
+/* harmony import */ var _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./directives/brand-header.directive */ "../ng-documentation/src/lib/core/directives/brand-header.directive.ts");
+/* harmony import */ var _page_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./page/page.component */ "../ng-documentation/src/lib/core/page/page.component.ts");
 
 
 
@@ -815,47 +1049,44 @@ var CoreModule = /** @class */ (function () {
     CoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             imports: [
-                _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_6__["CodeSampleModule"],
+                _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_5__["CodeSampleModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeModule"],
-                iwerk_angular_ui__WEBPACK_IMPORTED_MODULE_4__["TooltipModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"]
+                iwerk_angular_ui__WEBPACK_IMPORTED_MODULE_3__["TooltipModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"]
             ],
             exports: [
-                _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_6__["CodeSampleModule"],
-                _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_9__["ComponentDescriptionComponent"],
-                _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_8__["ComponentApiComponent"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["ComponentDocumentationComponent"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["ComponentExampleDirective"],
-                _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_11__["ComponentExampleComponent"],
-                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeModule"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["AnchorContainerDirective"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["AnchorDirective"],
-                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__["TabsComponent"],
-                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__["TabDirective"],
-                _code_code_component__WEBPACK_IMPORTED_MODULE_7__["CodeComponent"],
-                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeModule"],
-                _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_5__["CodeLineComponent"],
-                _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_15__["BrandHeaderDirective"],
-                _page_page_component__WEBPACK_IMPORTED_MODULE_16__["PageComponent"],
-                _page_page_component__WEBPACK_IMPORTED_MODULE_16__["PageSectionDirective"]
+                _code_sample_code_sample_module__WEBPACK_IMPORTED_MODULE_5__["CodeSampleModule"],
+                _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_8__["ComponentDescriptionComponent"],
+                _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_7__["ComponentApiComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["ComponentDocumentationComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["ComponentExampleDirective"],
+                _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_10__["ComponentExampleComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["AnchorContainerDirective"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["AnchorDirective"],
+                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_11__["TabsComponent"],
+                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_11__["TabDirective"],
+                _code_code_component__WEBPACK_IMPORTED_MODULE_6__["CodeComponent"],
+                _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_4__["CodeLineComponent"],
+                _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_14__["BrandHeaderDirective"],
+                _page_page_component__WEBPACK_IMPORTED_MODULE_15__["PageComponent"],
+                _page_page_component__WEBPACK_IMPORTED_MODULE_15__["PageSectionDirective"]
             ],
             declarations: [
-                _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_9__["ComponentDescriptionComponent"],
-                _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_8__["ComponentApiComponent"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["ComponentDocumentationComponent"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["ComponentExampleDirective"],
-                _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_11__["ComponentExampleComponent"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["AnchorContainerDirective"],
-                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_10__["AnchorDirective"],
-                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__["TabsComponent"],
-                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_12__["TabDirective"],
-                _code_code_component__WEBPACK_IMPORTED_MODULE_7__["CodeComponent"],
-                _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_5__["CodeLineComponent"],
-                _copy_button_copy_button_component__WEBPACK_IMPORTED_MODULE_14__["CopyButtonComponent"],
-                _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_15__["BrandHeaderDirective"],
-                _page_page_component__WEBPACK_IMPORTED_MODULE_16__["PageComponent"],
-                _page_page_component__WEBPACK_IMPORTED_MODULE_16__["PageSectionDirective"]
+                _component_description_component_description_component__WEBPACK_IMPORTED_MODULE_8__["ComponentDescriptionComponent"],
+                _component_api_component_api_component__WEBPACK_IMPORTED_MODULE_7__["ComponentApiComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["ComponentDocumentationComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["ComponentExampleDirective"],
+                _component_example_component_example_component__WEBPACK_IMPORTED_MODULE_10__["ComponentExampleComponent"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["AnchorContainerDirective"],
+                _component_documentation_component_documentation_component__WEBPACK_IMPORTED_MODULE_9__["AnchorDirective"],
+                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_11__["TabsComponent"],
+                _tabs_tabs_component__WEBPACK_IMPORTED_MODULE_11__["TabDirective"],
+                _code_code_component__WEBPACK_IMPORTED_MODULE_6__["CodeComponent"],
+                _code_line_code_line_component__WEBPACK_IMPORTED_MODULE_4__["CodeLineComponent"],
+                _copy_button_copy_button_component__WEBPACK_IMPORTED_MODULE_13__["CopyButtonComponent"],
+                _directives_brand_header_directive__WEBPACK_IMPORTED_MODULE_14__["BrandHeaderDirective"],
+                _page_page_component__WEBPACK_IMPORTED_MODULE_15__["PageComponent"],
+                _page_page_component__WEBPACK_IMPORTED_MODULE_15__["PageSectionDirective"]
             ]
         })
     ], CoreModule);
@@ -1012,17 +1243,6 @@ var DocumentationService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/page/page.component.html":
-/*!*****************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/page/page.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"header\" *ngIf=\"!noNavigation\">\n  <h1>{{title}}</h1>\n\n  <ol>\n    <ng-template ngFor [ngForOf]=\"sections$ | async\" let-section>\n      <li\n        [class.active]=\"(activeSection$ | async) === section\"\n        (click)=\"selectSection(section)\"\n      >{{section.title}}</li>\n    </ng-template>\n  </ol>\n</div>\n\n<div class=\"content\"\n  [docsAnchorContainer]=\"(activeSection$ | async).title\"\n  [docsAnchor]=\"firstSectionTitle$ | async\">\n  <ng-template ngFor [ngForOf]=\"sections$ | async\" let-section let-first=\"first\">\n    <h2\n      *ngIf=\"(!first || noNavigation) && section.title\"\n      [docsAnchor]=\"section.title\"\n    >{{section.title}}</h2>\n\n    <ng-container [ngTemplateOutlet]=\"section.template\"></ng-container>\n  </ng-template>\n</div>\n\n"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/page/page.component.sass":
 /*!*****************************************************************!*\
   !*** ../ng-documentation/src/lib/core/page/page.component.sass ***!
@@ -1030,7 +1250,7 @@ module.exports = "<div class=\"header\" *ngIf=\"!noNavigation\">\n  <h1>{{title}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  height: 100%;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n}\n\n.header {\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  border-bottom: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgrey;\n  padding: 0 15px;\n}\n\n.content {\n  flex: 1 1;\n  padding: 15px;\n  overflow: auto;\n}\n\nh2 {\n  margin-top: 50px;\n  border-bottom: 1px solid lightgrey;\n}\n\nol {\n  list-style: none;\n  margin: 0 0 0 30px;\n  padding: 0;\n}\n\nli {\n  display: inline-block;\n  margin: 0;\n  padding: 5px 10px;\n  transition: color 0.2s;\n  cursor: pointer;\n}\n\nli:hover {\n  color: #FF793F;\n}\n\nli.active {\n  color: #FF4D00;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3BhZ2UvcGFnZS5jb21wb25lbnQuc2FzcyIsInByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3BhZ2UvcGFnZS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0FDREY7O0FER0E7RUFDRSxjQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLHFDQUFBO0VBQ0EsZUFBQTtBQ0FGOztBREVBO0VBQ0UsU0FBQTtFQUNBLGFBQUE7RUFDQSxjQUFBO0FDQ0Y7O0FEQ0E7RUFDRSxnQkFBQTtFQUNBLGtDQUFBO0FDRUY7O0FEQUE7RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQ0dGOztBRERBO0VBQ0UscUJBQUE7RUFDQSxTQUFBO0VBQ0EsaUJBQUE7RUFDQSxzQkFBQTtFQUNBLGVBQUE7QUNJRjs7QURGRTtFQUNFLGNFckNVO0FEeUNkOztBREZFO0VBQ0UsY0V2Q1M7QUQyQ2IiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvcGFnZS9wYWdlLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcydcblxuXFw6aG9zdFxuICBoZWlnaHQ6IDEwMCVcbiAgb3ZlcmZsb3c6IGhpZGRlblxuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW5cblxuLmhlYWRlclxuICBmbGV4OiAwIDAgYXV0b1xuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiByb3dcbiAgYWxpZ24taXRlbXM6IGNlbnRlclxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgZ3JleVxuICBib3gtc2hhZG93OiAycHggMHB4IDJweCAxcHggbGlnaHRncmV5XG4gIHBhZGRpbmc6IDAgMTVweFxuXG4uY29udGVudFxuICBmbGV4OiAxIDFcbiAgcGFkZGluZzogMTVweFxuICBvdmVyZmxvdzogYXV0b1xuXG5oMlxuICBtYXJnaW4tdG9wOiA1MHB4XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkY29sb3ItbGlnaHQtZ3JleVxuXG5vbFxuICBsaXN0LXN0eWxlOiBub25lXG4gIG1hcmdpbjogMCAwIDAgMzBweFxuICBwYWRkaW5nOiAwXG5cbmxpXG4gIGRpc3BsYXk6IGlubGluZS1ibG9ja1xuICBtYXJnaW46IDBcbiAgcGFkZGluZzogNXB4IDEwcHhcbiAgdHJhbnNpdGlvbjogY29sb3IgMC4yc1xuICBjdXJzb3I6IHBvaW50ZXJcblxuICAmOmhvdmVyXG4gICAgY29sb3I6ICRjb2xvci10aHJlZVxuXG4gICYuYWN0aXZlXG4gICAgY29sb3I6ICRjb2xvci1mb3VyXG4iLCI6aG9zdCB7XG4gIGhlaWdodDogMTAwJTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cblxuLmhlYWRlciB7XG4gIGZsZXg6IDAgMCBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgZ3JleTtcbiAgYm94LXNoYWRvdzogMnB4IDBweCAycHggMXB4IGxpZ2h0Z3JleTtcbiAgcGFkZGluZzogMCAxNXB4O1xufVxuXG4uY29udGVudCB7XG4gIGZsZXg6IDEgMTtcbiAgcGFkZGluZzogMTVweDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbmgyIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIGxpZ2h0Z3JleTtcbn1cblxub2wge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBtYXJnaW46IDAgMCAwIDMwcHg7XG4gIHBhZGRpbmc6IDA7XG59XG5cbmxpIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICB0cmFuc2l0aW9uOiBjb2xvciAwLjJzO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5saTpob3ZlciB7XG4gIGNvbG9yOiAjRkY3OTNGO1xufVxubGkuYWN0aXZlIHtcbiAgY29sb3I6ICNGRjREMDA7XG59IiwiJGNvbG9yLW9uZTogIzI4QzhGRlxuJGNvbG9yLXR3bzogIzI4QTJGRlxuJGNvbG9yLXRocmVlOiAjRkY3OTNGXG4kY29sb3ItZm91cjogI0ZGNEQwMFxuJGNvbG9yLWZpdmU6ICNFRTIyMDBcbiRjb2xvci1saWdodC1ncmV5OiBsaWdodGdyZXlcblxuJGNvbG9yLWJnLWNvZGU6ICMzYjNiM2JcbiRjb2xvci10ZXh0LWNvZGU6ICNjZGNkY2RcbiJdfQ== */"
+module.exports = ":host {\n  height: 100%;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column; }\n\n.header {\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  border-bottom: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgrey;\n  padding: 0 15px; }\n\n.content {\n  flex: 1 1;\n  padding: 15px;\n  overflow: auto; }\n\nh2 {\n  margin-top: 50px;\n  border-bottom: 1px solid lightgrey; }\n\nol {\n  list-style: none;\n  margin: 0 0 0 30px;\n  padding: 0; }\n\nli {\n  display: inline-block;\n  margin: 0;\n  padding: 5px 10px;\n  transition: color 0.2s;\n  cursor: pointer; }\n\nli:hover {\n    color: #FF793F; }\n\nli.active {\n    color: #FF4D00; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3BhZ2UvcGFnZS5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixhQUFhO0VBQ2Isc0JBQXNCLEVBQUE7O0FBRXhCO0VBQ0UsY0FBYztFQUNkLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsZUFBZSxFQUFBOztBQUVqQjtFQUNFLFNBQVM7RUFDVCxhQUFhO0VBQ2IsY0FBYyxFQUFBOztBQUVoQjtFQUNFLGdCQUFnQjtFQUNoQixrQ0NuQjBCLEVBQUE7O0FEcUI1QjtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsVUFBVSxFQUFBOztBQUVaO0VBQ0UscUJBQXFCO0VBQ3JCLFNBQVM7RUFDVCxpQkFBaUI7RUFDakIsc0JBQXNCO0VBQ3RCLGVBQWUsRUFBQTs7QUFMakI7SUFRSSxjQ3JDaUIsRUFBQTs7QUQ2QnJCO0lBV0ksY0N2Q2dCLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvcGFnZS9wYWdlLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcyc7XG5cbiA6aG9zdCB7XG4gIGhlaWdodDogMTAwJTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgfVxuXG4uaGVhZGVyIHtcbiAgZmxleDogMCAwIGF1dG87XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBncmV5O1xuICBib3gtc2hhZG93OiAycHggMHB4IDJweCAxcHggbGlnaHRncmV5O1xuICBwYWRkaW5nOiAwIDE1cHg7IH1cblxuLmNvbnRlbnQge1xuICBmbGV4OiAxIDE7XG4gIHBhZGRpbmc6IDE1cHg7XG4gIG92ZXJmbG93OiBhdXRvOyB9XG5cbmgyIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICRjb2xvci1saWdodC1ncmV5OyB9XG5cbm9sIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgbWFyZ2luOiAwIDAgMCAzMHB4O1xuICBwYWRkaW5nOiAwOyB9XG5cbmxpIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICB0cmFuc2l0aW9uOiBjb2xvciAwLjJzO1xuICBjdXJzb3I6IHBvaW50ZXI7XG5cbiAgJjpob3ZlciB7XG4gICAgY29sb3I6ICRjb2xvci10aHJlZTsgfVxuXG4gICYuYWN0aXZlIHtcbiAgICBjb2xvcjogJGNvbG9yLWZvdXI7IH0gfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleTtcblxuJGNvbG9yLWJnLWNvZGU6ICMzYjNiM2I7XG4kY29sb3ItdGV4dC1jb2RlOiAjY2RjZGNkO1xuIl19 */"
 
 /***/ }),
 
@@ -1139,7 +1359,7 @@ var PageComponent = /** @class */ (function () {
     PageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-page',
-            template: __webpack_require__(/*! ./page.component.html */ "../ng-documentation/src/lib/core/page/page.component.html"),
+            template: __webpack_require__(/*! raw-loader!./page.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/page/page.component.html"),
             styles: [__webpack_require__(/*! ./page.component.sass */ "../ng-documentation/src/lib/core/page/page.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
@@ -1198,17 +1418,6 @@ var PageSectionDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/core/tabs/tabs.component.html":
-/*!*****************************************************************!*\
-  !*** ../ng-documentation/src/lib/core/tabs/tabs.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ol>\n  <li *ngFor=\"let tab of tabs\"\n    (click)=\"selectedTemplate = tab.template\"\n    [class.active]=\"tab.template === selectedTemplate\"\n  >{{tab.label}}</li>\n</ol>\n\n<div class=\"content\">\n  <ng-container *ngTemplateOutlet=\"selectedTemplate\"></ng-container>\n</div>"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/core/tabs/tabs.component.sass":
 /*!*****************************************************************!*\
   !*** ../ng-documentation/src/lib/core/tabs/tabs.component.sass ***!
@@ -1216,7 +1425,7 @@ module.exports = "<ol>\n  <li *ngFor=\"let tab of tabs\"\n    (click)=\"selected
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 300px;\n  overflow: hidden;\n  margin-top: 20px;\n  background-color: #3b3b3b;\n}\n\nol {\n  margin: 0;\n  padding: 0;\n  border-bottom: #cdcdcd 2px solid;\n}\n\nli {\n  list-style: none;\n  color: #cdcdcd;\n  display: inline-block;\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  padding: 0 15px;\n  line-height: 40px;\n  height: 40px;\n  border-bottom: 2px solid transparent;\n  transition: border-bottom 0.2s, color 0.2s;\n  margin-bottom: -2px;\n}\n\nli:hover:not(.active) {\n  border-bottom-color: #FF4D00;\n  color: #FF4D00;\n}\n\nli.active {\n  color: #FF4D00;\n  border-bottom-color: #FF4D00;\n}\n\n.content {\n  flex: 1 1;\n  overflow: auto;\n  background-color: whitesmoke;\n}\n\npre {\n  margin-top: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3RhYnMvdGFicy5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIiwicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvdGFicy90YWJzLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkNEYztBQ0FoQjs7QUZHQTtFQUNFLFNBQUE7RUFDQSxVQUFBO0VBQ0EsZ0NBQUE7QUVBRjs7QUZFQTtFQUNFLGdCQUFBO0VBQ0EsY0NUZ0I7RURVaEIscUJBQUE7RUFDQSxlQUFBO0VBQ0EsVUFBQTtFQUNBLFNBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esb0NBQUE7RUFDQSwwQ0FBQTtFQUNBLG1CQUFBO0FFQ0Y7O0FGQ0U7RUFDRSw0QkMzQlM7RUQ0QlQsY0M1QlM7QUM2QmI7O0FGQ0U7RUFDRSxjQy9CUztFRGdDVCw0QkNoQ1M7QUNpQ2I7O0FGQ0E7RUFDRSxTQUFBO0VBQ0EsY0FBQTtFQUNBLDRCQUFBO0FFRUY7O0FGQUE7RUFDRSxhQUFBO0FFR0YiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2NvcmUvdGFicy90YWJzLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcydcblxuXFw6aG9zdFxuICBkaXNwbGF5OiBmbGV4XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW5cbiAgaGVpZ2h0OiAzMDBweFxuICBvdmVyZmxvdzogaGlkZGVuXG4gIG1hcmdpbi10b3A6IDIwcHhcbiAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLWJnLWNvZGVcblxub2xcbiAgbWFyZ2luOiAwXG4gIHBhZGRpbmc6IDBcbiAgYm9yZGVyLWJvdHRvbTogJGNvbG9yLXRleHQtY29kZSAycHggc29saWRcblxubGlcbiAgbGlzdC1zdHlsZTogbm9uZVxuICBjb2xvcjogJGNvbG9yLXRleHQtY29kZVxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2tcbiAgY3Vyc29yOiBwb2ludGVyXG4gIHBhZGRpbmc6IDBcbiAgbWFyZ2luOiAwXG4gIHBhZGRpbmc6IDAgMTVweFxuICBsaW5lLWhlaWdodDogNDBweFxuICBoZWlnaHQ6IDQwcHhcbiAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkIHRyYW5zcGFyZW50XG4gIHRyYW5zaXRpb246IGJvcmRlci1ib3R0b20gMC4ycywgY29sb3IgMC4yc1xuICBtYXJnaW4tYm90dG9tOiAtMnB4XG5cbiAgJjpob3Zlcjpub3QoLmFjdGl2ZSlcbiAgICBib3JkZXItYm90dG9tLWNvbG9yOiAkY29sb3ItZm91clxuICAgIGNvbG9yOiAkY29sb3ItZm91clxuICAgIFxuICAmLmFjdGl2ZVxuICAgIGNvbG9yOiAkY29sb3ItZm91clxuICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjb2xvci1mb3VyXG5cbi5jb250ZW50XG4gIGZsZXg6IDEgMVxuICBvdmVyZmxvdzogYXV0b1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlXG5cbnByZVxuICBtYXJnaW4tdG9wOiAwXG4iLCIkY29sb3Itb25lOiAjMjhDOEZGXG4kY29sb3ItdHdvOiAjMjhBMkZGXG4kY29sb3ItdGhyZWU6ICNGRjc5M0ZcbiRjb2xvci1mb3VyOiAjRkY0RDAwXG4kY29sb3ItZml2ZTogI0VFMjIwMFxuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleVxuXG4kY29sb3ItYmctY29kZTogIzNiM2IzYlxuJGNvbG9yLXRleHQtY29kZTogI2NkY2RjZFxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBoZWlnaHQ6IDMwMHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2IzYjNiO1xufVxuXG5vbCB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgYm9yZGVyLWJvdHRvbTogI2NkY2RjZCAycHggc29saWQ7XG59XG5cbmxpIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgY29sb3I6ICNjZGNkY2Q7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDAgMTVweDtcbiAgbGluZS1oZWlnaHQ6IDQwcHg7XG4gIGhlaWdodDogNDBweDtcbiAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICB0cmFuc2l0aW9uOiBib3JkZXItYm90dG9tIDAuMnMsIGNvbG9yIDAuMnM7XG4gIG1hcmdpbi1ib3R0b206IC0ycHg7XG59XG5saTpob3Zlcjpub3QoLmFjdGl2ZSkge1xuICBib3JkZXItYm90dG9tLWNvbG9yOiAjRkY0RDAwO1xuICBjb2xvcjogI0ZGNEQwMDtcbn1cbmxpLmFjdGl2ZSB7XG4gIGNvbG9yOiAjRkY0RDAwO1xuICBib3JkZXItYm90dG9tLWNvbG9yOiAjRkY0RDAwO1xufVxuXG4uY29udGVudCB7XG4gIGZsZXg6IDEgMTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlc21va2U7XG59XG5cbnByZSB7XG4gIG1hcmdpbi10b3A6IDA7XG59Il19 */"
+module.exports = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 300px;\n  overflow: hidden;\n  margin-top: 20px;\n  background-color: #3b3b3b; }\n\nol {\n  margin: 0;\n  padding: 0;\n  border-bottom: #cdcdcd 2px solid; }\n\nli {\n  list-style: none;\n  color: #cdcdcd;\n  display: inline-block;\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  padding: 0 15px;\n  line-height: 40px;\n  height: 40px;\n  border-bottom: 2px solid transparent;\n  transition: border-bottom 0.2s, color 0.2s;\n  margin-bottom: -2px; }\n\nli:hover:not(.active) {\n    border-bottom-color: #FF4D00;\n    color: #FF4D00; }\n\nli.active {\n    color: #FF4D00;\n    border-bottom-color: #FF4D00; }\n\n.content {\n  flex: 1 1;\n  overflow: auto;\n  background-color: whitesmoke; }\n\npre {\n  margin-top: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3RhYnMvdGFicy5jb21wb25lbnQuc2FzcyIsIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9zdHlsZXMvX3ZhcmlhYmxlcy5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQix5QkNEcUIsRUFBQTs7QURHdkI7RUFDRSxTQUFTO0VBQ1QsVUFBVTtFQUNWLGdDQUF5QyxFQUFBOztBQUUzQztFQUNFLGdCQUFnQjtFQUNoQixjQ1R1QjtFRFV2QixxQkFBcUI7RUFDckIsZUFBZTtFQUNmLFVBQVU7RUFDVixTQUFTO0VBQ1QsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osb0NBQW9DO0VBQ3BDLDBDQUEwQztFQUMxQyxtQkFBbUIsRUFBQTs7QUFackI7SUFlSSw0QkMzQmdCO0lENEJoQixjQzVCZ0IsRUFBQTs7QURZcEI7SUFtQkksY0MvQmdCO0lEZ0NoQiw0QkNoQ2dCLEVBQUE7O0FEa0NwQjtFQUNFLFNBQVM7RUFDVCxjQUFjO0VBQ2QsNEJBQTRCLEVBQUE7O0FBRTlCO0VBQ0UsYUFBYSxFQUFBIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9jb3JlL3RhYnMvdGFicy5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy92YXJpYWJsZXMnO1xuXG4gOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBoZWlnaHQ6IDMwMHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItYmctY29kZTsgfVxuXG5vbCB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgYm9yZGVyLWJvdHRvbTogJGNvbG9yLXRleHQtY29kZSAycHggc29saWQ7IH1cblxubGkge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBjb2xvcjogJGNvbG9yLXRleHQtY29kZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMCAxNXB4O1xuICBsaW5lLWhlaWdodDogNDBweDtcbiAgaGVpZ2h0OiA0MHB4O1xuICBib3JkZXItYm90dG9tOiAycHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIHRyYW5zaXRpb246IGJvcmRlci1ib3R0b20gMC4ycywgY29sb3IgMC4ycztcbiAgbWFyZ2luLWJvdHRvbTogLTJweDtcblxuICAmOmhvdmVyOm5vdCguYWN0aXZlKSB7XG4gICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogJGNvbG9yLWZvdXI7XG4gICAgY29sb3I6ICRjb2xvci1mb3VyOyB9XG5cbiAgJi5hY3RpdmUge1xuICAgIGNvbG9yOiAkY29sb3ItZm91cjtcbiAgICBib3JkZXItYm90dG9tLWNvbG9yOiAkY29sb3ItZm91cjsgfSB9XG5cbi5jb250ZW50IHtcbiAgZmxleDogMSAxO1xuICBvdmVyZmxvdzogYXV0bztcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTsgfVxuXG5wcmUge1xuICBtYXJnaW4tdG9wOiAwOyB9XG4iLCIkY29sb3Itb25lOiAjMjhDOEZGO1xuJGNvbG9yLXR3bzogIzI4QTJGRjtcbiRjb2xvci10aHJlZTogI0ZGNzkzRjtcbiRjb2xvci1mb3VyOiAjRkY0RDAwO1xuJGNvbG9yLWZpdmU6ICNFRTIyMDA7XG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5O1xuXG4kY29sb3ItYmctY29kZTogIzNiM2IzYjtcbiRjb2xvci10ZXh0LWNvZGU6ICNjZGNkY2Q7XG4iXX0= */"
 
 /***/ }),
 
@@ -1245,7 +1454,7 @@ var TabsComponent = /** @class */ (function () {
     TabsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-tabs',
-            template: __webpack_require__(/*! ./tabs.component.html */ "../ng-documentation/src/lib/core/tabs/tabs.component.html"),
+            template: __webpack_require__(/*! raw-loader!./tabs.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/core/tabs/tabs.component.html"),
             styles: [__webpack_require__(/*! ./tabs.component.sass */ "../ng-documentation/src/lib/core/tabs/tabs.component.sass")]
         })
     ], TabsComponent);
@@ -1290,17 +1499,6 @@ var TabDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/default-welcome/default-welcome.component.html":
-/*!**********************************************************************************!*\
-  !*** ../ng-documentation/src/lib/default-welcome/default-welcome.component.html ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Default Welcome Page</h1>\n\n<h2><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Documentation & Demo</h2>\n<p>This documentation is a combination of automated comment extraction from your code and of component examples.\n</p>\n\n<h2><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Navigation</h2>\n<p>Use the menu on the left to navigate throught components.</p>\n\n"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/default-welcome/default-welcome.component.sass":
 /*!**********************************************************************************!*\
   !*** ../ng-documentation/src/lib/default-welcome/default-welcome.component.sass ***!
@@ -1308,7 +1506,7 @@ module.exports = "<h1>Default Welcome Page</h1>\n\n<h2><i class=\"fa fa-check-sq
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n  padding: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kZWZhdWx0LXdlbGNvbWUvZGVmYXVsdC13ZWxjb21lLmNvbXBvbmVudC5zYXNzIiwicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2RlZmF1bHQtd2VsY29tZS9kZWZhdWx0LXdlbGNvbWUuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUM7RUFDQyxjQUFBO0VBQ0EsYUFBQTtBQ0NGIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kZWZhdWx0LXdlbGNvbWUvZGVmYXVsdC13ZWxjb21lLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiXFw6aG9zdFxuICBkaXNwbGF5OiBibG9ja1xuICBwYWRkaW5nOiAxNXB4XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxNXB4O1xufSJdfQ== */"
+module.exports = ":host {\n  display: block;\n  padding: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kZWZhdWx0LXdlbGNvbWUvZGVmYXVsdC13ZWxjb21lLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0MsY0FBYztFQUNkLGFBQWEsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvZGVmYXVsdC13ZWxjb21lL2RlZmF1bHQtd2VsY29tZS5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIiA6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxNXB4OyB9XG4iXX0= */"
 
 /***/ }),
 
@@ -1332,7 +1530,7 @@ var DefaultWelcomeComponent = /** @class */ (function () {
     DefaultWelcomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-default-welcome',
-            template: __webpack_require__(/*! ./default-welcome.component.html */ "../ng-documentation/src/lib/default-welcome/default-welcome.component.html"),
+            template: __webpack_require__(/*! raw-loader!./default-welcome.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/default-welcome/default-welcome.component.html"),
             styles: [__webpack_require__(/*! ./default-welcome.component.sass */ "../ng-documentation/src/lib/default-welcome/default-welcome.component.sass")]
         })
     ], DefaultWelcomeComponent);
@@ -1422,17 +1620,6 @@ var DocsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/docs/docs.component.html":
-/*!************************************************************!*\
-  !*** ../ng-documentation/src/lib/docs/docs.component.html ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<aside>\n  <docs-menu>\n    <ng-content></ng-content>\n  </docs-menu>\n</aside>\n\n<main>\n  <router-outlet></router-outlet>\n</main>"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/docs/docs.component.sass":
 /*!************************************************************!*\
   !*** ../ng-documentation/src/lib/docs/docs.component.sass ***!
@@ -1440,7 +1627,7 @@ module.exports = "<aside>\n  <docs-menu>\n    <ng-content></ng-content>\n  </doc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n  position: relative;\n  width: 100vw;\n  height: 100vh;\n}\n\naside {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 200px;\n  overflow: auto;\n  background: white;\n  color: black;\n  padding: 15px 0px;\n  border-right: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgray;\n}\n\nmain {\n  position: absolute;\n  top: 0;\n  left: 200px;\n  height: 100%;\n  right: 0;\n  overflow: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvZG9jcy9kb2NzLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVDO0VBQ0MsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7QUNERjs7QURLQTtFQUNFLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxZQUFBO0VBQ0EsWUFQWTtFQVFaLGNBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLDRCQUFBO0VBQ0EscUNBQUE7QUNGRjs7QURJQTtFQUNFLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLFdBbEJZO0VBbUJaLFlBQUE7RUFDQSxRQUFBO0VBQ0EsY0FBQTtBQ0RGIiwiZmlsZSI6InByb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9zdHlsZXMvX3ZhcmlhYmxlcydcblxuXFw6aG9zdFxuICBkaXNwbGF5OiBibG9ja1xuICBwb3NpdGlvbjogcmVsYXRpdmVcbiAgd2lkdGg6IDEwMHZ3XG4gIGhlaWdodDogMTAwdmhcblxuJHdpZHRoX2FzaWRlOiAyMDBweFxuXG5hc2lkZVxuICBwb3NpdGlvbjogYWJzb2x1dGVcbiAgdG9wOiAwXG4gIGxlZnQ6IDBcbiAgaGVpZ2h0OiAxMDAlXG4gIHdpZHRoOiAkd2lkdGhfYXNpZGVcbiAgb3ZlcmZsb3c6IGF1dG9cbiAgYmFja2dyb3VuZDogd2hpdGVcbiAgY29sb3I6IGJsYWNrXG4gIHBhZGRpbmc6IDE1cHggMHB4XG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkIGdyZXlcbiAgYm94LXNoYWRvdzogMnB4IDBweCAycHggMXB4IGxpZ2h0Z3JheVxuXG5tYWluXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZVxuICB0b3A6IDBcbiAgbGVmdDogJHdpZHRoX2FzaWRlXG4gIGhlaWdodDogMTAwJVxuICByaWdodDogMFxuICBvdmVyZmxvdzogYXV0byIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xufVxuXG5hc2lkZSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAyMDBweDtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBjb2xvcjogYmxhY2s7XG4gIHBhZGRpbmc6IDE1cHggMHB4O1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBncmV5O1xuICBib3gtc2hhZG93OiAycHggMHB4IDJweCAxcHggbGlnaHRncmF5O1xufVxuXG5tYWluIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDIwMHB4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIHJpZ2h0OiAwO1xuICBvdmVyZmxvdzogYXV0bztcbn0iXX0= */"
+module.exports = ":host {\n  display: block;\n  position: relative;\n  width: 100vw;\n  height: 100vh; }\n\naside {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 200px;\n  overflow: auto;\n  background: white;\n  color: black;\n  padding: 15px 0px;\n  border-right: 1px solid grey;\n  box-shadow: 2px 0px 2px 1px lightgray; }\n\nmain {\n  position: absolute;\n  top: 0;\n  left: 200px;\n  height: 100%;\n  right: 0;\n  overflow: auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9kb2NzL2RvY3MuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUM7RUFDQyxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixhQUFhLEVBQUE7O0FBSWY7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLE9BQU87RUFDUCxZQUFZO0VBQ1osWUFQaUI7RUFRakIsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLDRCQUE0QjtFQUM1QixxQ0FBcUMsRUFBQTs7QUFFdkM7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFdBbEJpQjtFQW1CakIsWUFBWTtFQUNaLFFBQVE7RUFDUixjQUFjLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL2RvY3MvZG9jcy5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uL3N0eWxlcy9fdmFyaWFibGVzJztcblxuIDpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoOyB9XG5cbiR3aWR0aF9hc2lkZTogMjAwcHg7XG5cbmFzaWRlIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6ICR3aWR0aF9hc2lkZTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBjb2xvcjogYmxhY2s7XG4gIHBhZGRpbmc6IDE1cHggMHB4O1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBncmV5O1xuICBib3gtc2hhZG93OiAycHggMHB4IDJweCAxcHggbGlnaHRncmF5OyB9XG5cbm1haW4ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogJHdpZHRoX2FzaWRlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHJpZ2h0OiAwO1xuICBvdmVyZmxvdzogYXV0bzsgfVxuIl19 */"
 
 /***/ }),
 
@@ -1476,7 +1663,7 @@ var DocsComponent = /** @class */ (function () {
     DocsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-app',
-            template: __webpack_require__(/*! ./docs.component.html */ "../ng-documentation/src/lib/docs/docs.component.html"),
+            template: __webpack_require__(/*! raw-loader!./docs.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/docs/docs.component.html"),
             styles: [__webpack_require__(/*! ./docs.component.sass */ "../ng-documentation/src/lib/docs/docs.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
@@ -1505,17 +1692,6 @@ var DOCUMENTATION_PATH = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injecti
 
 /***/ }),
 
-/***/ "../ng-documentation/src/lib/menu/menu.component.html":
-/*!************************************************************!*\
-  !*** ../ng-documentation/src/lib/menu/menu.component.html ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"header\">\n  <div class=\"brand-area\">\n    <ng-container [ngTemplateOutlet]=\"brandHeaderTemplate\"></ng-container>\n  </div>\n    \n  <ul class=\"ng-documentation__menu-links links\">\n    <li><a routerLink=\"/\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact: true}\">Get started</a></li>\n  </ul>\n  <input type=\"text\"\n    class=\"search\"\n    [class.active]=\"search$ | async\"\n    [class.no-result]=\"(pages$ | async).length === 0\"\n    [ngModel]=\"search$ | async\"\n    (ngModelChange)=\"setSearch($event)\"\n    placeholder=\"Search for a component\"\n    autofocus\n    autocomplete=\"off\"\n  />\n  <div class=\"search-helper\"\n    [class.hidden]=\"!(search$ | async)\"\n    [class.no-result]=\"(pages$ | async).length === 0\">\n    <ng-container *ngIf=\"search$ | async\">\n      {{(pages$ | async).length}} <ng-container *ngIf=\"(pages$ | async).length > 1\">results</ng-container><ng-container *ngIf=\"(pages$ | async).length === 1\">result</ng-container> found\n    </ng-container>\n  </div>\n</div>\n<ul class=\"ng-documentation__menu-links links\">\n  <ng-container *ngIf=\"pages$ | async as pages; else noResults\">\n    <li *ngFor=\"let page of pages\">\n      <a\n        [routerLink]=\"page.path\"\n        routerLinkActive=\"active-link\"\n      >{{page.title}}</a>\n    </li>\n  </ng-container>\n</ul>\n<ul class=\"ng-documentation__menu-links ng-documentation__menu-extra-links\">\n  <ng-content></ng-content>\n</ul>\n\n<ng-template #noResults>\n  No result for this search!\n</ng-template>"
-
-/***/ }),
-
 /***/ "../ng-documentation/src/lib/menu/menu.component.sass":
 /*!************************************************************!*\
   !*** ../ng-documentation/src/lib/menu/menu.component.sass ***!
@@ -1523,7 +1699,7 @@ module.exports = "<div class=\"header\">\n  <div class=\"brand-area\">\n    <ng-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".brand-area {\n  padding: 13.5px 15px;\n}\n\n.search {\n  height: 40px;\n  line-height: 14px;\n  font-size: 14px;\n  padding: 13.5px 15px;\n  width: 100%;\n  border-radius: 0;\n  color: #28A2FF;\n  outline: none;\n  border: none;\n  border-top: lightgrey 1px solid;\n  border-bottom: lightgrey 1px solid;\n}\n\n.search.no-result {\n  border-color: #EE2200;\n  color: #EE2200;\n}\n\n.search-helper {\n  width: 100%;\n  padding: 0 15px;\n  line-height: 20px;\n  height: 20px;\n  background-color: #28A2FF;\n  color: white;\n  font-size: 1rem;\n  transition: opacity 0.2s;\n  opacity: 1;\n}\n\n.search-helper.no-result {\n  background-color: #EE2200;\n}\n\n.search-helper.hidden {\n  opacity: 0;\n}\n\n:host {\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  flex-direction: column;\n}\n\n.links {\n  flex: 1 1;\n  overflow: auto;\n}\n\n.extra-links, .header {\n  flex: 0 0 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvbWVudS9tZW51LmNvbXBvbmVudC5zYXNzIiwiL2hvbWUvdHJhdmlzL2J1aWxkL2tldmlubWVyY2t4L25nLWRvY3VtZW50YXRpb24vcHJvamVjdHMvbmctZG9jdW1lbnRhdGlvbi9zcmMvbGliL3N0eWxlcy9fdmFyaWFibGVzLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUE7RUFDRSxvQkFBQTtBQ0hGOztBREtBO0VBQ0UsWUFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsY0ViVTtFRmNWLGFBQUE7RUFDQSxZQUFBO0VBQ0EsK0JBQUE7RUFDQSxrQ0FBQTtBQ0ZGOztBRElFO0VBQ0UscUJFakJTO0VGa0JULGNFbEJTO0FEZ0JiOztBRElBO0VBQ0UsV0FBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkU1QlU7RUY2QlYsWUFBQTtFQUNBLGVBQUE7RUFDQSx3QkFBQTtFQUNBLFVBQUE7QUNERjs7QURHRTtFQUNFLHlCRWhDUztBRCtCYjs7QURHRTtFQUNFLFVBQUE7QUNESjs7QURHQztFQUNDLGFBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxzQkFBQTtBQ0FGOztBREVBO0VBQ0UsU0FBQTtFQUNBLGNBQUE7QUNDRjs7QURDQTtFQUNFLGNBQUE7QUNFRiIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvbWVudS9tZW51LmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vc3R5bGVzL3ZhcmlhYmxlcydcblxuJHNlYXJjaC1jb2xvcjogJGNvbG9yLXR3b1xuXG4uYnJhbmQtYXJlYVxuICBwYWRkaW5nOiAxMy41cHggMTVweFxuXG4uc2VhcmNoXG4gIGhlaWdodDogNDBweFxuICBsaW5lLWhlaWdodDogMTRweFxuICBmb250LXNpemU6IDE0cHhcbiAgcGFkZGluZzogMTMuNXB4IDE1cHhcbiAgd2lkdGg6IDEwMCVcbiAgYm9yZGVyLXJhZGl1czogMFxuICBjb2xvcjogJHNlYXJjaC1jb2xvclxuICBvdXRsaW5lOiBub25lXG4gIGJvcmRlcjogbm9uZVxuICBib3JkZXItdG9wOiAkY29sb3ItbGlnaHQtZ3JleSAxcHggc29saWRcbiAgYm9yZGVyLWJvdHRvbTogJGNvbG9yLWxpZ2h0LWdyZXkgMXB4IHNvbGlkXG5cbiAgJi5uby1yZXN1bHRcbiAgICBib3JkZXItY29sb3I6ICRjb2xvci1maXZlXG4gICAgY29sb3I6ICRjb2xvci1maXZlXG5cbi5zZWFyY2gtaGVscGVyXG4gIHdpZHRoOiAxMDAlXG4gIHBhZGRpbmc6IDAgMTVweFxuICBsaW5lLWhlaWdodDogMjBweFxuICBoZWlnaHQ6IDIwcHhcbiAgYmFja2dyb3VuZC1jb2xvcjogJHNlYXJjaC1jb2xvclxuICBjb2xvcjogd2hpdGVcbiAgZm9udC1zaXplOiAxcmVtXG4gIHRyYW5zaXRpb246IG9wYWNpdHkgMC4yc1xuICBvcGFjaXR5OiAxXG5cbiAgJi5uby1yZXN1bHRcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZml2ZVxuXG4gICYuaGlkZGVuXG4gICAgb3BhY2l0eTogMFxuXG5cXDpob3N0XG4gIGRpc3BsYXk6IGZsZXhcbiAgaGVpZ2h0OiAxMDAlXG4gIG92ZXJmbG93OiBoaWRkZW5cbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtblxuXG4ubGlua3NcbiAgZmxleDogMSAxXG4gIG92ZXJmbG93OiBhdXRvXG5cbi5leHRyYS1saW5rcywgLmhlYWRlclxuICBmbGV4OiAwIDAgYXV0b1xuIiwiLmJyYW5kLWFyZWEge1xuICBwYWRkaW5nOiAxMy41cHggMTVweDtcbn1cblxuLnNlYXJjaCB7XG4gIGhlaWdodDogNDBweDtcbiAgbGluZS1oZWlnaHQ6IDE0cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgcGFkZGluZzogMTMuNXB4IDE1cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBjb2xvcjogIzI4QTJGRjtcbiAgb3V0bGluZTogbm9uZTtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItdG9wOiBsaWdodGdyZXkgMXB4IHNvbGlkO1xuICBib3JkZXItYm90dG9tOiBsaWdodGdyZXkgMXB4IHNvbGlkO1xufVxuLnNlYXJjaC5uby1yZXN1bHQge1xuICBib3JkZXItY29sb3I6ICNFRTIyMDA7XG4gIGNvbG9yOiAjRUUyMjAwO1xufVxuXG4uc2VhcmNoLWhlbHBlciB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAwIDE1cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyOEEyRkY7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxcmVtO1xuICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMnM7XG4gIG9wYWNpdHk6IDE7XG59XG4uc2VhcmNoLWhlbHBlci5uby1yZXN1bHQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRUUyMjAwO1xufVxuLnNlYXJjaC1oZWxwZXIuaGlkZGVuIHtcbiAgb3BhY2l0eTogMDtcbn1cblxuOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG59XG5cbi5saW5rcyB7XG4gIGZsZXg6IDEgMTtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi5leHRyYS1saW5rcywgLmhlYWRlciB7XG4gIGZsZXg6IDAgMCBhdXRvO1xufSIsIiRjb2xvci1vbmU6ICMyOEM4RkZcbiRjb2xvci10d286ICMyOEEyRkZcbiRjb2xvci10aHJlZTogI0ZGNzkzRlxuJGNvbG9yLWZvdXI6ICNGRjREMDBcbiRjb2xvci1maXZlOiAjRUUyMjAwXG4kY29sb3ItbGlnaHQtZ3JleTogbGlnaHRncmV5XG5cbiRjb2xvci1iZy1jb2RlOiAjM2IzYjNiXG4kY29sb3ItdGV4dC1jb2RlOiAjY2RjZGNkXG4iXX0= */"
+module.exports = ".brand-area {\n  padding: 13.5px 15px; }\n\n.search {\n  height: 40px;\n  line-height: 14px;\n  font-size: 14px;\n  padding: 13.5px 15px;\n  width: 100%;\n  border-radius: 0;\n  color: #28A2FF;\n  outline: none;\n  border: none;\n  border-top: lightgrey 1px solid;\n  border-bottom: lightgrey 1px solid; }\n\n.search.no-result {\n    border-color: #EE2200;\n    color: #EE2200; }\n\n.search-helper {\n  width: 100%;\n  padding: 0 15px;\n  line-height: 20px;\n  height: 20px;\n  background-color: #28A2FF;\n  color: white;\n  font-size: 1rem;\n  transition: opacity 0.2s;\n  opacity: 1; }\n\n.search-helper.no-result {\n    background-color: #EE2200; }\n\n.search-helper.hidden {\n    opacity: 0; }\n\n:host {\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  flex-direction: column; }\n\n.links {\n  flex: 1 1;\n  overflow: auto; }\n\n.extra-links, .header {\n  flex: 0 0 auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL25nLWRvY3VtZW50YXRpb24vc3JjL2xpYi9tZW51L21lbnUuY29tcG9uZW50LnNhc3MiLCIvaG9tZS90cmF2aXMvYnVpbGQva2V2aW5tZXJja3gvbmctZG9jdW1lbnRhdGlvbi9wcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvc3R5bGVzL192YXJpYWJsZXMuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUNFLG9CQUFvQixFQUFBOztBQUV0QjtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGNDYmlCO0VEY2pCLGFBQWE7RUFDYixZQUFZO0VBQ1osK0JBQXVDO0VBQ3ZDLGtDQUEwQyxFQUFBOztBQVg1QztJQWNJLHFCQ2pCZ0I7SURrQmhCLGNDbEJnQixFQUFBOztBRG9CcEI7RUFDRSxXQUFXO0VBQ1gsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1oseUJDNUJpQjtFRDZCakIsWUFBWTtFQUNaLGVBQWU7RUFDZix3QkFBd0I7RUFDeEIsVUFBVSxFQUFBOztBQVRaO0lBWUkseUJDaENnQixFQUFBOztBRG9CcEI7SUFlSSxVQUFVLEVBQUE7O0FBRWI7RUFDQyxhQUFhO0VBQ2IsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixzQkFBc0IsRUFBQTs7QUFFeEI7RUFDRSxTQUFTO0VBQ1QsY0FBYyxFQUFBOztBQUVoQjtFQUNFLGNBQWMsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy9uZy1kb2N1bWVudGF0aW9uL3NyYy9saWIvbWVudS9tZW51LmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vc3R5bGVzL3ZhcmlhYmxlcyc7XG5cbiRzZWFyY2gtY29sb3I6ICRjb2xvci10d287XG5cbi5icmFuZC1hcmVhIHtcbiAgcGFkZGluZzogMTMuNXB4IDE1cHg7IH1cblxuLnNlYXJjaCB7XG4gIGhlaWdodDogNDBweDtcbiAgbGluZS1oZWlnaHQ6IDE0cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgcGFkZGluZzogMTMuNXB4IDE1cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBjb2xvcjogJHNlYXJjaC1jb2xvcjtcbiAgb3V0bGluZTogbm9uZTtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItdG9wOiAkY29sb3ItbGlnaHQtZ3JleSAxcHggc29saWQ7XG4gIGJvcmRlci1ib3R0b206ICRjb2xvci1saWdodC1ncmV5IDFweCBzb2xpZDtcblxuICAmLm5vLXJlc3VsdCB7XG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZml2ZTtcbiAgICBjb2xvcjogJGNvbG9yLWZpdmU7IH0gfVxuXG4uc2VhcmNoLWhlbHBlciB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAwIDE1cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICRzZWFyY2gtY29sb3I7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxcmVtO1xuICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMnM7XG4gIG9wYWNpdHk6IDE7XG5cbiAgJi5uby1yZXN1bHQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1maXZlOyB9XG5cbiAgJi5oaWRkZW4ge1xuICAgIG9wYWNpdHk6IDA7IH0gfVxuXG4gOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cblxuLmxpbmtzIHtcbiAgZmxleDogMSAxO1xuICBvdmVyZmxvdzogYXV0bzsgfVxuXG4uZXh0cmEtbGlua3MsIC5oZWFkZXIge1xuICBmbGV4OiAwIDAgYXV0bzsgfVxuIiwiJGNvbG9yLW9uZTogIzI4QzhGRjtcbiRjb2xvci10d286ICMyOEEyRkY7XG4kY29sb3ItdGhyZWU6ICNGRjc5M0Y7XG4kY29sb3ItZm91cjogI0ZGNEQwMDtcbiRjb2xvci1maXZlOiAjRUUyMjAwO1xuJGNvbG9yLWxpZ2h0LWdyZXk6IGxpZ2h0Z3JleTtcblxuJGNvbG9yLWJnLWNvZGU6ICMzYjNiM2I7XG4kY29sb3ItdGV4dC1jb2RlOiAjY2RjZGNkO1xuIl19 */"
 
 /***/ }),
 
@@ -1588,7 +1764,7 @@ var MenuComponent = /** @class */ (function () {
     MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'docs-menu',
-            template: __webpack_require__(/*! ./menu.component.html */ "../ng-documentation/src/lib/menu/menu.component.html"),
+            template: __webpack_require__(/*! raw-loader!./menu.component.html */ "../../node_modules/raw-loader/index.js!../ng-documentation/src/lib/menu/menu.component.html"),
             styles: [__webpack_require__(/*! ./menu.component.sass */ "../ng-documentation/src/lib/menu/menu.component.sass")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_routes_token__WEBPACK_IMPORTED_MODULE_6__["COMPONENT_PAGES"])),
@@ -1662,17 +1838,6 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/app.component.html":
-/*!************************************!*\
-  !*** ./src/app/app.component.html ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"brand-area\">NG Documentation</h3>\n  </ng-template>\n  <li><a href=\"https://github.com/kevinmerckx/ng-documentation\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> Github</a></li>\n</docs-app>\n"
-
-/***/ }),
-
 /***/ "./src/app/app.component.sass":
 /*!************************************!*\
   !*** ./src/app/app.component.sass ***!
@@ -1680,7 +1845,7 @@ module.exports = "<docs-app>\n  <ng-template docsBrandHeader>\n    <h3 class=\"b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".brand-area {\n  padding: 0 15px 5px 15px;\n  margin: 0 -15px;\n  border-bottom: 1px solid black;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL2RvY3Mvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNhc3MiLCJwcm9qZWN0cy9kb2NzL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQUE7RUFDQSxlQUFBO0VBQ0EsOEJBQUE7QUNDRiIsImZpbGUiOiJwcm9qZWN0cy9kb2NzL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmJyYW5kLWFyZWFcbiAgcGFkZGluZzogMCAxNXB4IDVweCAxNXB4XG4gIG1hcmdpbjogMCAtMTVweFxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgYmxhY2siLCIuYnJhbmQtYXJlYSB7XG4gIHBhZGRpbmc6IDAgMTVweCA1cHggMTVweDtcbiAgbWFyZ2luOiAwIC0xNXB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgYmxhY2s7XG59Il19 */"
+module.exports = ".brand-area {\n  padding: 0 15px 5px 15px;\n  margin: 0 -15px;\n  border-bottom: 1px solid black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9rZXZpbm1lcmNreC9uZy1kb2N1bWVudGF0aW9uL3Byb2plY3RzL2RvY3Mvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx3QkFBd0I7RUFDeEIsZUFBZTtFQUNmLDhCQUE4QixFQUFBIiwiZmlsZSI6InByb2plY3RzL2RvY3Mvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnJhbmQtYXJlYSB7XG4gIHBhZGRpbmc6IDAgMTVweCA1cHggMTVweDtcbiAgbWFyZ2luOiAwIC0xNXB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgYmxhY2s7IH1cbiJdfQ== */"
 
 /***/ }),
 
@@ -1696,19 +1861,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "../../node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-
 
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'docs';
-        this.faHandshake = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHandshake"];
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            template: __webpack_require__(/*! raw-loader!./app.component.html */ "../../node_modules/raw-loader/index.js!./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.sass */ "./src/app/app.component.sass")]
         })
     ], AppComponent);
@@ -1831,17 +1993,6 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/code-line/code-line-example1/code-line-example1.component.html":
-/*!*****************************************************************************************!*\
-  !*** ./src/app/features/code-line/code-line-example1/code-line-example1.component.html ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-code-line>console.log('Hello world!');</docs-code-line>"
-
-/***/ }),
-
 /***/ "./src/app/features/code-line/code-line-example1/code-line-example1.component.sass":
 /*!*****************************************************************************************!*\
   !*** ./src/app/features/code-line/code-line-example1/code-line-example1.component.sass ***!
@@ -1873,7 +2024,7 @@ var CodeLineExample1Component = /** @class */ (function () {
     CodeLineExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-code-line-example1',
-            template: __webpack_require__(/*! ./code-line-example1.component.html */ "./src/app/features/code-line/code-line-example1/code-line-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code-line-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/code-line/code-line-example1/code-line-example1.component.html"),
             styles: [__webpack_require__(/*! ./code-line-example1.component.sass */ "./src/app/features/code-line/code-line-example1/code-line-example1.component.sass")]
         })
     ], CodeLineExample1Component);
@@ -1928,17 +2079,6 @@ var CodeLineModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/code-line/code-line/code-line.component.html":
-/*!***********************************************************************!*\
-  !*** ./src/app/features/code-line/code-line/code-line.component.html ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Code Line'\"\n  [componentId]=\"'CodeLineComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display one line of code\">\n    <app-code-line-example1></app-code-line-example1>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-line-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/code-line/code-line/code-line.component.sass":
 /*!***********************************************************************!*\
   !*** ./src/app/features/code-line/code-line/code-line.component.sass ***!
@@ -1970,7 +2110,7 @@ var CodeLineComponent = /** @class */ (function () {
     CodeLineComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-code-line',
-            template: __webpack_require__(/*! ./code-line.component.html */ "./src/app/features/code-line/code-line/code-line.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code-line.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/code-line/code-line/code-line.component.html"),
             styles: [__webpack_require__(/*! ./code-line.component.sass */ "./src/app/features/code-line/code-line/code-line.component.sass")]
         })
     ], CodeLineComponent);
@@ -1978,17 +2118,6 @@ var CodeLineComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/code/code-example1/code-example1.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/features/code/code-example1/code-example1.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-code path=\"code-example1.component.html\"></docs-code>"
 
 /***/ }),
 
@@ -2023,7 +2152,7 @@ var CodeExample1Component = /** @class */ (function () {
     CodeExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-code-example1',
-            template: __webpack_require__(/*! ./code-example1.component.html */ "./src/app/features/code/code-example1/code-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/code/code-example1/code-example1.component.html"),
             styles: [__webpack_require__(/*! ./code-example1.component.sass */ "./src/app/features/code/code-example1/code-example1.component.sass")]
         })
     ], CodeExample1Component);
@@ -2031,17 +2160,6 @@ var CodeExample1Component = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/code/code-example2/code-example2.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/features/code/code-example2/code-example2.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-code>Some code here</docs-code>"
 
 /***/ }),
 
@@ -2076,7 +2194,7 @@ var CodeExample2Component = /** @class */ (function () {
     CodeExample2Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-code-example2',
-            template: __webpack_require__(/*! ./code-example2.component.html */ "./src/app/features/code/code-example2/code-example2.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code-example2.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/code/code-example2/code-example2.component.html"),
             styles: [__webpack_require__(/*! ./code-example2.component.sass */ "./src/app/features/code/code-example2/code-example2.component.sass")]
         })
     ], CodeExample2Component);
@@ -2130,17 +2248,6 @@ var CodeModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/code/code/code.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/features/code/code/code.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Code'\"\n  [componentId]=\"'CodeComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Code from a file\">\n    <app-code-example1></app-code-example1>\n  </ng-template>\n\n  <ng-template docsComponentExample=\"Display Code from the template\">\n    <app-code-example2></app-code-example2>\n    <docs-tabs>\n      <docs-code *docsTab=\"'HTML'\" path=\"code-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/code/code/code.component.sass":
 /*!********************************************************!*\
   !*** ./src/app/features/code/code/code.component.sass ***!
@@ -2172,7 +2279,7 @@ var CodeComponent = /** @class */ (function () {
     CodeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-code',
-            template: __webpack_require__(/*! ./code.component.html */ "./src/app/features/code/code/code.component.html"),
+            template: __webpack_require__(/*! raw-loader!./code.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/code/code/code.component.html"),
             styles: [__webpack_require__(/*! ./code.component.sass */ "./src/app/features/code/code/code.component.sass")]
         })
     ], CodeComponent);
@@ -2180,17 +2287,6 @@ var CodeComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/component-api/component-api-example1/component-api-example1.component.html":
-/*!*****************************************************************************************************!*\
-  !*** ./src/app/features/component-api/component-api-example1/component-api-example1.component.html ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-api\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n></docs-component-api>\n"
 
 /***/ }),
 
@@ -2229,7 +2325,7 @@ var ComponentApiExample1Component = /** @class */ (function () {
     ComponentApiExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-component-api-example1',
-            template: __webpack_require__(/*! ./component-api-example1.component.html */ "./src/app/features/component-api/component-api-example1/component-api-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-api-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/component-api/component-api-example1/component-api-example1.component.html"),
             providers: [
                 projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
                 {
@@ -2288,17 +2384,6 @@ var ComponentApiModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/component-api/component-api/component-api.component.html":
-/*!***********************************************************************************!*\
-  !*** ./src/app/features/component-api/component-api/component-api.component.html ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Component API'\"\n  [componentId]=\"'ComponentApiComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display a component's API\">\n    <docs-tabs>\n      <app-component-api-example1 *docsTab=\"'Example'\"></app-component-api-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-api-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/component-api/component-api/component-api.component.sass":
 /*!***********************************************************************************!*\
   !*** ./src/app/features/component-api/component-api/component-api.component.sass ***!
@@ -2330,7 +2415,7 @@ var ComponentApiComponent = /** @class */ (function () {
     ComponentApiComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-component-api',
-            template: __webpack_require__(/*! ./component-api.component.html */ "./src/app/features/component-api/component-api/component-api.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-api.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/component-api/component-api/component-api.component.html"),
             styles: [__webpack_require__(/*! ./component-api.component.sass */ "./src/app/features/component-api/component-api/component-api.component.sass")]
         })
     ], ComponentApiComponent);
@@ -2338,17 +2423,6 @@ var ComponentApiComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html":
-/*!***********************************************************************************************************************************!*\
-  !*** ./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html ***!
-  \***********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Profile'\"\n  [componentId]=\"'ProfileComponent'\"\n  [componentType]=\"'components'\"\n  [disableRoutedNavigation]=\"true\"\n>\n  <ng-template docsComponentExample=\"Basic Usage\">\n    <app-profile [profileId]=\"'a76Hhjh6'\" [category]=\"'Admin'\"></app-profile>\n  </ng-template>\n</docs-component-documentation>\n"
 
 /***/ }),
 
@@ -2387,7 +2461,7 @@ var ComponentDocumentationExample1Component = /** @class */ (function () {
     ComponentDocumentationExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-component-documentation-example1',
-            template: __webpack_require__(/*! ./component-documentation-example1.component.html */ "./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-documentation-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/component-documentation/component-documentation-example1/component-documentation-example1.component.html"),
             providers: [
                 projects_ng_documentation_src_lib_core_documentation_service__WEBPACK_IMPORTED_MODULE_2__["DocumentationService"],
                 {
@@ -2446,17 +2520,6 @@ var ComponentDocumentationModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/component-documentation/component-documentation/component-documentation.component.html":
-/*!*****************************************************************************************************************!*\
-  !*** ./src/app/features/component-documentation/component-documentation/component-documentation.component.html ***!
-  \*****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Component Documentation'\"\n  [componentId]=\"'ComponentDocumentationComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Display Component Documentation\">\n    <docs-tabs>\n      <app-component-documentation-example1 *docsTab=\"'Example'\"></app-component-documentation-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"component-documentation-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/component-documentation/component-documentation/component-documentation.component.sass":
 /*!*****************************************************************************************************************!*\
   !*** ./src/app/features/component-documentation/component-documentation/component-documentation.component.sass ***!
@@ -2488,7 +2551,7 @@ var ComponentDocumentationComponent = /** @class */ (function () {
     ComponentDocumentationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-component-documentation',
-            template: __webpack_require__(/*! ./component-documentation.component.html */ "./src/app/features/component-documentation/component-documentation/component-documentation.component.html"),
+            template: __webpack_require__(/*! raw-loader!./component-documentation.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/component-documentation/component-documentation/component-documentation.component.html"),
             styles: [__webpack_require__(/*! ./component-documentation.component.sass */ "./src/app/features/component-documentation/component-documentation/component-documentation.component.sass")]
         })
     ], ComponentDocumentationComponent);
@@ -2538,17 +2601,6 @@ var HomeModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/home/home/home.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/features/home/home/home.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-page [noNavigation]=\"true\">\n  <ng-template docsPageSection>\n    <p>This library aims at solving the following problem: easily generate a comprehensive documentation for libraries.\n    </p>\n\n    <ul>\n      <li>Get the API documentation directly from the code.</li>\n      <li>Create and show examples: the code that is shown is the actual code that is running => less copy/paste.</li>\n    </ul>\n\n    <p>This web page has been built with this library!</p>\n  </ng-template>\n\n  <ng-template docsPageSection=\"Get Started\">\n    <ol>\n      <li>\n        Install\n        <docs-code-line>npm install --save-dev ng-documentation</docs-code-line>\n      </li>\n\n      <li>Create a documentation application with the Angular CLI</li>\n\n      <li>\n        Setup helper tools\n        <p>\n          Add the following to the scripts section of your package.json.\n        </p>\n\n        <docs-code-line>\n          \"postinstall\": \"cp -R node_modules/ng-documentation/scripts .\",\n          <br />\n          \"build:docs\": \"./scripts/generate-doc.sh PATH_TO_THE_ASSETS_FOLDER PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT && ng build NAME_OF_ANGULAR_PROJECT\",\n          <br />\n          \"watch:docs\": \"./scripts/watch-docs.sh PATH_TO_THE_ASSETS_FOLDER/documentation PATH_TO_THE_TSCONFIG_JSON_FILE\n          NAME_OF_ANGULAR_PROJECT\"\n        </docs-code-line>\n      </li>\n\n\n      <li>Add the styles to your Angular project styles property in the angular.json.\n        <docs-code-line>\n          styles: [ \"node_modules/ng-documentation/ng-documentation.css\" ]\n        </docs-code-line>\n      </li>\n\n      <li>When you want to live serve the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run watch:docs</docs-code-line>\n      </li>\n\n      <li>When you want to build the documentation app, you must generate the documentation files:\n        <docs-code-line>npm run build:docs</docs-code-line>\n      </li>\n\n      <li>\n        Configure the documentation\n        <docs-tabs>\n          <docs-code *docsTab=\"'app.module.ts'\" path=\"app.module.ts\"></docs-code>\n          <docs-code *docsTab=\"'app.component.html'\" path=\"app.component.html\"></docs-code>\n        </docs-tabs>\n      </li>\n    </ol>\n  </ng-template>\n</docs-page>"
-
-/***/ }),
-
 /***/ "./src/app/features/home/home/home.component.sass":
 /*!********************************************************!*\
   !*** ./src/app/features/home/home/home.component.sass ***!
@@ -2580,7 +2632,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__(/*! ./home.component.html */ "./src/app/features/home/home/home.component.html"),
+            template: __webpack_require__(/*! raw-loader!./home.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/home/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.sass */ "./src/app/features/home/home/home.component.sass")]
         })
     ], HomeComponent);
@@ -2588,17 +2640,6 @@ var HomeComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/page/page-example1/page-example1.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/features/page/page-example1/page-example1.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
 
 /***/ }),
 
@@ -2633,7 +2674,7 @@ var PageExample1Component = /** @class */ (function () {
     PageExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-page-example1',
-            template: __webpack_require__(/*! ./page-example1.component.html */ "./src/app/features/page/page-example1/page-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./page-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/page/page-example1/page-example1.component.html"),
             styles: [__webpack_require__(/*! ./page-example1.component.sass */ "./src/app/features/page/page-example1/page-example1.component.sass")]
         })
     ], PageExample1Component);
@@ -2641,17 +2682,6 @@ var PageExample1Component = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/page/page-example2/page-example2.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/features/page/page-example2/page-example2.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-page [title]=\"'Some Title'\" [disableRoutedNavigation]=\"true\" [noNavigation]=\"true\">\n  <ng-template [docsPageSection]=\"'Section #1'\">\n    <p>Here is the first section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #2'\">\n    <p>Here is the second section.</p>\n  </ng-template>\n  <ng-template [docsPageSection]=\"'Section #3'\">\n    <p>Here is the third section.</p>\n  </ng-template>\n</docs-page>"
 
 /***/ }),
 
@@ -2686,7 +2716,7 @@ var PageExample2Component = /** @class */ (function () {
     PageExample2Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-page-example2',
-            template: __webpack_require__(/*! ./page-example2.component.html */ "./src/app/features/page/page-example2/page-example2.component.html"),
+            template: __webpack_require__(/*! raw-loader!./page-example2.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/page/page-example2/page-example2.component.html"),
             styles: [__webpack_require__(/*! ./page-example2.component.sass */ "./src/app/features/page/page-example2/page-example2.component.sass")]
         })
     ], PageExample2Component);
@@ -2740,17 +2770,6 @@ var PageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/page/page/page.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/features/page/page/page.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Documentation Page'\"\n  [componentId]=\"'PageComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Render a standard page\">\n    <docs-tabs>\n      <app-page-example1 *docsTab=\"'Example'\"></app-page-example1>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example1.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n  <ng-template docsComponentExample=\"No navigation bar\">\n    <docs-tabs>\n      <app-page-example2 *docsTab=\"'Example'\"></app-page-example2>\n      <docs-code *docsTab=\"'HTML'\" path=\"page-example2.component.html\"></docs-code>\n    </docs-tabs>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/page/page/page.component.sass":
 /*!********************************************************!*\
   !*** ./src/app/features/page/page/page.component.sass ***!
@@ -2782,7 +2801,7 @@ var PageComponent = /** @class */ (function () {
     PageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-page',
-            template: __webpack_require__(/*! ./page.component.html */ "./src/app/features/page/page/page.component.html"),
+            template: __webpack_require__(/*! raw-loader!./page.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/page/page/page.component.html"),
             styles: [__webpack_require__(/*! ./page.component.sass */ "./src/app/features/page/page/page.component.sass")]
         })
     ], PageComponent);
@@ -2790,17 +2809,6 @@ var PageComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/features/tabs/tabs-example1/tabs-example1.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/features/tabs/tabs-example1/tabs-example1.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-tabs>\n  <docs-code *docsTab=\"'HTML'\" path=\"tabs-example1.component.html\"></docs-code>\n  <docs-code *docsTab=\"'TS'\" path=\"tabs-example1.component.ts\"></docs-code>\n</docs-tabs>"
 
 /***/ }),
 
@@ -2835,7 +2843,7 @@ var TabsExample1Component = /** @class */ (function () {
     TabsExample1Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs-example1',
-            template: __webpack_require__(/*! ./tabs-example1.component.html */ "./src/app/features/tabs/tabs-example1/tabs-example1.component.html"),
+            template: __webpack_require__(/*! raw-loader!./tabs-example1.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/tabs/tabs-example1/tabs-example1.component.html"),
             styles: [__webpack_require__(/*! ./tabs-example1.component.sass */ "./src/app/features/tabs/tabs-example1/tabs-example1.component.sass")]
         })
     ], TabsExample1Component);
@@ -2890,17 +2898,6 @@ var TabsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/features/tabs/tabs/tabs.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/features/tabs/tabs/tabs.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<docs-component-documentation\n  [componentTitle]=\"'Tabs'\"\n  [componentId]=\"'TabsComponent'\"\n  [componentType]=\"'components'\"\n>\n  <ng-template docsComponentExample=\"Tabs to display code\">\n    <app-tabs-example1></app-tabs-example1>\n  </ng-template>\n</docs-component-documentation>\n"
-
-/***/ }),
-
 /***/ "./src/app/features/tabs/tabs/tabs.component.sass":
 /*!********************************************************!*\
   !*** ./src/app/features/tabs/tabs/tabs.component.sass ***!
@@ -2932,7 +2929,7 @@ var TabsComponent = /** @class */ (function () {
     TabsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs',
-            template: __webpack_require__(/*! ./tabs.component.html */ "./src/app/features/tabs/tabs/tabs.component.html"),
+            template: __webpack_require__(/*! raw-loader!./tabs.component.html */ "../../node_modules/raw-loader/index.js!./src/app/features/tabs/tabs/tabs.component.html"),
             styles: [__webpack_require__(/*! ./tabs.component.sass */ "./src/app/features/tabs/tabs/tabs.component.sass")]
         })
     ], TabsComponent);
@@ -2940,17 +2937,6 @@ var TabsComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/shared/profile/profile.component.html":
-/*!*******************************************************!*\
-  !*** ./src/app/shared/profile/profile.component.html ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<strong>Profile #{{profileId}}</strong> (category: {{category}})"
 
 /***/ }),
 
@@ -2999,7 +2985,7 @@ var ProfileComponent = /** @class */ (function () {
     ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-profile',
-            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/shared/profile/profile.component.html")
+            template: __webpack_require__(/*! raw-loader!./profile.component.html */ "../../node_modules/raw-loader/index.js!./src/app/shared/profile/profile.component.html")
         })
     ], ProfileComponent);
     return ProfileComponent;

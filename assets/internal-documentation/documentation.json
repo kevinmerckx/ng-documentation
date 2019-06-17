@@ -7,7 +7,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-0e788ef19309516db9cfe2106edf46aa",
+            "id": "component-AppComponent-9e2b0d19ab86d70048ea192b6a4520a3",
             "file": "projects/docs/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -27,20 +27,12 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "faHandshake",
-                    "defaultValue": "faHandshake",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
                     "name": "title",
                     "defaultValue": "'docs'",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 9
                 }
             ],
             "methodsClass": [],
@@ -49,7 +41,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { faHandshake } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.sass']\n})\nexport class AppComponent {\n  title = 'docs';\n  faHandshake = faHandshake;\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.sass']\n})\nexport class AppComponent {\n  title = 'docs';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1173,7 +1165,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
