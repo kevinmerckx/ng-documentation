@@ -10,7 +10,7 @@ import { faCopy } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./code-line.component.sass']
 })
 export class CodeLineComponent implements OnDestroy {
-  @ViewChild('code') code: ElementRef;
+  @ViewChild('code', { static: false }) code: ElementRef;
   faCopy = faCopy;
   copied = false;
   copiedTimeout: any;

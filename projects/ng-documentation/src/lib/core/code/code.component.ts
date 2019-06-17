@@ -14,7 +14,7 @@ export class CodeComponent implements OnDestroy {
    * Path or name of the file that you want to display.
    */
   @Input() path: string;
-  @ViewChild('code') code: ElementRef;
+  @ViewChild('code', { static: false }) code: ElementRef;
   faCopy = faCopy;
   copied = false;
   copiedTimeout: any;
