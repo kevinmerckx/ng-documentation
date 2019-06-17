@@ -5,15 +5,17 @@
   flex-direction: column
   height: 300px
   overflow: hidden
-  border: $color-light-grey 1px solid
   margin-top: 20px
+  background-color: $color-bg-code
 
 ol
   margin: 0
   padding: 0
+  border-bottom: $color-text-code 2px solid
 
 li
   list-style: none
+  color: $color-text-code
   display: inline-block
   cursor: pointer
   padding: 0
@@ -22,10 +24,12 @@ li
   line-height: 40px
   height: 40px
   border-bottom: 2px solid transparent
-  transition: border-bottom 0.2s
+  transition: border-bottom 0.2s, color 0.2s
+  margin-bottom: -2px
 
   &:hover:not(.active)
-    border-bottom-color: $color-light-grey
+    border-bottom-color: $color-four
+    color: $color-four
     
   &.active
     color: $color-four
