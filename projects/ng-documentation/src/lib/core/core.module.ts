@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipModule } from 'iwerk-angular-ui';
 import { CodeLineComponent } from './code-line/code-line.component';
 import { CodeSampleModule } from './code-sample/code-sample.module';
@@ -24,7 +23,6 @@ import { PageComponent, PageSectionDirective } from './page/page.component';
   imports: [
     CodeSampleModule,
     CommonModule,
-    FontAwesomeModule,
     TooltipModule,
     HttpClientModule
   ],
@@ -35,13 +33,11 @@ import { PageComponent, PageSectionDirective } from './page/page.component';
     ComponentDocumentationComponent,
     ComponentExampleDirective,
     ComponentExampleComponent,
-    FontAwesomeModule,
     AnchorContainerDirective,
     AnchorDirective,
     TabsComponent,
     TabDirective,
     CodeComponent,
-    FontAwesomeModule,
     CodeLineComponent,
     BrandHeaderDirective,
     PageComponent,

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   title = 'docs';
-  faHandshake = faHandshake;
 }
