@@ -1043,7 +1043,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  position: relative\n  display: block\n  overflow: auto\n\npre\n  margin: 0\n  padding: 0\n  height: 100%\n  overflow: auto\n  \n  code\n    margin: 0\n\n.source-actions\n  position: absolute\n  right: 0\n  top: 0\n  display: flex\n  flex-direction: column\n  align-items: flex-end\n  padding: 5px 15px\n",
+                    "data": "@import ../../styles/variables\n\n\\:host\n  position: relative\n  display: block\n  overflow: auto\n\npre\n  margin: 0\n  padding: 0\n  height: 100%\n  overflow: auto\n  background: $color-bg-code\n  \n  code\n    margin: 0\n\n.source-actions\n  position: absolute\n  right: 0\n  top: 0\n  display: flex\n  flex-direction: column\n  align-items: flex-end\n  padding: 5px 15px\n",
                     "styleUrl": "./code.component.sass"
                 }
             ],
@@ -1475,7 +1475,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\\:host\n  display: block\n\nbutton\n  border: none\n  box-shadow: none\n  background: transparent\n  height: auto\n  line-height: normal\n  color: grey\n  outline: none\n  padding: 0\n\n  &:hover\n    color: black",
+                    "data": "@import ../../styles/variables\n\n\\:host\n  display: block\n\nbutton\n  border: none\n  box-shadow: none\n  background: transparent\n  height: auto\n  line-height: normal\n  color: $color-text-code\n  outline: none\n  padding: 0\n  cursor: pointer\n\n  &:hover\n    color: white",
                     "styleUrl": "./copy-button.component.sass"
                 }
             ],
@@ -1927,7 +1927,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../styles/variables'\n\n\\:host\n  display: flex\n  flex-direction: column\n  height: 300px\n  overflow: hidden\n  border: $color-light-grey 1px solid\n  margin-top: 20px\n\nol\n  margin: 0\n  padding: 0\n\nli\n  list-style: none\n  display: inline-block\n  cursor: pointer\n  padding: 0\n  margin: 0\n  padding: 0 15px\n  line-height: 40px\n  height: 40px\n  border-bottom: 2px solid transparent\n  transition: border-bottom 0.2s\n\n  &:hover:not(.active)\n    border-bottom-color: $color-light-grey\n    \n  &.active\n    color: $color-four\n    border-bottom-color: $color-four\n\n.content\n  flex: 1 1\n  overflow: auto\n  background-color: whitesmoke\n\npre\n  margin-top: 0\n",
+                    "data": "@import '../../styles/variables'\n\n\\:host\n  display: flex\n  flex-direction: column\n  height: 300px\n  overflow: hidden\n  margin-top: 20px\n  background-color: $color-bg-code\n\nol\n  margin: 0\n  padding: 0\n  border-bottom: $color-text-code 2px solid\n\nli\n  list-style: none\n  color: $color-text-code\n  display: inline-block\n  cursor: pointer\n  padding: 0\n  margin: 0\n  padding: 0 15px\n  line-height: 40px\n  height: 40px\n  border-bottom: 2px solid transparent\n  transition: border-bottom 0.2s, color 0.2s\n  margin-bottom: -2px\n\n  &:hover:not(.active)\n    border-bottom-color: $color-four\n    color: $color-four\n    \n  &.active\n    color: $color-four\n    border-bottom-color: $color-four\n\n.content\n  flex: 1 1\n  overflow: auto\n  background-color: whitesmoke\n\npre\n  margin-top: 0\n",
                     "styleUrl": "./tabs.component.sass"
                 }
             ],
