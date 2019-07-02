@@ -1,8 +1,0 @@
-<button class="copy" (click)="copy()">
-  <ng-container *ngIf="!copied">copy</ng-container>
-  <ng-container *ngIf="copied">copied!</ng-container>
-  <ng-template [ngIf]="!copied">
-    <ng-template iwTooltip [horizontal]="true">Copy this code sample</ng-template>
-  </ng-template>
-</button>
-

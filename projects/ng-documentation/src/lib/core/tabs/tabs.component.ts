@@ -10,8 +10,11 @@ import { Component, OnInit, Directive, OnDestroy, TemplateRef, Input } from '@an
 })
 export class TabsComponent {
   selectedTemplate: TemplateRef<any>;
-
   tabs: { label: string, template: TemplateRef<any> }[] = [];
+
+  get tabsForCore() {
+    return JSON.stringify(this.tabs.map(t => t.label));
+  }
 }
 
 @Directive({

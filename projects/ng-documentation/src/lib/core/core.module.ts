@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TooltipModule } from 'iwerk-angular-ui';
 import { CodeLineComponent } from './code-line/code-line.component';
 import { CodeSampleModule } from './code-sample/code-sample.module';
@@ -15,9 +15,11 @@ import {
 import { ComponentExampleComponent } from './component-example/component-example.component';
 import { TabDirective, TabsComponent } from './tabs/tabs.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CopyButtonComponent } from './copy-button/copy-button.component';
 import { BrandHeaderDirective } from './directives/brand-header.directive';
 import { PageComponent, PageSectionDirective } from './page/page.component';
+import { defineCustomElements } from 'core-documentation/loader';
+
+defineCustomElements(window);
 
 @NgModule({
   imports: [
@@ -55,10 +57,12 @@ import { PageComponent, PageSectionDirective } from './page/page.component';
     TabDirective,
     CodeComponent,
     CodeLineComponent,
-    CopyButtonComponent,
     BrandHeaderDirective,
     PageComponent,
     PageSectionDirective
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class CoreModule { }

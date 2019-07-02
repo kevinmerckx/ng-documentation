@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Optional, Inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay, publishReplay, filter } from 'rxjs/operators';
 import { DOCUMENTATION_PATH } from '../documentation.token';
 
 export interface InputType {
@@ -20,6 +20,7 @@ export interface OutputType {
 
 export interface MethodType {
     name: string;
+    description: string;
     returnType: string;
 }
 
@@ -68,7 +69,7 @@ export class DocumentationService {
     }
 
     getComponentDocumentation$(name: string, type: keyof Documentation) {
-        return this.documentationSubject.pipe(
+        return this.documentationSubject.asObservable().pipe(
             map(documentation => {
                 if (!documentation) {
                     return undefined;
@@ -96,22 +97,29 @@ export class DocumentationService {
         componentType: keyof Documentation
         input: InputType
     }): Observable<string> {
-        return this.getComponentDocumentation$(options.componentId, options.componentType)
-            .pipe(map(d => {
-                const defaultResult = options.input.type;
-                if (!d.accessors) {
-                    if (!defaultResult) {
-                        return this.getTypeFromDefaultValue(options.input.defaultValue);
+        return new Observable(obs => {
+            this.getComponentDocumentation$(options.componentId, options.componentType)
+                .pipe(
+                    filter(d => !!d),
+                    map(d => {
+                    const defaultResult = options.input.type;
+                    if (!d.accessors) {
+                        if (!defaultResult) {
+                            return this.getTypeFromDefaultValue(options.input.defaultValue);
+                        }
+                        return defaultResult;
                     }
-                    return defaultResult;
-                }
-                const acc = d.accessors[options.input.name];
-                if (acc) {
-                    return acc.getSignature.returnType;
-                } else {
-                    return defaultResult;
-                }
-            }));
+                    const acc = d.accessors[options.input.name];
+                    if (acc) {
+                        return acc.getSignature.returnType;
+                    } else {
+                        return defaultResult;
+                    }
+                })).subscribe(v => {
+                    obs.next(v);
+                    obs.complete();
+                });
+        });
     }
 
     getTypeFromDefaultValue(defaultValue: string) {
