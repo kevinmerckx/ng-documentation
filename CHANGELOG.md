@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/kevinmerckx/ng-documentation/compare/v1.2.0...v1.2.1) (2019-06-17)
+
+
+### Bug Fixes
+
+* **build:** fix the build of lib and docs ([8cc0b7d](https://github.com/kevinmerckx/ng-documentation/commit/8cc0b7d))
+* **build:** remove fontawesome ([c66553d](https://github.com/kevinmerckx/ng-documentation/commit/c66553d))
+
 # [1.2.0](https://github.com/kevinmerckx/ng-documentation/compare/v1.1.2...v1.2.0) (2019-06-17)
 
 
