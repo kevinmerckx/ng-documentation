@@ -4,6 +4,7 @@ notifications:
   email: false
 addons:
   chrome: stable
+dist: xenial
 services:
   - xvfb
 before_script:
