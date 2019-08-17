@@ -6,10 +6,11 @@ addons:
   chrome: stable
 services:
   - xvfb
+before_script:
+  - xvfb-run --server-args="-screen 0 1024x768x24" make test
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 addons:
 apt:
 install:
