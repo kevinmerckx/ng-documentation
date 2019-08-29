@@ -37,7 +37,7 @@
     "nodemon": "^1.18.10"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.3",
+    "@angular-devkit/build-angular": "~0.803.2",
     "@angular-devkit/build-ng-packagr": "~0.800.3",
     "@angular/cli": "^8.0.3",
     "@angular/compiler-cli": "^8.0.1",
