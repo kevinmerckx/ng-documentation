@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "iwerk-angular-ui": "^5.0.0",
-    "@compodoc/compodoc": "^1.1.9",
+    "@compodoc/compodoc": "^1.1.11",
     "node-html-parser": "^1.1.13",
     "nodemon": "^1.18.10"
   },
