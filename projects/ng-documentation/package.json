@@ -10,7 +10,7 @@
     "iwerk-angular-ui": "^5.0.0",
     "@compodoc/compodoc": "^1.1.9",
     "node-html-parser": "^1.1.13",
-    "nodemon": "^1.18.10"
+    "nodemon": "^2.0.3"
   },
   "repository": {
     "type": "git",
